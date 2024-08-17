@@ -14,3 +14,14 @@ func _process(delta: float) -> void:
 	
 func updateUI() -> void:
 	
+	%Money_val.text = str( $"../Player_Manager_1".res_money)
+	%Material_val.text = str($"../Player_Manager_1".res_materials)
+	%Homes_val.text = str($"../Player_Manager_1".res_livingRoom)
+	%People_val.text = str($"../Player_Manager_1".res_people)
+	%Energy_val.text = str($"../Player_Manager_1".res_energy_produced)
+	%Food_val.text = str($"../Player_Manager_1".res_food_produced)
+	%Energy_cons_val.text = str($"../Player_Manager_1".res_energy_used)
+	%Food_cons_val.text = str($"../Player_Manager_1".res_food_used)
+	pass
+	
+	

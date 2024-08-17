@@ -5,11 +5,12 @@ enum ENUM_GameState{main_menu, world, ui_menue}
 
 var GameState : ENUM_GameState
 
-var gameTime_seconds : float = 0
+var gameTime : float = 0
+var gameTime_seconds : int = 0
 
 @export var player: Array[player_manager] 
 
-
+signal Tick_second
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,10 +25,15 @@ func _process(delta: float) -> void:
 	
 	#Check Current GameState
 	if(GameState == ENUM_GameState.world):
-		gameTime_seconds += delta
 		
-		for obj in player:
-			obj.ressourcePerTick()
+		
+		gameTime += delta
+		
+		if(gameTime_seconds < floor(gameTime)):
+			gameTime_seconds += 1
+			#for obj in player: 
+				##obj.ressourcePerTick() # done by signal
+			Tick_second.emit()
 		
 		
 		

@@ -17,7 +17,6 @@ script = ExtResource("2_7cadx")
 [node name="RessourceManager" type="Node3D" parent="GameManager/Player_Manager_1"]
 
 [node name="UI_Manager" type="Control" parent="GameManager"]
-unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -175,5 +174,3 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "0
 "
-
-[connection signal="Tick_second" from="GameManager" to="GameManager/Player_Manager_1" method="ressourcePerTick"]
