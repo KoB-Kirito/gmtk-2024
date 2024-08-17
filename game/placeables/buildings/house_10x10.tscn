@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi4cvrctfheyw"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_esfeg"]
+[ext_resource type="Script" path="res://game/placeables/blocks/block_5x5.gd" id="2_qq733"]
+[ext_resource type="PackedScene" uid="uid://cbiqri8eaehnp" path="res://assets/Nomi/3D/walkingHouse_Module_1.blend" id="3_qwqu8"]
+[ext_resource type="Script" path="res://scripts/ClickDetector.gd" id="4_d8i0d"]
+[ext_resource type="PackedScene" uid="uid://bsk8mcfx625" path="res://game/placeables/_slots/slot_10m.tscn" id="5_bsv8c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjqo4"]
+size = Vector3(10.1, 10.1, 10.1)
+
+[node name="House10x10" instance=ExtResource("1_esfeg")]
+script = ExtResource("2_qq733")
+
+[node name="Model" parent="." index="0" instance=ExtResource("3_qwqu8")]
+
+[node name="MouseClickDetector" type="StaticBody3D" parent="." index="1"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_d8i0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_fjqo4")
+
+[node name="BuildingSlot10x" parent="." index="2" instance=ExtResource("5_bsv8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[connection signal="mouse_clicked" from="MouseClickDetector" to="." method="_on_mouse_click_detector_mouse_clicked"]

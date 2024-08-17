@@ -5,7 +5,7 @@ extends StaticBody3D
 
 
 ## Emitted when a mouse button is pressed while the mouse pointer is inside any of this object's shapes.
-signal mouse_clicked(button_index: int)
+signal mouse_clicked(button_index: int, event_position: Vector3)
 
 const MOUSE_LAYER = 2
 
@@ -16,7 +16,7 @@ func _ready() -> void:
 		collision_mask = MOUSE_LAYER
 
 
-func _input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+func _input_event(_camera: Node, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if Engine.is_editor_hint():
 		return
 	
@@ -27,4 +27,4 @@ func _input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _n
 	
 	print(owner.name, " clicked. button index: ", mouse_button_event.button_index)
 	
-	mouse_clicked.emit(mouse_button_event.button_index)
+	mouse_clicked.emit(mouse_button_event.button_index, event_position)

@@ -56,13 +56,14 @@ layout/style_list=[]
 layout/default_style="Default"
 glossary/default_case_sensitive=true
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/lightweight_state_machine/plugin.cfg")
-
-[filesystem]
-
-import/blender/enabled=false
 
 [input]
 

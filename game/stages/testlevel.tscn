@@ -1,7 +1,101 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyrxtp8clcmh3"]
+[gd_scene load_steps=49 format=3 uid="uid://dyrxtp8clcmh3"]
 
 [ext_resource type="Script" path="res://game/stages/testlevel.gd" id="1_8oay2"]
-[ext_resource type="PackedScene" uid="uid://cxdq27knicbqy" path="res://game/placeables/_system/building_slot_1x.tscn" id="2_jcu86"]
+[ext_resource type="PackedScene" uid="uid://cxdq27knicbqy" path="res://game/placeables/_slots/slot_2m.tscn" id="2_jcu86"]
+[ext_resource type="Script" path="res://game/ui/InventoryItem.gd" id="2_qevnt"]
+[ext_resource type="Script" path="res://game/camera/camera.gd" id="2_wimfh"]
+[ext_resource type="Script" path="res://game/ui/unit_data.gd" id="3_b2txa"]
+[ext_resource type="Texture2D" uid="uid://cp6kuj03v03u" path="res://assets/textures/prototype/green/texture_01.png" id="4_3d7xt"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="4_bm738"]
+[ext_resource type="Texture2D" uid="uid://et8ykpbufd1" path="res://assets/textures/prototype/green/texture_13.png" id="4_kvjfh"]
+[ext_resource type="PackedScene" uid="uid://bsk8mcfx625" path="res://game/placeables/_slots/slot_10m.tscn" id="5_kcmbj"]
+[ext_resource type="PackedScene" uid="uid://d07fjyk53j4ls" path="res://game/robot/robot.tscn" id="6_8nnip"]
+[ext_resource type="Texture2D" uid="uid://cte22yvjllix1" path="res://assets/textures/prototype/green/texture_11.png" id="6_kky8e"]
+[ext_resource type="PackedScene" uid="uid://d2jnyggsymvmg" path="res://assets/models/placeables/Balkon5x20.blend" id="7_0ve8j"]
+[ext_resource type="Texture2D" uid="uid://d5poic2he3lp" path="res://assets/textures/prototype/purple/texture_01.png" id="7_honkp"]
+[ext_resource type="PackedScene" uid="uid://xg4kn2chgd7j" path="res://assets/models/placeables/Balkon10x20.blend" id="8_j26gs"]
+[ext_resource type="Texture2D" uid="uid://dn7l0kyorjm6d" path="res://assets/textures/prototype/purple/texture_13.png" id="8_ts82d"]
+[ext_resource type="Texture2D" uid="uid://dc7jfcio5ijqx" path="res://assets/textures/prototype/purple/texture_11.png" id="9_5gg7u"]
+[ext_resource type="PackedScene" uid="uid://nfgkdg36nvrr" path="res://assets/models/placeables/Dach5x20.blend" id="9_lvovm"]
+[ext_resource type="Texture2D" uid="uid://5adp37fqo7vi" path="res://assets/textures/prototype/orange/texture_01.png" id="10_2axua"]
+[ext_resource type="Texture2D" uid="uid://mpvowjtnoqo4" path="res://assets/textures/prototype/light/texture_01.png" id="10_60y00"]
+[ext_resource type="PackedScene" uid="uid://bwpc7cpxj31gm" path="res://assets/models/placeables/Dach10x10.blend" id="10_tpxcg"]
+[ext_resource type="PackedScene" uid="uid://c3mqomca30adq" path="res://assets/models/placeables/Dach10x20.blend" id="11_3hhhy"]
+[ext_resource type="Texture2D" uid="uid://d0txrcs8eqf6g" path="res://assets/textures/prototype/orange/texture_13.png" id="11_iyc1d"]
+[ext_resource type="Texture2D" uid="uid://clw57nh3tue31" path="res://assets/textures/prototype/light/texture_11.png" id="11_o6c2o"]
+[ext_resource type="Texture2D" uid="uid://d2u6m2r883vu0" path="res://assets/textures/prototype/light/texture_09.png" id="12_g6x0y"]
+[ext_resource type="Texture2D" uid="uid://bt6jyfqyaq875" path="res://assets/textures/prototype/orange/texture_11.png" id="12_kjv0q"]
+[ext_resource type="PackedScene" uid="uid://cauxtxrd5kdbd" path="res://assets/models/placeables/Haus10x10.blend" id="12_yjfi8"]
+[ext_resource type="PackedScene" uid="uid://ct1v44hh362ba" path="res://assets/models/placeables/Haus10x10Dach.blend" id="13_6o67s"]
+[ext_resource type="PackedScene" uid="uid://b4a3ak41tsl2j" path="res://assets/models/placeables/Haus10x20Dach.blend" id="14_hfnel"]
+[ext_resource type="PackedScene" uid="uid://dj7hywrpipufe" path="res://assets/models/placeables/Stockwerk5x20.blend" id="15_hik6o"]
+[ext_resource type="PackedScene" uid="uid://bu8gx4qbx2kln" path="res://assets/models/placeables/Stockwerk5x20Dach.blend" id="16_61dbh"]
+[ext_resource type="PackedScene" uid="uid://c3v8ql8ky847n" path="res://assets/models/placeables/Stockwerk10x20Dach.blend" id="17_q8psv"]
+[ext_resource type="PackedScene" uid="uid://cb4bjekof2p52" path="res://assets/models/placeables/Stockwerk10x20.blend" id="18_3hj5x"]
+[ext_resource type="PackedScene" uid="uid://cbiqri8eaehnp" path="res://assets/Nomi/3D/walkingHouse_Module_1.blend" id="19_mtcs3"]
+[ext_resource type="PackedScene" uid="uid://b54vokuqqkwqi" path="res://assets/models/placeables/Haus10x20.blend" id="20_g8wfo"]
+[ext_resource type="PackedScene" uid="uid://kbl5dnemvvdt" path="res://assets/Nomi/3D/walkingHouse_Module_2.blend" id="21_j2riy"]
+[ext_resource type="PackedScene" uid="uid://basbcumeh43c3" path="res://assets/Nomi/3D/walkingHouse_Module_3.blend" id="22_ojwb8"]
+
+[sub_resource type="Resource" id="Resource_tn2jy"]
+script = ExtResource("3_b2txa")
+path = "res://game/placeables/towers/laser.tscn"
+name = "Laser"
+tooltip = "On small slots, only sideways"
+texture = ExtResource("4_3d7xt")
+texture_hover = ExtResource("6_kky8e")
+texture_disabled = ExtResource("4_kvjfh")
+
+[sub_resource type="Resource" id="Resource_rpujk"]
+script = ExtResource("2_qevnt")
+slot_type = 0
+slot_orientation = 2
+unit_data = SubResource("Resource_tn2jy")
+
+[sub_resource type="Resource" id="Resource_qmwtm"]
+script = ExtResource("3_b2txa")
+path = "res://game/placeables/blocks/block_5x5.tscn"
+name = "Connection Block"
+tooltip = "On medium slots all directions"
+texture = ExtResource("7_honkp")
+texture_hover = ExtResource("9_5gg7u")
+texture_disabled = ExtResource("8_ts82d")
+
+[sub_resource type="Resource" id="Resource_t6ndd"]
+script = ExtResource("2_qevnt")
+slot_type = 1
+slot_orientation = 0
+unit_data = SubResource("Resource_qmwtm")
+
+[sub_resource type="Resource" id="Resource_p40qi"]
+script = ExtResource("3_b2txa")
+path = "res://game/placeables/blocks/block_5x5_2x2.tscn"
+name = "Connection Block"
+tooltip = "On medium slots all directions. Converts to small slot."
+texture = ExtResource("10_2axua")
+texture_hover = ExtResource("12_kjv0q")
+texture_disabled = ExtResource("11_iyc1d")
+
+[sub_resource type="Resource" id="Resource_q6dov"]
+script = ExtResource("2_qevnt")
+slot_type = 1
+slot_orientation = 0
+unit_data = SubResource("Resource_p40qi")
+
+[sub_resource type="Resource" id="Resource_37er4"]
+script = ExtResource("3_b2txa")
+path = "res://game/placeables/buildings/house_10x10.tscn"
+name = "House"
+tooltip = "On large slots only up"
+texture = ExtResource("10_60y00")
+texture_hover = ExtResource("12_g6x0y")
+texture_disabled = ExtResource("11_o6c2o")
+
+[sub_resource type="Resource" id="Resource_y41lg"]
+script = ExtResource("2_qevnt")
+slot_type = 2
+slot_orientation = 1
+unit_data = SubResource("Resource_37er4")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_de6e4"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,6 +114,7 @@ albedo_color = Color(0, 0.270588, 0, 1)
 
 [node name="Testlevel" type="Node3D"]
 script = ExtResource("1_8oay2")
+test_inventory = Array[ExtResource("2_qevnt")]([SubResource("Resource_rpujk"), SubResource("Resource_t6ndd"), SubResource("Resource_q6dov"), SubResource("Resource_y41lg")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -30,20 +125,106 @@ environment = SubResource("Environment_5w6op")
 
 [node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-size = Vector3(30, 1, 30)
+use_collision = true
+size = Vector3(300, 1, 300)
 material = SubResource("StandardMaterial3D_053r0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 7, 10, 7)
+script = ExtResource("2_wimfh")
 
 [node name="BuildingSlot1x" parent="." instance=ExtResource("2_jcu86")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
 
-[node name="BuildingSlot1x2" parent="." instance=ExtResource("2_jcu86")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+[node name="BuildingSlot4m" parent="." instance=ExtResource("4_bm738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
-[node name="BuildingSlot1x3" parent="." instance=ExtResource("2_jcu86")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+[node name="BuildingSlot10x" parent="." instance=ExtResource("5_kcmbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 0)
 
-[node name="BuildingSlot1x4" parent="." instance=ExtResource("2_jcu86")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+[node name="BuildingSlot10x5" parent="." instance=ExtResource("5_kcmbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 10, 22)
+
+[node name="BuildingSlot10x2" parent="." instance=ExtResource("5_kcmbj")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 5, 22)
+
+[node name="BuildingSlot10x3" parent="." instance=ExtResource("5_kcmbj")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, -26, 5, 17)
+
+[node name="BuildingSlot10x4" parent="." instance=ExtResource("5_kcmbj")]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, -31, 5, 22)
+
+[node name="Robot" parent="." instance=ExtResource("6_8nnip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, -16.5)
+
+[node name="Balkon5x20" parent="." instance=ExtResource("7_0ve8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -79.5)
+
+[node name="Balkon10x20" parent="." instance=ExtResource("8_j26gs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -62)
+
+[node name="Dach5x20" parent="." instance=ExtResource("9_lvovm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -71)
+
+[node name="Dach10x10" parent="." instance=ExtResource("10_tpxcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -82)
+
+[node name="Dach10x20" parent="." instance=ExtResource("11_3hhhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -89.5)
+
+[node name="BuildingSlot4m2" parent="." instance=ExtResource("4_bm738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.5, -79.5)
+
+[node name="BuildingSlot4m3" parent="." instance=ExtResource("4_bm738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, -79.5)
+
+[node name="BuildingSlot4m4" parent="." instance=ExtResource("4_bm738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.5, -79.5)
+
+[node name="BuildingSlot4m5" parent="." instance=ExtResource("4_bm738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3.5, -79.5)
+
+[node name="BuildingSlot10m" parent="." instance=ExtResource("5_kcmbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, -61.5)
+
+[node name="Haus10x10" parent="." instance=ExtResource("12_yjfi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 22.5)
+
+[node name="Haus10x10Dach" parent="." instance=ExtResource("13_6o67s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, -58)
+
+[node name="Haus10x20Dach" parent="." instance=ExtResource("14_hfnel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.5, 0, -60)
+
+[node name="Stockwerk5x20" parent="." instance=ExtResource("15_hik6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 0, -85)
+
+[node name="Stockwerk5x20Dach" parent="." instance=ExtResource("16_61dbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.5, 0, -87.5)
+
+[node name="Stockwerk10x20Dach" parent="." instance=ExtResource("17_q8psv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, 0, -108)
+
+[node name="Stockwerk10x20" parent="." instance=ExtResource("18_3hj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.5, 0, -110.5)
+
+[node name="walkingHouse_Module_1" parent="." instance=ExtResource("19_mtcs3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5, 0, -111.5)
+
+[node name="Haus10x20" parent="." instance=ExtResource("20_g8wfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104, 0, -61)
+
+[node name="BuildingSlot10m2" parent="." instance=ExtResource("5_kcmbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 10, -61)
+
+[node name="BuildingSlot10m3" parent="." instance=ExtResource("5_kcmbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99, 10, -61)
+
+[node name="walkingHouse_Module_2" parent="." instance=ExtResource("19_mtcs3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.5, 0, -32)
+
+[node name="walkingHouse_Module_3" parent="." instance=ExtResource("21_j2riy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.5, 0, -34)
+
+[node name="walkingHouse_Module_4" parent="." instance=ExtResource("22_ojwb8")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -32.5, 0, -29.5)
