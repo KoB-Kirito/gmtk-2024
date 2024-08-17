@@ -1,0 +1,140 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4gyrr74gsf0o"]
+
+[ext_resource type="Script" path="res://assets/Nomi/Levels/game_manager.gd" id="1_2wocj"]
+[ext_resource type="Script" path="res://assets/Nomi/Levels/player_manager.gd" id="2_7cadx"]
+[ext_resource type="Script" path="res://assets/Nomi/Levels/ui_manager.gd" id="3_rpih1"]
+
+[node name="BaseScene" type="Node3D"]
+
+[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("1_2wocj")
+player = [NodePath("Player_Manager_1")]
+
+[node name="Player_Manager_1" type="Node3D" parent="GameManager"]
+script = ExtResource("2_7cadx")
+
+[node name="RessourceManager" type="Node3D" parent="GameManager/Player_Manager_1"]
+
+[node name="UI_Manager" type="Control" parent="GameManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_rpih1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager/UI_Manager"]
+follow_viewport_enabled = true
+
+[node name="PanelContainer" type="PanelContainer" parent="GameManager/UI_Manager/CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Control" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_right = 180.0
+offset_bottom = 64.0
+grow_horizontal = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Money" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Money"
+
+[node name="Material" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Material"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Money_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "0
+"
+
+[node name="Material_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "0
+"
+
+[node name="Control" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Homes" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Homes"
+
+[node name="People" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "People"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Homes_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+text = "0
+"
+
+[node name="People_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+text = "0
+"
+
+[node name="Control2" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Energy" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Energy"
+
+[node name="Food" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Food"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Energy_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+text = "0
+"
+
+[node name="Food_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+text = "0
+"
