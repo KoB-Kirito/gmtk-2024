@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyrxtp8clcmh3"]
+
+[ext_resource type="Script" path="res://game/stages/testlevel.gd" id="1_8oay2"]
+[ext_resource type="PackedScene" uid="uid://cxdq27knicbqy" path="res://game/placeables/_system/building_slot_1x.tscn" id="2_jcu86"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_de6e4"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ca36d"]
+sky_material = SubResource("ProceduralSkyMaterial_de6e4")
+
+[sub_resource type="Environment" id="Environment_5w6op"]
+background_mode = 2
+sky = SubResource("Sky_ca36d")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_053r0"]
+albedo_color = Color(0, 0.270588, 0, 1)
+
+[node name="Testlevel" type="Node3D"]
+script = ExtResource("1_8oay2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5w6op")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(30, 1, 30)
+material = SubResource("StandardMaterial3D_053r0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 7, 10, 7)
+
+[node name="BuildingSlot1x" parent="." instance=ExtResource("2_jcu86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="BuildingSlot1x2" parent="." instance=ExtResource("2_jcu86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="BuildingSlot1x3" parent="." instance=ExtResource("2_jcu86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="BuildingSlot1x4" parent="." instance=ExtResource("2_jcu86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
