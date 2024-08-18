@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4gyrr74gsf0o"]
+[gd_scene load_steps=16 format=3 uid="uid://c4gyrr74gsf0o"]
 
 [ext_resource type="Script" path="res://assets/Nomi/Levels/game_manager.gd" id="1_2wocj"]
 [ext_resource type="Script" path="res://assets/Nomi/Levels/player_manager.gd" id="2_7cadx"]
 [ext_resource type="Script" path="res://assets/Nomi/Levels/ui_manager.gd" id="3_rpih1"]
+[ext_resource type="Texture2D" uid="uid://ddwqbb8vj2gcu" path="res://assets/Nomi/2DUI/back.png" id="4_4qrcf"]
+[ext_resource type="Texture2D" uid="uid://cxo5k2s3wmbu1" path="res://assets/Nomi/2DUI/money.png" id="4_4u6n3"]
+[ext_resource type="Texture2D" uid="uid://cxmqu1o581vel" path="res://assets/Nomi/2DUI/material.png" id="5_gadnm"]
+[ext_resource type="Texture2D" uid="uid://dkgvcsyqiif4w" path="res://assets/Nomi/2DUI/back2.png" id="5_n28ey"]
+[ext_resource type="Texture2D" uid="uid://cmcv1upx50nnc" path="res://assets/Nomi/2DUI/House.png" id="6_rr2rw"]
+[ext_resource type="Texture2D" uid="uid://cf7d0udnavi1o" path="res://assets/Nomi/2DUI/people.png" id="7_uomlj"]
+[ext_resource type="Texture2D" uid="uid://b7ijiapajo0d6" path="res://assets/Nomi/2DUI/Energy.png" id="8_dngsu"]
+[ext_resource type="Texture2D" uid="uid://2uh52qocxi17" path="res://assets/Nomi/2DUI/up.png" id="9_m0wl4"]
+[ext_resource type="Texture2D" uid="uid://ctc6jt2crkw7l" path="res://assets/Nomi/2DUI/Food.png" id="10_d5tbo"]
+[ext_resource type="Texture2D" uid="uid://omt84d4hqmba" path="res://assets/Nomi/2DUI/down.png" id="11_ldpba"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_us4to"]
+texture = ExtResource("4_4qrcf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_snwc1"]
+texture = ExtResource("5_n28ey")
 
 [node name="BaseScene" type="Node3D"]
 
@@ -29,8 +45,11 @@ follow_viewport_enabled = true
 
 [node name="PanelContainer" type="PanelContainer" parent="GameManager/UI_Manager/CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Control" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer"]
 layout_mode = 2
@@ -42,15 +61,30 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -240.0
 offset_right = 240.0
-offset_bottom = 64.0
+offset_bottom = 101.0
 grow_horizontal = 2
 size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_us4to")
+
+[node name="Control" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/Control"]
+custom_minimum_size = Vector2(320, 72)
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 470.0
+offset_bottom = 78.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_snwc1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer"]
 layout_mode = 2
 
 [node name="Control4" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(12, 0)
+custom_minimum_size = Vector2(12, 10)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer"]
@@ -63,11 +97,28 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Money" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-text = "Money"
+texture = ExtResource("4_4u6n3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Material2" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Money
+"
+
+[node name="TextureRect2" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_gadnm")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Material" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Material"
 
@@ -76,15 +127,19 @@ layout_mode = 2
 
 [node name="Money_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 text = "0
 "
+vertical_alignment = 1
 
 [node name="Material_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 text = "0
 "
+vertical_alignment = 1
 
 [node name="Control" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(48, 0)
@@ -93,11 +148,27 @@ layout_mode = 2
 [node name="VBoxContainer2" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("6_rr2rw")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Homes" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+visible = false
 layout_mode = 2
 text = "Homes"
 
+[node name="TextureRect2" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_uomlj")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="People" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+visible = false
 layout_mode = 2
 text = "People"
 
@@ -106,15 +177,19 @@ layout_mode = 2
 
 [node name="Homes_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 text = "0
 "
+vertical_alignment = 1
 
 [node name="People_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 text = "0
 "
+vertical_alignment = 1
 
 [node name="Control2" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(48, 0)
@@ -123,11 +198,39 @@ layout_mode = 2
 [node name="VBoxContainer3" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
+[node name="TextureRect2" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_dngsu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/TextureRect2"]
+custom_minimum_size = Vector2(32, 32)
+texture = ExtResource("9_m0wl4")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Energy" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+visible = false
 layout_mode = 2
 text = "Energy"
 
+[node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("10_d5tbo")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/TextureRect"]
+custom_minimum_size = Vector2(32, 32)
+texture = ExtResource("9_m0wl4")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Food" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+visible = false
 layout_mode = 2
 text = "Food"
 
@@ -136,15 +239,19 @@ layout_mode = 2
 
 [node name="Energy_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer6"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 text = "0
 "
+vertical_alignment = 1
 
 [node name="Food_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer6"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 text = "0
 "
+vertical_alignment = 1
 
 [node name="Control4" type="Control" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(48, 0)
@@ -153,11 +260,39 @@ layout_mode = 2
 [node name="VBoxContainer7" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer7"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_dngsu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer7/TextureRect"]
+custom_minimum_size = Vector2(32, 32)
+texture = ExtResource("11_ldpba")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Energy" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer7"]
+visible = false
 layout_mode = 2
 text = "Energy"
 
+[node name="TextureRect2" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer7"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("10_d5tbo")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer7/TextureRect2"]
+custom_minimum_size = Vector2(32, 32)
+texture = ExtResource("11_ldpba")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Food" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer7"]
+visible = false
 layout_mode = 2
 text = "Food"
 
@@ -166,14 +301,18 @@ layout_mode = 2
 
 [node name="Energy_cons_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer8"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 text = "0
 "
+vertical_alignment = 1
 
 [node name="Food_cons_val" type="Label" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer8"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 text = "0
 "
+vertical_alignment = 1
 
 [connection signal="Tick_second" from="GameManager" to="GameManager/Player_Manager_1" method="ressourcePerTick"]
