@@ -207,6 +207,7 @@ stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/TextureRect2"]
 custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
 texture = ExtResource("9_m0wl4")
 expand_mode = 1
 stretch_mode = 4
@@ -225,6 +226,7 @@ stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/TextureRect"]
 custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
 texture = ExtResource("9_m0wl4")
 expand_mode = 1
 stretch_mode = 4
@@ -269,6 +271,7 @@ stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer7/TextureRect"]
 custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
 texture = ExtResource("11_ldpba")
 expand_mode = 1
 stretch_mode = 4
@@ -287,6 +290,7 @@ stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer7/TextureRect2"]
 custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
 texture = ExtResource("11_ldpba")
 expand_mode = 1
 stretch_mode = 4
