@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://xf3awr372g2k"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_oije2"]
+[ext_resource type="Script" path="res://game/placeables/blocks/block_5x5.gd" id="2_y7vb8"]
+[ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="3_rcp7l"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="4_dg8cg"]
+[ext_resource type="Script" path="res://scripts/ClickDetector.gd" id="5_ujd1f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfqac"]
+albedo_texture = ExtResource("3_rcp7l")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjqo4"]
+size = Vector3(5.1, 5.1, 5.1)
+
+[node name="ConnectionBlock5x5" instance=ExtResource("1_oije2")]
+script = ExtResource("2_y7vb8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+size = Vector3(5, 5, 5)
+material = SubResource("StandardMaterial3D_jfqac")
+
+[node name="BuildingSlot5mUp" parent="." index="1" instance=ExtResource("4_dg8cg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="BuildingSlot5m1" parent="." index="2" instance=ExtResource("4_dg8cg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, 2.5)
+
+[node name="BuildingSlot5m2" parent="." index="3" instance=ExtResource("4_dg8cg")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -2.5, 2.5, 0)
+
+[node name="BuildingSlot5m3" parent="." index="4" instance=ExtResource("4_dg8cg")]
+transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 0, 2.5, -2.5)
+
+[node name="BuildingSlot5m4" parent="." index="5" instance=ExtResource("4_dg8cg")]
+transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 2.5, 2.5, 0)
+
+[node name="MouseClickDetector" type="StaticBody3D" parent="." index="6"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_ujd1f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_fjqo4")
+
+[connection signal="mouse_clicked" from="MouseClickDetector" to="." method="_on_mouse_click_detector_mouse_clicked"]
