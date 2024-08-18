@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://game/ui/unit_button.gd" id="3_5dfub"]
 
 [node name="UnitButton" type="TextureButton"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(100, 100)
 texture_normal = ExtResource("1_7cjq7")
 texture_hover = ExtResource("2_yo4ux")
 ignore_texture_size = true

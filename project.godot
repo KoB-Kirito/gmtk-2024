@@ -27,6 +27,7 @@ Events="*res://autoloads/events.gd"
 Globals="*res://autoloads/globals.gd"
 PauseMenu="*res://autoloads/pause_menu.tscn"
 SceneTransition="*res://autoloads/scene_transition.tscn"
+Database="*res://autoloads/database.tscn"
 
 [dialogic]
 

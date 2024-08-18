@@ -5,4 +5,9 @@ extends Node3D
 
 
 func _ready() -> void:
-	Globals.inventory = test_inventory
+	#TEST
+	# give all units
+	for unit in Database.placeables:
+		var item = InventoryItem.new()
+		item.unit_data = unit
+		Globals.inventory.append(item)

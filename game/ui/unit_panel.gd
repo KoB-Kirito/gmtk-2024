@@ -12,21 +12,23 @@ func setup(slot: BuildingSlot) -> void:
 	var slot_orientation = slot.get_slot_orientation()
 	
 	for item: InventoryItem in Globals.inventory:
+		var unit := item.unit_data
+		
 		var unit_button = UNIT_BUTTON.instantiate()
-		unit_button.setup(item.unit_data)
+		unit_button.setup(unit)
 		%GridContainer.add_child(unit_button)
 		
 		# check if unit can be placed in slot
-		if slot.slot_type == item.slot_type:
-			if item.slot_orientation == Globals.SlotOrientation.ALL or slot_orientation == item.slot_orientation:
+		if slot.slot_type == unit.slot_type:
+			if unit.slot_orientation == Globals.SlotOrientation.ALL or slot_orientation == unit.slot_orientation:
 				# debug
-				if item.unit_data.occupied_space <= Vector3.ZERO:
-					push_error("item has no occupied space set: ", item.unit_data.name)
+				if unit.occupied_space <= Vector3.ZERO:
+					push_error("item has no occupied space set: ", unit.name)
 				
 				# check if space is enough
-				if await slot.is_area_free(item.unit_data.occupied_space):
+				if await slot.is_area_free(unit.occupied_space):
 					# unit meets requirements for this slot
-					unit_button.pressed.connect(func(): unit_selected.emit(item.unit_data.path))
+					unit_button.pressed.connect(func(): unit_selected.emit(unit.path))
 					
 				else:
 					# area does not have enough space

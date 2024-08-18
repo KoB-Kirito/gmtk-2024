@@ -1,0 +1,112 @@
+[gd_scene load_steps=30 format=3 uid="uid://31o8nvgnpkwq"]
+
+[ext_resource type="Script" path="res://autoloads/database.gd" id="1_87apn"]
+[ext_resource type="Script" path="res://game/ui/unit_data.gd" id="2_3knpf"]
+[ext_resource type="Texture2D" uid="uid://c1m43yekga067" path="res://assets/textures/prototype/green/texture_02.png" id="3_hdxwp"]
+[ext_resource type="Texture2D" uid="uid://et8ykpbufd1" path="res://assets/textures/prototype/green/texture_13.png" id="4_iwwdv"]
+[ext_resource type="Texture2D" uid="uid://cte22yvjllix1" path="res://assets/textures/prototype/green/texture_11.png" id="5_j7ol1"]
+[ext_resource type="Texture2D" uid="uid://cl5virwt0pvrc" path="res://assets/textures/prototype/purple/texture_02.png" id="6_c6n0q"]
+[ext_resource type="Texture2D" uid="uid://dn7l0kyorjm6d" path="res://assets/textures/prototype/purple/texture_13.png" id="7_317k5"]
+[ext_resource type="Texture2D" uid="uid://dc7jfcio5ijqx" path="res://assets/textures/prototype/purple/texture_11.png" id="8_sinko"]
+[ext_resource type="Texture2D" uid="uid://dy3e4smobf4wj" path="res://assets/textures/prototype/red/texture_02.png" id="9_shc0q"]
+[ext_resource type="Texture2D" uid="uid://dybc38bw7y4ks" path="res://assets/textures/prototype/red/texture_13.png" id="10_q8soa"]
+[ext_resource type="Texture2D" uid="uid://dit3webir6mtj" path="res://assets/textures/prototype/red/texture_11.png" id="11_m5c8u"]
+[ext_resource type="Texture2D" uid="uid://ceh1psmukhbfv" path="res://assets/textures/prototype/orange/texture_02.png" id="12_amv0v"]
+[ext_resource type="Texture2D" uid="uid://d0txrcs8eqf6g" path="res://assets/textures/prototype/orange/texture_13.png" id="13_yetxt"]
+[ext_resource type="Texture2D" uid="uid://bt6jyfqyaq875" path="res://assets/textures/prototype/orange/texture_11.png" id="14_0rhyp"]
+[ext_resource type="Texture2D" uid="uid://bkbh16uia54vk" path="res://assets/textures/prototype/light/texture_02.png" id="15_oe66c"]
+[ext_resource type="Texture2D" uid="uid://clw57nh3tue31" path="res://assets/textures/prototype/light/texture_11.png" id="16_tdf6d"]
+[ext_resource type="Texture2D" uid="uid://d2u6m2r883vu0" path="res://assets/textures/prototype/light/texture_09.png" id="17_g4toc"]
+[ext_resource type="Texture2D" uid="uid://bhn8434hh0gu6" path="res://game/placeables/buildings/modern_house_large.png" id="18_je3ax"]
+[ext_resource type="Texture2D" uid="uid://dpl42jknsvvqw" path="res://game/placeables/buildings/modern_house_large_disabled.png" id="19_eghbn"]
+[ext_resource type="Texture2D" uid="uid://ccwowq0ucr3tq" path="res://game/placeables/buildings/modern_house_large_hover.png" id="20_v654u"]
+[ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="21_pisxe"]
+[ext_resource type="Texture2D" uid="uid://ndh3umcndd2t" path="res://icon_red.svg" id="22_047l8"]
+
+[sub_resource type="Resource" id="Resource_pc33a"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/blocks/block_2x2.tscn"
+name = "Block Small"
+description = "Test block"
+texture = ExtResource("3_hdxwp")
+texture_hover = ExtResource("5_j7ol1")
+texture_disabled = ExtResource("4_iwwdv")
+occupied_space = Vector3(2, 2, 2)
+slot_type = 0
+slot_orientation = 0
+
+[sub_resource type="Resource" id="Resource_8mema"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/blocks/block_5x5.tscn"
+name = "Block Medium"
+description = "Test block"
+texture = ExtResource("6_c6n0q")
+texture_hover = ExtResource("8_sinko")
+texture_disabled = ExtResource("7_317k5")
+occupied_space = Vector3(5, 5, 5)
+slot_type = 1
+slot_orientation = 0
+
+[sub_resource type="Resource" id="Resource_skrss"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/blocks/block_10x10.tscn"
+name = "Block Large"
+description = "Test block"
+texture = ExtResource("9_shc0q")
+texture_hover = ExtResource("11_m5c8u")
+texture_disabled = ExtResource("10_q8soa")
+occupied_space = Vector3(10, 10, 10)
+slot_type = 2
+slot_orientation = 0
+
+[sub_resource type="Resource" id="Resource_avyl5"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/blocks/block_5x5_2x2.tscn"
+name = "Connector Medium to Small"
+description = "Test block"
+texture = ExtResource("12_amv0v")
+texture_hover = ExtResource("14_0rhyp")
+texture_disabled = ExtResource("13_yetxt")
+occupied_space = Vector3(5, 2.5, 5)
+slot_type = 1
+slot_orientation = 0
+
+[sub_resource type="Resource" id="Resource_51wv3"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/blocks/test_10x5.tscn"
+name = "Low Block Large"
+description = "Test block, half height"
+texture = ExtResource("15_oe66c")
+texture_hover = ExtResource("17_g4toc")
+texture_disabled = ExtResource("16_tdf6d")
+occupied_space = Vector3(10, 5, 10)
+slot_type = 2
+slot_orientation = 0
+
+[sub_resource type="Resource" id="Resource_qmcg1"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/buildings/house_10x10.tscn"
+name = "Modern House Large"
+description = "Has a large slot on top"
+texture = ExtResource("18_je3ax")
+texture_hover = ExtResource("20_v654u")
+texture_disabled = ExtResource("19_eghbn")
+occupied_space = Vector3(10, 10, 10)
+slot_type = 2
+slot_orientation = 1
+
+[sub_resource type="Resource" id="Resource_b35v2"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/towers/laser.tscn"
+name = "Minigun"
+description = "bla bla"
+texture = ExtResource("21_pisxe")
+texture_hover = ExtResource("22_047l8")
+texture_disabled = ExtResource("21_pisxe")
+occupied_space = Vector3(2, 2, 2)
+slot_type = 0
+slot_orientation = 0
+
+[node name="Database" type="Node"]
+script = ExtResource("1_87apn")
+placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_pc33a"), SubResource("Resource_8mema"), SubResource("Resource_skrss"), SubResource("Resource_avyl5"), SubResource("Resource_51wv3"), SubResource("Resource_qmcg1"), SubResource("Resource_b35v2")])

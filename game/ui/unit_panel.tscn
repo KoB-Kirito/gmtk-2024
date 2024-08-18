@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3332bqj5ceg3"]
+[gd_scene load_steps=4 format=3 uid="uid://c3332bqj5ceg3"]
 
 [ext_resource type="Script" path="res://game/ui/unit_panel.gd" id="1_5en5b"]
+[ext_resource type="Texture2D" uid="uid://wdec1u3dqjil" path="res://assets/Nomi/2DUI/uiback_9patching_dividedBy4.png" id="2_no1h2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhnm0"]
+content_margin_left = 36.0
+content_margin_top = 36.0
+content_margin_right = 36.0
+content_margin_bottom = 36.0
+texture = ExtResource("2_no1h2")
+texture_margin_left = 69.3978
+texture_margin_top = 66.3135
+texture_margin_right = 90.3714
+texture_margin_bottom = 44.723
+region_rect = Rect2(2, 6, 294, 285)
 
 [node name="UnitPanel" type="ColorRect"]
 anchors_preset = 15
@@ -14,21 +27,15 @@ script = ExtResource("1_5en5b")
 [node name="PanelContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 617.0
-offset_top = 341.0
-offset_right = 633.0
-offset_bottom = 357.0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mhnm0")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
 columns = 4
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
