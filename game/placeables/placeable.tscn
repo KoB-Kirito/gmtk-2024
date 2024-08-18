@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://supqn4f73wkn"]
+[gd_scene load_steps=4 format=3 uid="uid://supqn4f73wkn"]
 
 [ext_resource type="Script" path="res://game/placeables/placeable.gd" id="1_aeqkj"]
+[ext_resource type="Script" path="res://scripts/ClickDetector.gd" id="2_lgxb4"]
+[ext_resource type="Script" path="res://game/placeables/OccupationArea.gd" id="2_os7eg"]
 
 [node name="Placeable" type="Node3D"]
 script = ExtResource("1_aeqkj")
+
+[node name="OccupiedArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 4
+input_ray_pickable = false
+script = ExtResource("2_os7eg")
+
+[node name="MouseClickDetector" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_lgxb4")
+
+[connection signal="mouse_clicked" from="MouseClickDetector" to="." method="_on_mouse_click_detector_mouse_clicked"]

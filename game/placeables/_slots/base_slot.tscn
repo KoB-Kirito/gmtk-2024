@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjd5738m07yhn"]
+
+[ext_resource type="Script" path="res://game/placeables/_slots/building_slot.gd" id="1_xb0ql"]
+[ext_resource type="Script" path="res://game/placeables/_slots/BuildArea.gd" id="2_2fa26"]
+[ext_resource type="Script" path="res://scripts/ClickDetector.gd" id="3_p23a6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7y5b"]
+resource_local_to_scene = true
+
+[node name="BaseSlot" type="Node3D"]
+script = ExtResource("1_xb0ql")
+
+[node name="Visual" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="BuildArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 4
+input_ray_pickable = false
+script = ExtResource("2_2fa26")
+
+[node name="MouseClickDetector" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_p23a6")
+
+[node name="CollisionChecker" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 4
+input_ray_pickable = false
+
+[node name="CollisionCheckerShape" type="CollisionShape3D" parent="CollisionChecker"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_k7y5b")
+
+[connection signal="mouse_clicked" from="MouseClickDetector" to="." method="_on_mouse_click_detector_mouse_clicked"]

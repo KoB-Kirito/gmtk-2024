@@ -1,15 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://dsmtu5n8vqbpt"]
 
-[ext_resource type="Script" path="res://game/placeables/_slots/building_slot.gd" id="1_q781l"]
+[ext_resource type="PackedScene" uid="uid://bjd5738m07yhn" path="res://game/placeables/_slots/base_slot.tscn" id="1_p4t3j"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="2_05sy3"]
-[ext_resource type="Script" path="res://scripts/ClickDetector.gd" id="3_h3lh4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjn5q"]
 transparency = 1
 albedo_color = Color(0, 1, 1, 1)
 albedo_texture = ExtResource("2_05sy3")
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_78xyf"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_g2oi0"]
 lightmap_size_hint = Vector2i(61, 24)
 material = SubResource("StandardMaterial3D_xjn5q")
 flip_faces = true
@@ -19,27 +18,24 @@ height = 0.2
 cap_top = false
 cap_bottom = false
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ko0s2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_eckte"]
+size = Vector3(4.9, 2.4, 4.9)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yd57j"]
 height = 0.2
 radius = 2.2
 
-[node name="BuildingSlot5m" type="Node3D"]
-script = ExtResource("1_q781l")
+[node name="Slot5m" instance=ExtResource("1_p4t3j")]
 slot_type = 1
 
-[node name="Visual" type="MeshInstance3D" parent="."]
-unique_name_in_owner = true
+[node name="Ring" type="MeshInstance3D" parent="Visual" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-mesh = SubResource("CylinderMesh_78xyf")
+mesh = SubResource("CylinderMesh_g2oi0")
 
-[node name="MouseClickDetector" type="StaticBody3D" parent="."]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("3_h3lh4")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BuildArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_eckte")
 
-[node name="ClickCollision" type="CollisionShape3D" parent="MouseClickDetector"]
-unique_name_in_owner = true
+[node name="ClickCollision" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-shape = SubResource("CylinderShape3D_ko0s2")
-
-[connection signal="mouse_clicked" from="MouseClickDetector" to="." method="_on_mouse_click_detector_mouse_clicked"]
+shape = SubResource("CylinderShape3D_yd57j")

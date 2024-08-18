@@ -8,24 +8,39 @@ const UNIT_BUTTON = preload("res://game/ui/unit_button.tscn")
 signal unit_selected(unit: String)
 
 
-func setup(slot_type: Globals.SlotType, slot_orientation: Globals.SlotOrientation) -> void:
+func setup(slot: BuildingSlot) -> void:
+	var slot_orientation = slot.get_slot_orientation()
+	
 	for item: InventoryItem in Globals.inventory:
 		var unit_button = UNIT_BUTTON.instantiate()
 		unit_button.setup(item.unit_data)
 		%GridContainer.add_child(unit_button)
 		
 		# check if unit can be placed in slot
-		if slot_type == item.slot_type:
-			if item.slot_orientation == Globals.SlotOrientation.ALL or slot_orientation == item.slot_orientation :
-				# unit meets requirements for this slot
-				unit_button.pressed.connect(func(): unit_selected.emit(item.unit_data.path))
+		if slot.slot_type == item.slot_type:
+			if item.slot_orientation == Globals.SlotOrientation.ALL or slot_orientation == item.slot_orientation:
+				# debug
+				if item.unit_data.occupied_space <= Vector3.ZERO:
+					push_error("item has no occupied space set: ", item.unit_data.name)
+				
+				# check if space is enough
+				if await slot.is_area_free(item.unit_data.occupied_space):
+					# unit meets requirements for this slot
+					unit_button.pressed.connect(func(): unit_selected.emit(item.unit_data.path))
+					
+				else:
+					# area does not have enough space
+					unit_button.tooltip_text += "\n\n(Not enough space available)"
+					unit_button.disabled = true
 				
 			else:
 				# does not meet orientation requirement
+				unit_button.tooltip_text += "\n\n(Can't be build in this orientation)"
 				unit_button.disabled = true
 			
 		else:
 			# does not meet slot size requirement
+			unit_button.tooltip_text += "\n\n(Does not fit in this slot size)"
 			unit_button.disabled = true
 
 

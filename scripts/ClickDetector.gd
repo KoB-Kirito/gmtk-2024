@@ -28,3 +28,17 @@ func _input_event(_camera: Node, event: InputEvent, event_position: Vector3, _no
 	print(owner.name, " clicked. button index: ", mouse_button_event.button_index)
 	
 	mouse_clicked.emit(mouse_button_event.button_index, event_position)
+
+
+## Disables all collision shapes
+func disable() -> void:
+	for child in get_children():
+		if child is CollisionShape3D:
+			child.disabled = true
+
+
+## Enables all collision shapes
+func enable() -> void:
+	for child in get_children():
+		if child is CollisionShape3D:
+			child.disabled = false
