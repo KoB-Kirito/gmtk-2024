@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0pamo7as1qkj"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_nlkca"]
+[ext_resource type="PackedScene" uid="uid://besh2l6ttx2in" path="res://assets/Nomi/3D/walkingHouse_Module_4_Fluegelturm.blend" id="2_biowf"]
+[ext_resource type="PackedScene" uid="uid://cxdq27knicbqy" path="res://game/placeables/_slots/slot_2m.tscn" id="3_atddu"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="4_im3r0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iwy48"]
+size = Vector3(5.10889, 9.36649, 4.97845)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_23otb"]
+size = Vector3(5.00305, 0.137756, 4.97864)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3mb1"]
+size = Vector3(5.03625, 3.78076, 5.00641)
+
+[node name="Placeable" instance=ExtResource("1_nlkca")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017395, 4.73551, -0.0090332)
+shape = SubResource("BoxShape3D_iwy48")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="OccupiedArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00891113, 7.28292, 5.02089)
+shape = SubResource("BoxShape3D_23otb")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="OccupiedArea" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00891113, 7.28292, -4.98218)
+shape = SubResource("BoxShape3D_23otb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137329, 1.89254, -0.00210571)
+shape = SubResource("BoxShape3D_l3mb1")
+
+[node name="walkingHouse_Module_4_Fluegelturm" parent="." index="2" instance=ExtResource("2_biowf")]
+
+[node name="Slot2m" parent="." index="3" instance=ExtResource("3_atddu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 7.5, 6.2)
+
+[node name="Slot2m2" parent="." index="4" instance=ExtResource("3_atddu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 7.5, 3.8)
+
+[node name="Slot2m3" parent="." index="5" instance=ExtResource("3_atddu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 7.5, 6.2)
+
+[node name="Slot2m4" parent="." index="6" instance=ExtResource("3_atddu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 7.5, 3.8)
+
+[node name="Slot2m5" parent="." index="7" instance=ExtResource("3_atddu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 7.5, -3.8)
+
+[node name="Slot2m6" parent="." index="8" instance=ExtResource("3_atddu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 7.5, -6.2)
+
+[node name="Slot2m7" parent="." index="9" instance=ExtResource("3_atddu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 7.5, -3.8)
+
+[node name="Slot2m8" parent="." index="10" instance=ExtResource("3_atddu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 7.5, -6.2)
+
+[node name="Slot5m" parent="." index="11" instance=ExtResource("4_im3r0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.37432, 0)

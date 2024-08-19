@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://31o8nvgnpkwq"]
+[gd_scene load_steps=36 format=3 uid="uid://31o8nvgnpkwq"]
 
 [ext_resource type="Script" path="res://autoloads/database.gd" id="1_87apn"]
 [ext_resource type="Script" path="res://game/ui/unit_data.gd" id="2_3knpf"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://ccwowq0ucr3tq" path="res://game/placeables/buildings/modern_house_large_hover.png" id="20_v654u"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="21_pisxe"]
 [ext_resource type="Texture2D" uid="uid://ndh3umcndd2t" path="res://icon_red.svg" id="22_047l8"]
+[ext_resource type="Texture2D" uid="uid://bqwpongfebf8" path="res://assets/textures/prototype/dark/texture_02.png" id="23_6bjmw"]
+[ext_resource type="Texture2D" uid="uid://b2xkcf1fru7hj" path="res://assets/textures/prototype/dark/texture_13.png" id="24_pytbw"]
+[ext_resource type="Texture2D" uid="uid://iospc45kobc6" path="res://assets/textures/prototype/dark/texture_11.png" id="25_a5iab"]
 
 [sub_resource type="Resource" id="Resource_pc33a"]
 script = ExtResource("2_3knpf")
@@ -107,6 +110,42 @@ occupied_space = Vector3(2, 2, 2)
 slot_type = 0
 slot_orientation = 0
 
+[sub_resource type="Resource" id="Resource_7hm13"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/towers/2x2_modern_laserTower.tscn"
+name = "LaserTower_Modern"
+description = ""
+texture = ExtResource("23_6bjmw")
+texture_hover = ExtResource("25_a5iab")
+texture_disabled = ExtResource("24_pytbw")
+occupied_space = Vector3(2, 2, 2)
+slot_type = 0
+slot_orientation = 0
+
+[sub_resource type="Resource" id="Resource_jm1ww"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/towers/2x2_modern_CannonTower.tscn"
+name = "CannonTower"
+description = ""
+texture = ExtResource("3_hdxwp")
+texture_hover = ExtResource("5_j7ol1")
+texture_disabled = ExtResource("4_iwwdv")
+occupied_space = Vector3(2, 2, 2)
+slot_type = 0
+slot_orientation = 0
+
+[sub_resource type="Resource" id="Resource_xy6w1"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/towers/2x2_modern_LightningTower.tscn"
+name = "LightningTower"
+description = ""
+texture = ExtResource("6_c6n0q")
+texture_hover = ExtResource("8_sinko")
+texture_disabled = ExtResource("7_317k5")
+occupied_space = Vector3(2, 4, 2)
+slot_type = 0
+slot_orientation = 0
+
 [node name="Database" type="Node"]
 script = ExtResource("1_87apn")
-placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_pc33a"), SubResource("Resource_8mema"), SubResource("Resource_skrss"), SubResource("Resource_avyl5"), SubResource("Resource_51wv3"), SubResource("Resource_qmcg1"), SubResource("Resource_b35v2")])
+placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_pc33a"), SubResource("Resource_8mema"), SubResource("Resource_skrss"), SubResource("Resource_avyl5"), SubResource("Resource_51wv3"), SubResource("Resource_qmcg1"), SubResource("Resource_b35v2"), SubResource("Resource_7hm13"), SubResource("Resource_jm1ww"), SubResource("Resource_xy6w1")])
