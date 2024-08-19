@@ -5,7 +5,7 @@ extends ColorRect
 const UNIT_BUTTON = preload("res://game/ui/unit_button.tscn")
 
 
-signal unit_selected(unit: String)
+signal unit_selected(unit: UnitData)
 
 
 func setup(slot: BuildingSlot) -> void:
@@ -28,7 +28,7 @@ func setup(slot: BuildingSlot) -> void:
 				# check if space is enough
 				if await slot.is_area_free(unit.occupied_space):
 					# unit meets requirements for this slot
-					unit_button.pressed.connect(func(): unit_selected.emit(unit.path))
+					unit_button.pressed.connect(func(): unit_selected.emit(unit))
 					
 				else:
 					# area does not have enough space
