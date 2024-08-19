@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bojqj72vx6lst"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_7m0dh"]
+[ext_resource type="PackedScene" uid="uid://b5mmuobkeb66y" path="res://assets/Nomi/3D/2x2_module_modern_cannontower.blend" id="2_ufso4"]
+
+[node name="Placeable" instance=ExtResource("1_7m0dh")]
+
+[node name="2x2_module_modern_cannontower" parent="." index="2" instance=ExtResource("2_ufso4")]

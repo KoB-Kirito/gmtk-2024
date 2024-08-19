@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwx8x7wythtrl"]
+
+[ext_resource type="PackedScene" uid="uid://in0cbip1xdse" path="res://assets/Nomi/3D/5x5_module_modern_generator.blend" id="1_mibh1"]
+[ext_resource type="PackedScene" uid="uid://ck2way62jaeb5" path="res://assets/Nomi/3D/5x5_module_modern_MtoS.blend" id="2_51lh8"]
+[ext_resource type="PackedScene" uid="uid://cbiqri8eaehnp" path="res://assets/Nomi/3D/walkingHouse_Module_1.blend" id="3_vobkn"]
+[ext_resource type="PackedScene" uid="uid://kbl5dnemvvdt" path="res://assets/Nomi/3D/walkingHouse_Module_2.blend" id="4_umta4"]
+[ext_resource type="PackedScene" uid="uid://basbcumeh43c3" path="res://assets/Nomi/3D/walkingHouse_Module_3.blend" id="5_wb70m"]
+[ext_resource type="PackedScene" uid="uid://ci7nrncxcosc6" path="res://assets/Nomi/3D/walkingHouse_Module_4.blend" id="6_060ub"]
+[ext_resource type="PackedScene" uid="uid://besh2l6ttx2in" path="res://assets/Nomi/3D/walkingHouse_Module_4_Fluegelturm.blend" id="7_bjirw"]
+[ext_resource type="PackedScene" uid="uid://b5mmuobkeb66y" path="res://assets/Nomi/3D/2x2_module_modern_cannontower.blend" id="8_av04f"]
+
+[node name="NomiShowcase" type="Node3D"]
+
+[node name="5x5_module_modern_generator" parent="." instance=ExtResource("1_mibh1")]
+
+[node name="5x5_module_modern_MtoS" parent="." instance=ExtResource("2_51lh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="walkingHouse_Module_1" parent="." instance=ExtResource("3_vobkn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="walkingHouse_Module_2" parent="." instance=ExtResource("4_umta4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="walkingHouse_Module_3" parent="." instance=ExtResource("5_wb70m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+
+[node name="walkingHouse_Module_4" parent="." instance=ExtResource("6_060ub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
+
+[node name="walkingHouse_Module_4_Fluegelturm" parent="." instance=ExtResource("7_bjirw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0)
+
+[node name="2x2_module_modern_cannontower" parent="." instance=ExtResource("8_av04f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.0724, 0, -0.680647)
+
+[node name="2x2_module_modern_cannontower2" parent="." instance=ExtResource("8_av04f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0972, 2.593, 3.873)

@@ -18,6 +18,7 @@ var res_food_used : int = 0
 var res_materials : int = 0
 var res_money : int = 0
 
+@export var modules : Array[modules_base]
 
 
 
@@ -34,9 +35,7 @@ func _process(delta: float) -> void:
 	
 func ressourcePerTick() -> void:
 	
-	
-	res_money+=1
-	
+		
 	#receive 1 Person per 5 
 	if(res_livingRoom > res_people && res_food_produced > res_people):
 		if(gatheringPeople >= 5 ):

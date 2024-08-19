@@ -26,12 +26,12 @@ texture = ExtResource("5_n28ey")
 [node name="ExampleModule" type="Node3D" parent="."]
 script = ExtResource("1_ynsw0")
 tickNeed = 1
-moneyPerDelivery = 2
+foodPerDelivery = 3
 matPerDelivery = 1
 
 [node name="ExampleModule2" type="Node3D" parent="."]
 script = ExtResource("1_ynsw0")
-moneyPerDelivery = 5
+foodPerDelivery = 5
 matPerDelivery = 5
 
 [node name="ExampleModule3" type="Node3D" parent="."]
