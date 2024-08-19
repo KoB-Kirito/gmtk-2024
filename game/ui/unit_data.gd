@@ -26,5 +26,8 @@ extends Resource
 ## Required people
 @export var people: int
 
+# asignedByPlayerManager
+var module_ID : int
+
 # in-code
 @export_storage var rotation: float = 0.0
