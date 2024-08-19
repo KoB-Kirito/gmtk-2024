@@ -1,13 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfyq0pwy6e1kl"]
+[gd_scene load_steps=19 format=3 uid="uid://cer232orwpcqp"]
 
-[ext_resource type="Script" path="res://addons/terraincrafter/terrain_crafter.gd" id="2_y15o3"]
-[ext_resource type="Shader" path="res://addons/terraincrafter/generator_resources/terrain_shader.gdshader" id="3_7lo6u"]
-[ext_resource type="Texture2D" uid="uid://exeg38jtm0yn" path="res://game/terrain/texturen/snow1_s.jpg" id="3_xt66i"]
-[ext_resource type="PackedScene" uid="uid://d07fjyk53j4ls" path="res://game/robot/robot.tscn" id="6_d65or"]
-[ext_resource type="Texture2D" uid="uid://bd1jyqcceievr" path="res://game/terrain/texturen/snow_rough_s.jpg" id="6_y6pix"]
-[ext_resource type="Script" path="res://addons/terraincrafter/assets/example_ship/scripts/ship_camera.gd" id="8_f7jbf"]
-[ext_resource type="Shader" path="res://addons/terraincrafter/assets/example_level/water.gdshader" id="9_a0rco"]
-[ext_resource type="Script" path="res://addons/terraincrafter/assets/example_level/water.gd" id="10_nnbgs"]
+[ext_resource type="Script" path="res://addons/terraincrafter/assets/example_level/debug_menu.gd" id="1_f5v4n"]
+[ext_resource type="Script" path="res://addons/terraincrafter/terrain_crafter.gd" id="2_3mveq"]
+[ext_resource type="Shader" path="res://addons/terraincrafter/generator_resources/terrain_shader.gdshader" id="3_t8d0x"]
+[ext_resource type="Texture2D" uid="uid://exeg38jtm0yn" path="res://game/terrain/texturen/snow1_s.jpg" id="4_kr0xt"]
+[ext_resource type="Texture2D" uid="uid://bd1jyqcceievr" path="res://game/terrain/texturen/snow_rough_s.jpg" id="5_gfj5p"]
+[ext_resource type="PackedScene" uid="uid://4eyad0j15nfi" path="res://addons/terraincrafter/assets/example_ship/ship.tscn" id="6_2f38f"]
+[ext_resource type="Script" path="res://addons/terraincrafter/assets/example_ship/scripts/ship_camera.gd" id="7_bioxq"]
+[ext_resource type="Shader" path="res://addons/terraincrafter/assets/example_level/water.gdshader" id="8_lm8x3"]
+[ext_resource type="Script" path="res://addons/terraincrafter/assets/example_level/water.gd" id="9_0lrs2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gpdl0"]
 sky_top_color = Color(0.211765, 0.313726, 0.552941, 1)
@@ -49,7 +50,7 @@ subdivide_depth = 32
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xmwso"]
 render_priority = 0
-shader = ExtResource("3_7lo6u")
+shader = ExtResource("3_t8d0x")
 shader_parameter/low_height = -287.578
 shader_parameter/medium_height = -140.857
 shader_parameter/high_height = 93.789
@@ -63,16 +64,16 @@ shader_parameter/roughness_high = 1.0
 shader_parameter/specular_low = 0.0
 shader_parameter/specular_medium = 0.0
 shader_parameter/specular_high = 0.0
-shader_parameter/texture_low = ExtResource("6_y6pix")
-shader_parameter/texture_medium = ExtResource("3_xt66i")
-shader_parameter/texture_high = ExtResource("3_xt66i")
+shader_parameter/texture_low = ExtResource("5_gfj5p")
+shader_parameter/texture_medium = ExtResource("4_kr0xt")
+shader_parameter/texture_high = ExtResource("4_kr0xt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y5lfv"]
 size = Vector2(10000, 10000)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxwin"]
 render_priority = 1
-shader = ExtResource("9_a0rco")
+shader = ExtResource("8_lm8x3")
 shader_parameter/depth_fade_distance = 2.041
 shader_parameter/absorbance = 0.521
 shader_parameter/shallow_color = Color(0.36105, 0.707403, 1, 1)
@@ -104,9 +105,36 @@ light_negative = true
 light_bake_mode = 1
 shadow_enabled = true
 
+[node name="DebugMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_f5v4n")
+terrain_crafter_node = NodePath("../TerrainCrafter")
+player = NodePath("../Player")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ChunksLabel" type="Label" parent="DebugMenu/VBoxContainer"]
+layout_mode = 2
+text = "Chunks"
+
+[node name="PositionLabel" type="Label" parent="DebugMenu/VBoxContainer"]
+layout_mode = 2
+text = "Position"
+
+[node name="FPSLabel" type="Label" parent="DebugMenu/VBoxContainer"]
+layout_mode = 2
+text = "FPS
+"
+
 [node name="TerrainCrafter" type="Node3D" parent="." node_paths=PackedStringArray("base_mesh_instance", "chunks_node")]
-script = ExtResource("2_y15o3")
-player = NodePath("../Robot")
+script = ExtResource("2_3mveq")
+player = NodePath("../Player")
 base_mesh_instance = NodePath("BaseMesh")
 chunks_node = NodePath("Chunks")
 noise = SubResource("FastNoiseLite_e72jx")
@@ -120,25 +148,26 @@ mesh = SubResource("PlaneMesh_w8kbc")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_xmwso")
 
-[node name="Robot" parent="." instance=ExtResource("6_d65or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 200, -0.662)
+[node name="Player" parent="." instance=ExtResource("6_2f38f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 279.1, -0.662)
 
 [node name="FollowCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 310.935, -27.3319)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.00165, 17.3471)
 current = true
 fov = 46.3
 far = 5000.0
-script = ExtResource("8_f7jbf")
+script = ExtResource("7_bioxq")
 lerp_speed = 30.0
-target_path = NodePath("../Robot")
-offset = Vector3(0, 160, 300)
+target_path = NodePath("../Player")
+offset = Vector3(0, 0.255, 2)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -75.1754, 0)
 layers = 3
 mesh = SubResource("PlaneMesh_y5lfv")
 surface_material_override/0 = SubResource("ShaderMaterial_gxwin")
-script = ExtResource("10_nnbgs")
+script = ExtResource("9_0lrs2")
+ship = NodePath("../Player")
 follow_height = -180.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Water"]

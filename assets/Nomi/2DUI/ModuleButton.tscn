@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddivm8ky3vb8s"]
+[gd_scene load_steps=5 format=3 uid="uid://ddivm8ky3vb8s"]
 
 [ext_resource type="Texture2D" uid="uid://wdec1u3dqjil" path="res://assets/Nomi/2DUI/uiback_9patching_dividedBy4.png" id="1_lklf5"]
+[ext_resource type="Script" path="res://assets/Nomi/2DUI/module_button.gd" id="2_n8vv5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f6ce4"]
 texture = ExtResource("1_lklf5")
@@ -19,21 +20,22 @@ custom_minimum_size = Vector2(380, 186)
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ModuleButton" type="Panel" parent="."]
 custom_minimum_size = Vector2(380, 186)
 layout_mode = 1
 offset_right = 380.0
 offset_bottom = 186.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_f6ce4")
+script = ExtResource("2_n8vv5")
 
-[node name="TextureButton" type="TextureButton" parent="Panel"]
+[node name="TextureButton" type="TextureButton" parent="ModuleButton"]
 visible = false
 layout_mode = 1
 offset_right = 360.0
 offset_bottom = 96.0
 texture_normal = SubResource("PlaceholderTexture2D_8g4kp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ModuleButton"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -48,29 +50,29 @@ offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ModuleName" type="Label" parent="Panel/VBoxContainer"]
+[node name="ModuleName" type="Label" parent="ModuleButton/VBoxContainer"]
 layout_mode = 2
 text = "Module Name"
 
-[node name="Description" type="Label" parent="Panel/VBoxContainer"]
+[node name="Description" type="Label" parent="ModuleButton/VBoxContainer"]
 layout_mode = 2
 text = "This module is currently useless"
 
-[node name="Control" type="Control" parent="Panel/VBoxContainer"]
+[node name="Control" type="Control" parent="ModuleButton/VBoxContainer"]
 custom_minimum_size = Vector2(232, 0)
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="ModuleButton/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Control" type="Control" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Control" type="Control" parent="ModuleButton/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(246, 0)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Button" type="Button" parent="ModuleButton/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -79,7 +81,7 @@ theme_override_font_sizes/font_size = 12
 text = "+
 "
 
-[node name="Button2" type="Button" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Button2" type="Button" parent="ModuleButton/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -88,25 +90,28 @@ theme_override_font_sizes/font_size = 12
 text = "-
 "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ModuleButton/VBoxContainer"]
 layout_mode = 2
 
-[node name="ActivityTag" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="ActivityTag" type="Label" parent="ModuleButton/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Inactive"
 
-[node name="Control" type="Control" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="ModuleButton/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 
-[node name="ActivityTag2" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="ActivityTag2" type="Label" parent="ModuleButton/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Workers"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ActivityTag3" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="ActivityTag3" type="Label" parent="ModuleButton/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0 / 10"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[connection signal="button_up" from="ModuleButton/VBoxContainer/HBoxContainer2/Button" to="ModuleButton" method="_on_plus_button_button_up"]
+[connection signal="button_up" from="ModuleButton/VBoxContainer/HBoxContainer2/Button2" to="ModuleButton" method="_on_minus_button_2_button_up"]
