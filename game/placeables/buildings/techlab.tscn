@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc2rxo44n76dk"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_rnlxy"]
+[ext_resource type="PackedScene" uid="uid://be71qd66frlvr" path="res://assets/models/lolli/weapon_tech.blend" id="2_gxckq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fmcct"]
+size = Vector3(10.1265, 7.82999, 10.1487)
+
+[node name="Placeable" instance=ExtResource("1_rnlxy")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 3.90187, -0.0220947)
+shape = SubResource("BoxShape3D_fmcct")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 3.90187, -0.0220947)
+shape = SubResource("BoxShape3D_fmcct")
+
+[node name="weapon_tech" parent="." index="2" instance=ExtResource("2_gxckq")]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqyfmhdr3raog"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_xue4w"]
+[ext_resource type="PackedScene" uid="uid://basbcumeh43c3" path="res://assets/Nomi/3D/walkingHouse_Module_3.blend" id="2_tbeqr"]
+[ext_resource type="PackedScene" uid="uid://bsk8mcfx625" path="res://game/placeables/_slots/slot_10m.tscn" id="2_vh75m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5tifl"]
+size = Vector3(9.79611, 9.36304, 9.72977)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ewoq"]
+size = Vector3(9.75235, 0.342285, 9.73029)
+
+[node name="Placeable" instance=ExtResource("1_xue4w")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0236053, 4.70569, 0.0151215)
+shape = SubResource("BoxShape3D_5tifl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="OccupiedArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0036, 2.76763, 0.0313721)
+shape = SubResource("BoxShape3D_8ewoq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="OccupiedArea" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0638828, 2.76763, -9.92076)
+shape = SubResource("BoxShape3D_8ewoq")
+
+[node name="Slot10m" parent="OccupiedArea" index="3" instance=ExtResource("2_vh75m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.073576, 3.04915, -10.0323)
+
+[node name="Slot10m2" parent="OccupiedArea" index="4" instance=ExtResource("2_vh75m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99547, 3.04915, 0.0367432)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00457764, 4.70569, -0.00878906)
+shape = SubResource("BoxShape3D_5tifl")
+
+[node name="walkingHouse_Module_3" parent="." index="2" instance=ExtResource("2_tbeqr")]
