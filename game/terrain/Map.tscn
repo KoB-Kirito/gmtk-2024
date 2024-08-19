@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://cfyq0pwy6e1kl"]
+[gd_scene load_steps=19 format=3 uid="uid://cfyq0pwy6e1kl"]
 
 [ext_resource type="Script" path="res://addons/terraincrafter/assets/example_level/debug_menu.gd" id="1_7ch3l"]
 [ext_resource type="Script" path="res://addons/terraincrafter/terrain_crafter.gd" id="2_y15o3"]
 [ext_resource type="Shader" path="res://addons/terraincrafter/generator_resources/terrain_shader.gdshader" id="3_7lo6u"]
 [ext_resource type="Texture2D" uid="uid://exeg38jtm0yn" path="res://game/terrain/texturen/snow1_s.jpg" id="3_xt66i"]
-[ext_resource type="Texture2D" uid="uid://1x20vxv3hbrq" path="res://game/terrain/texturen/snow_bumpy_s.jpg" id="5_c1y1f"]
 [ext_resource type="Texture2D" uid="uid://bd1jyqcceievr" path="res://game/terrain/texturen/snow_rough_s.jpg" id="6_y6pix"]
 [ext_resource type="PackedScene" uid="uid://4eyad0j15nfi" path="res://addons/terraincrafter/assets/example_ship/ship.tscn" id="7_5ybk0"]
 [ext_resource type="Script" path="res://addons/terraincrafter/assets/example_ship/scripts/ship_camera.gd" id="8_f7jbf"]
@@ -53,7 +52,7 @@ shader = ExtResource("3_7lo6u")
 shader_parameter/low_height = -287.578
 shader_parameter/medium_height = -140.857
 shader_parameter/high_height = 93.789
-shader_parameter/blend_range = 10.248
+shader_parameter/blend_range = 5.0
 shader_parameter/uv_scale_low = Vector2(10, 10)
 shader_parameter/uv_scale_medium = Vector2(10, 10)
 shader_parameter/uv_scale_high = Vector2(5, 5)
@@ -65,7 +64,7 @@ shader_parameter/specular_medium = 0.0
 shader_parameter/specular_high = 0.0
 shader_parameter/texture_low = ExtResource("6_y6pix")
 shader_parameter/texture_medium = ExtResource("3_xt66i")
-shader_parameter/texture_high = ExtResource("5_c1y1f")
+shader_parameter/texture_high = ExtResource("3_xt66i")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y5lfv"]
 size = Vector2(10000, 10000)
@@ -95,7 +94,13 @@ points = PackedVector3Array(-3000, 0, -3000, -3000, 0, 3000, 3000, 0, -3000, 300
 environment = SubResource("Environment_rmk44")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 0.642788, -0.766045, 0, 0.766045, 0.642788, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.642788, -0.766044, 0, 0.766044, 0.642788, -48.2101, 0, 0)
+light_color = Color(0.677567, 0.677567, 0.677567, 1)
+light_energy = 0.592
+light_indirect_energy = 0.083
+light_volumetric_fog_energy = 0.359
+light_negative = true
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="DebugMenu" type="Control" parent="."]
