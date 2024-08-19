@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxdq27knicbqy"]
+[gd_scene load_steps=9 format=3 uid="uid://cxdq27knicbqy"]
 
 [ext_resource type="PackedScene" uid="uid://bjd5738m07yhn" path="res://game/placeables/_slots/base_slot.tscn" id="1_oyu28"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="2_mqj3m"]
+[ext_resource type="PackedScene" uid="uid://cxribwevvka6k" path="res://assets/models/ringe/grüner-ring-2-5x2-5.blend" id="3_yqlyi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjn5q"]
 transparency = 1
@@ -34,6 +35,9 @@ resource_local_to_scene = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("CylinderMesh_jv2xo")
 skeleton = NodePath("../..")
+
+[node name="grüner-ring-2-5x2-5" parent="Visual" index="1" instance=ExtResource("3_yqlyi")]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BuildArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

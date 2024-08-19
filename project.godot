@@ -61,8 +61,8 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={}
-layout/style_list=["res://story/Style.tres"]
-layout/default_style="res://story/Style.tres"
+layout/style_list=["res://story/custome style.tres"]
+layout/default_style="res://story/custome style.tres"
 glossary/default_case_sensitive=true
 
 [display]
@@ -160,3 +160,10 @@ toggle_debug={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+preview_color={
+"type": "vec4",
+"value": Vector4(0, 1, 0, 0.5)
+}

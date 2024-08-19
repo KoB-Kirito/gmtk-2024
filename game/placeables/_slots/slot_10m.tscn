@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsk8mcfx625"]
+[gd_scene load_steps=9 format=3 uid="uid://bsk8mcfx625"]
 
 [ext_resource type="PackedScene" uid="uid://bjd5738m07yhn" path="res://game/placeables/_slots/base_slot.tscn" id="1_brypw"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="2_7as2q"]
+[ext_resource type="PackedScene" uid="uid://btcy82x565tha" path="res://assets/models/ringe/blauer-ring-10x10.blend" id="2_22xg1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjn5q"]
 transparency = 1
@@ -31,7 +32,10 @@ resource_local_to_scene = true
 [node name="Slot10m" instance=ExtResource("1_brypw")]
 slot_type = 2
 
-[node name="Ring" type="MeshInstance3D" parent="Visual" index="0"]
+[node name="blauer-ring-10x10" parent="Visual" index="0" instance=ExtResource("2_22xg1")]
+visible = false
+
+[node name="Ring" type="MeshInstance3D" parent="Visual" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("CylinderMesh_8xfnc")
 

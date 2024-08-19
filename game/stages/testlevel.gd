@@ -12,6 +12,11 @@ func _ready() -> void:
 		item.unit_data = unit
 		Globals.inventory.append(item)
 	
+	# give start resources
+	%player_manager.res_materials = 1000
+	%player_manager.res_money = 1000
+	Globals.playerManager = %player_manager
+	
 	
 #region Example for nomi
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://31o8nvgnpkwq"]
+[gd_scene load_steps=38 format=3 uid="uid://31o8nvgnpkwq"]
 
 [ext_resource type="Script" path="res://autoloads/database.gd" id="1_87apn"]
 [ext_resource type="Script" path="res://game/ui/unit_data.gd" id="2_3knpf"]
@@ -186,6 +186,38 @@ money = 0
 people = 0
 rotation = 0.0
 
+[sub_resource type="Resource" id="Resource_yiqa4"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/buildings/timber_house_10x20.tscn"
+name = "Timber Double House Large"
+description = "House with a lot of building space"
+texture = ExtResource("18_je3ax")
+texture_hover = ExtResource("20_v654u")
+texture_disabled = ExtResource("19_eghbn")
+occupied_space = Vector3(0, 0, 0)
+slot_type = 2
+slot_orientation = 0
+materials = 100
+money = 100
+people = 0
+rotation = 0.0
+
+[sub_resource type="Resource" id="Resource_0cq0b"]
+script = ExtResource("2_3knpf")
+path = "res://game/placeables/buildings/modern_house_10x10x10.tscn"
+name = "Modern House with Platforms"
+description = "Large, platforms yada yada"
+texture = ExtResource("18_je3ax")
+texture_hover = ExtResource("20_v654u")
+texture_disabled = ExtResource("19_eghbn")
+occupied_space = Vector3(0, 0, 0)
+slot_type = 2
+slot_orientation = 0
+materials = 0
+money = 0
+people = 0
+rotation = 0.0
+
 [node name="Database" type="Node"]
 script = ExtResource("1_87apn")
-placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_pc33a"), SubResource("Resource_8mema"), SubResource("Resource_skrss"), SubResource("Resource_avyl5"), SubResource("Resource_51wv3"), SubResource("Resource_qmcg1"), SubResource("Resource_b35v2"), SubResource("Resource_7hm13"), SubResource("Resource_jm1ww"), SubResource("Resource_xy6w1")])
+placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_pc33a"), SubResource("Resource_8mema"), SubResource("Resource_skrss"), SubResource("Resource_avyl5"), SubResource("Resource_51wv3"), SubResource("Resource_qmcg1"), SubResource("Resource_b35v2"), SubResource("Resource_7hm13"), SubResource("Resource_jm1ww"), SubResource("Resource_xy6w1"), SubResource("Resource_yiqa4"), SubResource("Resource_0cq0b")])

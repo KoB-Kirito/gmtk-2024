@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsmtu5n8vqbpt"]
+[gd_scene load_steps=9 format=3 uid="uid://dsmtu5n8vqbpt"]
 
 [ext_resource type="PackedScene" uid="uid://bjd5738m07yhn" path="res://game/placeables/_slots/base_slot.tscn" id="1_p4t3j"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="2_05sy3"]
+[ext_resource type="PackedScene" uid="uid://dso1c7dqa8bun" path="res://assets/models/ringe/roter-ring-5x5.blend" id="3_fibxn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjn5q"]
 transparency = 1
@@ -25,12 +26,18 @@ size = Vector3(4.9, 2.4, 4.9)
 height = 0.2
 radius = 2.2
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqvie"]
+resource_local_to_scene = true
+
 [node name="Slot5m" instance=ExtResource("1_p4t3j")]
 slot_type = 1
 
 [node name="Ring" type="MeshInstance3D" parent="Visual" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("CylinderMesh_g2oi0")
+
+[node name="roter-ring-5x5" parent="Visual" index="1" instance=ExtResource("3_fibxn")]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BuildArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -39,3 +46,6 @@ shape = SubResource("BoxShape3D_eckte")
 [node name="ClickCollision" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("CylinderShape3D_yd57j")
+
+[node name="CollisionCheckerShape" parent="CollisionChecker" index="0"]
+shape = SubResource("BoxShape3D_tqvie")
