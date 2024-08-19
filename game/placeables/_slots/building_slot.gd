@@ -22,9 +22,9 @@ func _on_mouse_click_detector_mouse_clicked(button_index: int, event_position: V
 			add_child(unit_panel)
 			unit_panel.set_panel_position(screen_position)
 			
-			var unit = await unit_panel.unit_selected
+			var unit: UnitData = await unit_panel.unit_selected
 			
-			print_debug("Picked unit: ", unit)
+			print_debug("Picked unit: ", unit.name)
 			
 			unit_panel.queue_free()
 			
@@ -38,15 +38,18 @@ func _on_mouse_click_detector_mouse_clicked(button_index: int, event_position: V
 			pass
 
 
-func build(placeable_path: String) -> void:
-	print("building")
+func build(unit_data: UnitData) -> void:
 	# load object
-	var placeable_scene: PackedScene = load(placeable_path)
+	var placeable_scene: PackedScene = load(unit_data.path)
 	var placeable: Placeable = placeable_scene.instantiate()
 	
 	# place object
 	add_sibling(placeable, true)
 	placeable.global_transform = global_transform
+	
+	# tell nomi
+	Events.module_placed.emit(placeable, unit_data)
+	
 	
 	# replaced with physics proccess checking
 	## disable until placeable is removed

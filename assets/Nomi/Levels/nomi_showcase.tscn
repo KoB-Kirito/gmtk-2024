@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwx8x7wythtrl"]
+[gd_scene load_steps=11 format=3 uid="uid://cwx8x7wythtrl"]
 
 [ext_resource type="PackedScene" uid="uid://in0cbip1xdse" path="res://assets/Nomi/3D/5x5_module_modern_generator.blend" id="1_mibh1"]
 [ext_resource type="PackedScene" uid="uid://ck2way62jaeb5" path="res://assets/Nomi/3D/5x5_module_modern_MtoS.blend" id="2_51lh8"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ci7nrncxcosc6" path="res://assets/Nomi/3D/walkingHouse_Module_4.blend" id="6_060ub"]
 [ext_resource type="PackedScene" uid="uid://besh2l6ttx2in" path="res://assets/Nomi/3D/walkingHouse_Module_4_Fluegelturm.blend" id="7_bjirw"]
 [ext_resource type="PackedScene" uid="uid://b5mmuobkeb66y" path="res://assets/Nomi/3D/2x2_module_modern_cannontower.blend" id="8_av04f"]
+[ext_resource type="PackedScene" uid="uid://btpsjkwjtfi5r" path="res://assets/Nomi/3D/2x2_module_modern_lightningTower.blend" id="9_nsfur"]
+[ext_resource type="PackedScene" uid="uid://ly433i75ebwk" path="res://assets/Nomi/3D/2x2_module_modern_laserTower.blend" id="10_fpp22"]
 
 [node name="NomiShowcase" type="Node3D"]
 
@@ -36,3 +38,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.0724, 0, -0.680647)
 
 [node name="2x2_module_modern_cannontower2" parent="." instance=ExtResource("8_av04f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0972, 2.593, 3.873)
+
+[node name="2x2_module_modern_lightningTower" parent="." instance=ExtResource("9_nsfur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9636, 0, -0.698233)
+
+[node name="2x2_module_modern_laserTower" parent="." instance=ExtResource("10_fpp22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.3706, 0, -5.98768)
