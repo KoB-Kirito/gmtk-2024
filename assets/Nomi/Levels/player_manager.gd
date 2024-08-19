@@ -26,13 +26,29 @@ var res_money : int = 0
 func _ready() -> void:
 	Globals.playerManager = self
 	
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#region Example for nomi
 	
+	Events.module_placed.connect(on_module_placed)
+
+
+func on_module_placed(module: Placeable, data: UnitData) -> void:
+	print("module placed: ", data.name)
+	
+	var ui_module: Control # will result in your own object creation I guess
+	
+	res_materials -= data.materials
+	res_money -= data.money
+	
+	module.tree_exited.connect(on_module_removed.bind(ui_module))
+
+
+func on_module_removed(ui_module: Control) -> void:
+	print("module exited")
+	
+	# do stuff with the connected ui_module
+#endregion
+
+
 func ressourcePerTick() -> void:
 	
 		
