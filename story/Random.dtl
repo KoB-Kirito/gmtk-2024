@@ -1,0 +1,12 @@
+join character (Frank) rightmost
+[voice volume="0.0"]
+character: YEEEEAAAAHHHHH! You finished them off!
+leave character
+join joffrey right
+[voice volume="0.0"]
+joffrey: Uhhhhh! A new blueprint! Let's see what it unlocks for us!
+leave joffrey
+join character (Frank) rightmost
+[voice volume="0.0"]
+character: This is how it’s done!
+leave character

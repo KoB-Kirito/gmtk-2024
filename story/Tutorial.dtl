@@ -1,0 +1,10 @@
+join joffrey rightmost
+[voice volume="0.0"]
+joffrey: Hey, new Mayor! Welcome to our Walking City. Our goal is to build a thriving, profitable metropolis.
+[voice volume="0.0"]
+joffrey: See those rings on the platform—green, blue, and red? That’s where you can place our buildings.
+[voice volume="0.0"]
+joffrey: We can find more blueprints by taking down other cities—hehe!
+[voice volume="0.0"]
+joffrey: But be careful, space is limited. So choose wisely where and what you build.
+leave joffrey

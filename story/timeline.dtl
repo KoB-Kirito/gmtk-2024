@@ -1,0 +1,38 @@
+[background arg="res://story/bcg2.png" fade="0.0"]
+join Narrator center
+[voice volume="0.0"]
+Narrator: In a world long forgotten by the stars, there existed a planet. It was a world much like ours bustling cities, verdant forests, and endless oceans. But that was before the Great Shift, the cataclysmic event that altered the course of life forever.
+[voice volume="0.0"]
+Narrator: The Shift came without warning. The ground trembled, the skies darkened, and the oceans roared in fury. What was once a vibrant world was torn asunder by volcanic eruptions, massive earthquakes, and floods that swallowed entire continents. As the planet reshaped itself in a fit of violent rage, its inhabitants were forced to adapt or perish.
+[voice volume="0.0"]
+Narrator: We used the remnants of ancient technology, we constructed colossal legs beneath the foundations of our greatest cities. These towering appendages allowed the Cities move across the ever-changing mountainous terrain. Thus, the Walking Cities were born.
+[voice volume="0.0"]
+Narrator: In a desperate attempt to survive, we built colossal platforms to carry our cities. Walking Cities, we called them.
+[voice volume="0.0"]
+Narrator: These towering machines could traverse snow, mountains, and even oceans, searching for a new home. But as resources dwindled, the cities turned on each other, transforming into war machines.
+[voice volume="0.0"]
+Narrator: Now, survival is a brutal battle, and the Walking Cities roam the frozen earth, locked in endless conflict, driven by the hope of finding a new place to call home.
+leave Narrator
+[background arg="res://story/background 2d.png" fade="0.2"]
+join character (Frank) center
+[voice volume="0.0"]
+character: Hey, you're finally awake.
+[voice volume="0.0"]
+character: Listen up—our world is gone. The Great Shift left us with nothing but frozen wastelands.
+[voice volume="0.0"]
+character: Our cities, forests, and fields—all lost. But we didn’t quit. We built these Walking Cities, massive machines that carry the last of our civilization, moving through ice and snow, searching for a place to survive and rebuild.
+[voice volume="0.0"]
+character: But out here, it’s not just the cold we have to worry about. Other cities roam these lands too, desperate like us.
+[voice volume="0.0"]
+character: THEY'RE NOT FRIENDS; they’re rivals, enemies even.
+[voice volume="0.0"]
+character: And they’ll do whatever it takes to survive, just like we will.
+[voice volume="0.0"]
+character: Our city is our lifeline, and we’ve armed it to protect ourselves. But weapons alone won’t be enough.
+[voice volume="0.0"]
+character: We need strategy, we need resources, and above all, we need hope.
+[voice volume="0.0"]
+character: As mayor, it’s up to you to lead our people.
+[voice volume="0.0"]
+character: Make the tough decisions, keep us moving, and maybe—just maybe—we’ll find a new home before it’s too late. The fate of our city rests in your hands.
+leave character [animation="Fade Out"]

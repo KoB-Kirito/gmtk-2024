@@ -31,9 +31,15 @@ Database="*res://autoloads/database.tscn"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"Narrator": "res://story/Narrator.dch",
+"character": "res://story/character.dch",
+"joffrey": "res://story/joffrey.dch"
+}
 directories/dtl_directory={
-"prolog": "res://story/prolog.dtl"
+"Random": "res://story/Random.dtl",
+"Tutorial": "res://story/Tutorial.dtl",
+"timeline": "res://story/timeline.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -55,8 +61,8 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={}
-layout/style_list=["res://story/custome style.tres"]
-layout/default_style="res://story/custome style.tres"
+layout/style_list=["res://story/Style.tres"]
+layout/default_style="res://story/Style.tres"
 glossary/default_case_sensitive=true
 
 [display]

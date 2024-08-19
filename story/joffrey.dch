@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.804688, 0.777478, 0.224223, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "3",
+"description": "",
+"display_name": "Joffrey",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"3": {
+"export_overrides": {
+"image": "\"res://story/3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
+"scale": 1.0
+}
