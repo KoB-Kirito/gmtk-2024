@@ -24,12 +24,14 @@ func _on_mouse_click_detector_mouse_clicked(button_index: int, event_position: V
 			
 			var unit: UnitData = await unit_panel.unit_selected
 			
-			print_debug("Picked unit: ", unit.name)
-			
 			unit_panel.queue_free()
 			
 			if unit:
+				print("Picked unit: ", unit.name)
 				build(unit)
+				
+			else:
+				print("UI cancelled")
 		
 		MOUSE_BUTTON_MIDDLE:
 			remove()

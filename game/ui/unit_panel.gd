@@ -53,4 +53,4 @@ func set_panel_position(screen_position: Vector2) -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		unit_selected.emit("")
+		unit_selected.emit(null)
