@@ -27,19 +27,21 @@ tonemap_mode = 2
 glow_enabled = true
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.717219, 0.743973, 0.786011, 1)
-fog_density = 0.9281
+fog_light_color = Color(0.821288, 0.839289, 0.867579, 1)
+fog_density = 0.6339
 fog_aerial_perspective = 1.0
-fog_sky_affect = 0.0
+fog_sky_affect = 0.007
 fog_depth_begin = 3856.3
 fog_depth_end = 5500.0
 adjustment_enabled = true
-adjustment_brightness = 1.1
-adjustment_saturation = 1.1
+adjustment_brightness = 1.22
+adjustment_contrast = 1.03
+adjustment_saturation = 1.01
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_e72jx"]
 noise_type = 0
-frequency = 0.0002
+seed = 2
+frequency = 0.0001
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w8kbc"]
 size = Vector2(100, 100)
@@ -95,7 +97,7 @@ environment = SubResource("Environment_rmk44")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.642788, -0.766044, 0, 0.766044, 0.642788, -48.2101, 0, 0)
-light_color = Color(0.677567, 0.677567, 0.677567, 1)
+light_color = Color(0.892034, 0.892034, 0.892034, 1)
 light_energy = 0.592
 light_indirect_energy = 0.083
 light_volumetric_fog_energy = 0.359
@@ -161,7 +163,6 @@ offset = Vector3(0, 0.255, 2)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -75.1754, 0)
-visible = false
 layers = 3
 mesh = SubResource("PlaneMesh_y5lfv")
 surface_material_override/0 = SubResource("ShaderMaterial_gxwin")
