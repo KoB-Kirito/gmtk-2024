@@ -48,8 +48,6 @@ player = [NodePath("Player_Manager_1")]
 script = ExtResource("2_7cadx")
 modules = [NodePath("../../ExampleModule"), NodePath("../../ExampleModule2"), NodePath("../../ExampleModule3")]
 
-[node name="RessourceManager" type="Node3D" parent="GameManager/Player_Manager_1"]
-
 [node name="UI_Manager" type="Control" parent="GameManager"]
 unique_name_in_owner = true
 layout_mode = 3

@@ -24,7 +24,7 @@ var res_money : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	res_people
+	Globals.playerManager = self
 	
 	pass # Replace with function body.
 
@@ -49,3 +49,9 @@ func ressourcePerTick() -> void:
 	
 	%UI_Manager.updateUI()
 	pass
+	
+func canBuid() -> bool:
+	
+	#addModuleToList
+	#giveIDtoModule
+	return true;

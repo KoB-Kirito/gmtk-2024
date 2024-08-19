@@ -1,4 +1,5 @@
 extends Node3D
+class_name GameManager
 
 
 enum ENUM_GameState{main_menu, world, ui_menue}
@@ -15,6 +16,7 @@ signal Tick_second
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	Globals.gameManager = self
 	GameState = ENUM_GameState.world
 	
 	pass # Replace with function body.
