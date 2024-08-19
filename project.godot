@@ -32,7 +32,9 @@ Database="*res://autoloads/database.tscn"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"prolog": "res://story/prolog.dtl"
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -64,7 +66,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/lightweight_state_machine/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleTerrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/lightweight_state_machine/plugin.cfg")
 
 [gui]
 
