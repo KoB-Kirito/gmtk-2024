@@ -18,3 +18,13 @@ extends Resource
 @export var occupied_space: Vector3
 @export var slot_type: Globals.SlotType
 @export var slot_orientation: Globals.SlotOrientation
+
+## Required material
+@export var materials: int
+## Required money
+@export var money: int
+## Required people
+@export var people: int
+
+# in-code
+@export_storage var rotation: float = 0.0
