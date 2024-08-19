@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsk8mcfx625"]
+[gd_scene load_steps=8 format=3 uid="uid://bsk8mcfx625"]
 
 [ext_resource type="PackedScene" uid="uid://bjd5738m07yhn" path="res://game/placeables/_slots/base_slot.tscn" id="1_brypw"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="2_7as2q"]
@@ -25,6 +25,9 @@ size = Vector3(9.9, 4.9, 9.9)
 height = 0.2
 radius = 4.6
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hxld"]
+resource_local_to_scene = true
+
 [node name="Slot10m" instance=ExtResource("1_brypw")]
 slot_type = 2
 
@@ -40,3 +43,6 @@ shape = SubResource("BoxShape3D_p2htf")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("CylinderShape3D_ldao2")
+
+[node name="CollisionCheckerShape" parent="CollisionChecker" index="0"]
+shape = SubResource("BoxShape3D_2hxld")
