@@ -43,6 +43,9 @@ func _on_mouse_entered() -> void:
 	hovered = true
 	print("mouse entered")
 	
+	# highlight
+	modulate = Color(2.0, 2.0, 2.0)
+	
 	# load object
 	var placeable_scene: PackedScene = load(_unit_data.path)
 	var placeable: Placeable = placeable_scene.instantiate()
@@ -66,6 +69,12 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
+	if disabled:
+		return
+	
+	# highlight
+	modulate = Color(1.0, 1.0, 1.0)
+	
 	hovered = false
 	print("mouse exited")
 	

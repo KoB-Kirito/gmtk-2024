@@ -5,10 +5,14 @@ extends Resource
 
 ## Name for this module
 @export var name: String
-## Used in tooltip
-@export_multiline var description: String
 ## Path to scene
 @export_file("*.tscn") var path: String
+## Icon representing the module in the UI
+@export var texture: Texture2D
+
+@export_group("Description")
+## Used in tooltip
+@export_multiline var description: String
 
 @export_group("Build Requirements")
 ## Minimum slot size
@@ -21,15 +25,6 @@ extends Resource
 @export var money: int
 ## Required people
 @export var people: int
-
-@export_group("UI")
-## Normal texture representing the module in the UI
-@export var texture: Texture2D
-## Texture when mouse hovers icon
-@export var texture_hover: Texture2D
-## Texture when button is disabled
-@export var texture_disabled: Texture2D
-
 
 # in-code
 ## asignedByPlayerManager

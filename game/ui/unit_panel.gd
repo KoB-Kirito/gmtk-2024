@@ -34,17 +34,22 @@ func setup(slot: BuildingSlot) -> void:
 					
 				else:
 					unit_button.tooltip_text += "\n\n(Not enough resources)"
-					unit_button.disabled = true
+					disable_button(unit_button)
 				
 			else:
 				# does not meet orientation requirement
 				unit_button.tooltip_text += "\n\n(Can't be build in this orientation)"
-				unit_button.disabled = true
+				disable_button(unit_button)
 			
 		else:
 			# does not meet slot size requirement
 			unit_button.tooltip_text += "\n\n(Does not fit in this slot size)"
-			unit_button.disabled = true
+			disable_button(unit_button)
+
+
+func disable_button(button: TextureButton) -> void:
+	button.disabled = true
+	button.modulate = Color.DIM_GRAY
 
 
 ## Sets the panel position to a screen position
