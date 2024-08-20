@@ -77,6 +77,7 @@ func on_moreWorker(ID : int) -> void:
 	## Go through all in array, check ID and change
 	
 	Globals.uiManager.updateUI()
+	Globals.uiManager.updateModuleUI()
 	
 	pass
 

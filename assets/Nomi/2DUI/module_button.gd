@@ -17,6 +17,12 @@ func updateUI() -> void:
 	
 	print("Bin am tryharden! im module button")
 	$ModuleButton/VBoxContainer/HBoxContainer/ActivityTag3.text = str(myData.people) + "/" + str(myData.peopleMax)
+	
+	if(myData.people >= myData.peopleNeed):
+		$ModuleButton/VBoxContainer/HBoxContainer/ActivityTag.text = "Active"
+	else:
+		$ModuleButton/VBoxContainer/HBoxContainer/ActivityTag.text = "Inactive"
+	
 	pass
 
 func _on_plus_button_button_up() -> void:
