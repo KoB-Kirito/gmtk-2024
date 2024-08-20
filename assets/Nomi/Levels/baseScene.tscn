@@ -328,5 +328,5 @@ offset_bottom = 1080.0
 [node name="Module_UI_Container" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer2"]
 layout_mode = 2
 
-[connection signal="Tick_second" from="GameManager" to="GameManager/Player_Manager_1" method="exectueAtTick"]
 [connection signal="Tick_second" from="GameManager" to="GameManager/Player_Manager_1" method="ressourcePerTick"]
+[connection signal="Tick_second" from="GameManager" to="GameManager/Player_Manager_1" method="exectueAtTick"]
