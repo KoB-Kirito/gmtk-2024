@@ -34,10 +34,11 @@ func _on_mouse_click_detector_mouse_clicked(button_index: int, event_position: V
 				print("Picked unit: ", item.unit_data.name)
 				build(item.unit_data)
 				
-				# remove item
-				item.amount -= 1
-				if item.amount <= 0:
-					Globals.inventory.erase(item)
+				# remove item, if it has amount. If not amount > Infinite
+				if item.amount > 0:
+					item.amount -= 1
+					if item.amount <= 0:
+						Globals.inventory.erase(item)
 				
 			else:
 				print("UI cancelled")
