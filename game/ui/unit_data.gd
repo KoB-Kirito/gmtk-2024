@@ -27,6 +27,9 @@ extends Resource
 @export var people: int
 
 @export_group("Data")
+
+var tickCount : int = 0
+var tickNeed : int = 0
 ## HasPeopleToWork?
 @export_storage var isActive : bool
 
@@ -52,11 +55,12 @@ extends Resource
 @export var energized_prod_money_perTick : int = 0
 
 @export var energized_prod_food : int = 0
-@export var energized_prod_energy : int = 0
+#@export var energized_prod_energy : int = 0
 @export var energized_prod_housing : int = 0
 
 # in-code
 ## asignedByPlayerManager
 @export_storage var module_ID : int
+@export_storage var myButton
 ## Preserves rotation from preview
 @export_storage var rotation: float = 0.0

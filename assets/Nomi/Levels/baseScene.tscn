@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://c4gyrr74gsf0o"]
+[gd_scene load_steps=16 format=3 uid="uid://c4gyrr74gsf0o"]
 
 [ext_resource type="Script" path="res://assets/Nomi/Levels/game_manager.gd" id="1_2wocj"]
-[ext_resource type="Script" path="res://assets/Nomi/modules_base.gd" id="1_ynsw0"]
 [ext_resource type="Script" path="res://assets/Nomi/Levels/player_manager.gd" id="2_7cadx"]
 [ext_resource type="Script" path="res://assets/Nomi/Levels/ui_manager.gd" id="3_rpih1"]
 [ext_resource type="Texture2D" uid="uid://ddwqbb8vj2gcu" path="res://assets/Nomi/2DUI/back.png" id="4_4qrcf"]
@@ -22,22 +21,6 @@ texture = ExtResource("4_4qrcf")
 texture = ExtResource("5_n28ey")
 
 [node name="BaseScene" type="Node3D"]
-
-[node name="ExampleModule" type="Node3D" parent="."]
-script = ExtResource("1_ynsw0")
-tickNeed = 1
-moneyPerDelivery = 2
-matPerDelivery = 1
-
-[node name="ExampleModule2" type="Node3D" parent="."]
-script = ExtResource("1_ynsw0")
-moneyPerDelivery = 5
-matPerDelivery = 5
-
-[node name="ExampleModule3" type="Node3D" parent="."]
-script = ExtResource("1_ynsw0")
-tickNeed = 10
-matPerDelivery = 100
 
 [node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 unique_name_in_owner = true

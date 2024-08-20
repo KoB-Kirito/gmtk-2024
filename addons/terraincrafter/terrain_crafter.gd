@@ -181,8 +181,8 @@ func _create_chunk(chunk_data: Dictionary) -> MeshInstance3D:
 	call_deferred("add_chunk_to_scene", chunk)
 
 	chunk.create_trimesh_collision()
-	if print_statistics:
-		print("Chunk created at position: ", chunk.transform.origin)
+	#if print_statistics:
+		##print("Chunk created at position: ", chunk.transform.origin)
 
 	return chunk
 
@@ -208,5 +208,5 @@ func _thread_create_chunks() -> void:
 func add_chunk_to_scene(chunk: MeshInstance3D) -> void:
 	chunks_node.add_child(chunk)
 	chunks[Vector2(chunk.transform.origin.x / float(chunk_size), chunk.transform.origin.z / float(chunk_size))] = chunk
-	if print_statistics:
-		print("Chunk added to scene at position: ", chunk.transform.origin)
+	#if print_statistics:
+		#print("Chunk added to scene at position: ", chunk.transform.origin)

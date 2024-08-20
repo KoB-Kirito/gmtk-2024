@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 	player = $"../Player_Manager_1"
 	module_UI_Prefab = load("res://assets/Nomi/2DUI/ModuleButton.tscn")
-	updateModuleUI()
+	
 	pass # Replace with function body.
 
 
@@ -31,12 +31,19 @@ func updateUI() -> void:
 	%Food_cons_val.text = str($"../Player_Manager_1".res_food_used)
 	pass
 	
+func initializeModuleUI(myData : UnitData) -> void:
+	
+	var mod = module_UI_Prefab.instantiate()
+	$CanvasLayer/PanelContainer2/Module_UI_Container.add_child(mod)
+	myData.myButton = mod
+	mod.myData = myData
+	#for module in Globals.playerManager.modules:
+		#
+		#var mod = module_UI_Prefab.instantiate()
+		#$CanvasLayer/PanelContainer2/Module_UI_Container.add_child(mod)
+		
 func updateModuleUI() -> void:
 	
-	
-	for module in Globals.playerManager.modules:
-		
-		var mod = module_UI_Prefab.instantiate()
-		$CanvasLayer/PanelContainer2/Module_UI_Container.add_child(mod)
-	
+	for moduleButton in $CanvasLayer/PanelContainer2/Module_UI_Container.get_children(false):
+		moduleButton.updateUI()
 	
