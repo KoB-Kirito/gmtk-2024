@@ -1,37 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnjlkfj4q4p0k"]
+[gd_scene load_steps=5 format=3 uid="uid://cnjlkfj4q4p0k"]
 
 [ext_resource type="Script" path="res://game/collectible/collectible.gd" id="1_fhccm"]
+[ext_resource type="PackedScene" uid="uid://cbc1c1mpg3je" path="res://assets/models/placeables/Bauplan.blend" id="2_ycxkx"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_v58lx"]
-radius = 5.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_qqbb4"]
+size = Vector3(25, 10, 15)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbdjr"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_7ufqv"]
-material = SubResource("StandardMaterial3D_xbdjr")
-radius = 5.0
-height = 10.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_dtt6y"]
-radius = 6.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1sj5"]
+size = Vector3(30, 20, 20)
 
 [node name="Collectible" type="RigidBody3D"]
 script = ExtResource("1_fhccm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_v58lx")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.14525, 0)
+shape = SubResource("BoxShape3D_qqbb4")
 
 [node name="Visual" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual"]
-mesh = SubResource("SphereMesh_7ufqv")
-skeleton = NodePath("../..")
+[node name="Bauplan" parent="Visual" instance=ExtResource("2_ycxkx")]
 
 [node name="CollectArea" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollectArea"]
-shape = SubResource("SphereShape3D_dtt6y")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19825, 0)
+shape = SubResource("BoxShape3D_m1sj5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
+[connection signal="area_entered" from="CollectArea" to="." method="_on_collect_area_area_entered"]
