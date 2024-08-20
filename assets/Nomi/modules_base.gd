@@ -17,7 +17,7 @@ var foodPerDelivery : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	%GameManager.Tick_second.connect(exectueAtTick)
+	Globals.gameManager.Tick_second.connect(exectueAtTick)
 
 
 	pass # Replace with function body.
@@ -31,7 +31,7 @@ func exectueAtTick() -> void:
 	tickCount += 1
 	if tickCount >= tickNeed:
 		tickCount = 0
-		$"../GameManager/Player_Manager_1".res_money += moneyPerDelivery
-		$"../GameManager/Player_Manager_1".res_food_produced += foodPerDelivery
-		$"../GameManager/Player_Manager_1".res_materials += matPerDelivery
+		Globals.playerManager.res_money += moneyPerDelivery
+		Globals.playerManager.res_food_produced += foodPerDelivery
+		Globals.playerManager.res_materials += matPerDelivery
 	pass

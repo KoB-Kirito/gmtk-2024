@@ -1,10 +1,13 @@
 extends Control
+class_name UI_Manager
 
 var player : player_manager 
 
 var module_UI_Prefab 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.uiManager = self
+	
 	player = $"../Player_Manager_1"
 	module_UI_Prefab = load("res://assets/Nomi/2DUI/ModuleButton.tscn")
 	updateModuleUI()
@@ -31,7 +34,7 @@ func updateUI() -> void:
 func updateModuleUI() -> void:
 	
 	
-	for module in $"../Player_Manager_1".modules:
+	for module in Globals.playerManager.modules:
 		
 		var mod = module_UI_Prefab.instantiate()
 		$CanvasLayer/PanelContainer2/Module_UI_Container.add_child(mod)

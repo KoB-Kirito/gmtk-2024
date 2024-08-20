@@ -26,6 +26,34 @@ extends Resource
 ## Required people
 @export var people: int
 
+## HasPeopleToWork?
+#var isActive : bool
+
+## Produces Bonus Ressources?
+var isEnergized : bool
+
+## Required energy while running
+@export var energyNeed : int
+@export var peopleNeed : int
+@export var peopleMax : int
+
+@export var ticks_every_x_seconds : int = 1
+@export var energized_ticks_every_x_seconds : int = 1
+
+@export var prod_materials_perTick : int = 0
+@export var prod_money_perTick : int = 0
+
+@export var prod_food : int = 0
+@export var prod_energy : int = 0
+@export var prod_housing : int = 0
+
+@export var energized_prod_materials_perTick : int = 0
+@export var energized_prod_money_perTick : int = 0
+
+@export var energized_prod_food : int = 0
+@export var energized_prod_energy : int = 0
+@export var energized_prod_housing : int = 0
+
 # in-code
 ## asignedByPlayerManager
 @export_storage var module_ID : int
