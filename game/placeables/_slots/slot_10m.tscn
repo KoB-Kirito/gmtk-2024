@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsk8mcfx625"]
+[gd_scene load_steps=11 format=3 uid="uid://bsk8mcfx625"]
 
 [ext_resource type="PackedScene" uid="uid://bjd5738m07yhn" path="res://game/placeables/_slots/base_slot.tscn" id="1_brypw"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="2_7as2q"]
-[ext_resource type="PackedScene" uid="uid://btcy82x565tha" path="res://assets/models/ringe/blauer-ring-10x10.blend" id="2_22xg1"]
+[ext_resource type="PackedScene" uid="uid://cef6nyho3brj1" path="res://assets/models/ringe/rot.ring.10.blend" id="3_vt65j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjn5q"]
 transparency = 1
@@ -19,8 +19,18 @@ height = 0.2
 cap_top = false
 cap_bottom = false
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p2htf"]
-size = Vector3(9.9, 4.9, 9.9)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vd6fp"]
+transparency = 1
+albedo_color = Color(0, 0.741176, 0.380392, 0.490196)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h7ab2"]
+material = SubResource("StandardMaterial3D_vd6fp")
+top_radius = 4.8
+bottom_radius = 4.8
+height = 0.001
+cap_bottom = false
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l1oqv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ldao2"]
 height = 0.2
@@ -32,16 +42,21 @@ resource_local_to_scene = true
 [node name="Slot10m" instance=ExtResource("1_brypw")]
 slot_type = 2
 
-[node name="blauer-ring-10x10" parent="Visual" index="0" instance=ExtResource("2_22xg1")]
+[node name="Ring" type="MeshInstance3D" parent="Visual" index="0"]
 visible = false
-
-[node name="Ring" type="MeshInstance3D" parent="Visual" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("CylinderMesh_8xfnc")
+
+[node name="rot_ring_10" parent="Visual" index="1" instance=ExtResource("3_vt65j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual/Hover" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = SubResource("CylinderMesh_h7ab2")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BuildArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
-shape = SubResource("BoxShape3D_p2htf")
+shape = SubResource("ConvexPolygonShape3D_l1oqv")
 
 [node name="ClickCollision" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
 unique_name_in_owner = true

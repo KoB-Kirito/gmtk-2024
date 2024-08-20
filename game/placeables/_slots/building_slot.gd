@@ -11,6 +11,10 @@ const UNIT_PANEL = preload("res://game/ui/unit_panel.tscn")
 @onready var collision_check_shape: BoxShape3D = %CollisionCheckerShape.shape
 
 
+func _ready() -> void:
+	%Hover.hide()
+
+
 func _on_mouse_click_detector_mouse_clicked(button_index: int, event_position: Vector3) -> void:
 	match button_index:
 		MOUSE_BUTTON_LEFT:
@@ -127,3 +131,11 @@ func remove() -> void:
 	
 	#TODO: fsx, sound
 	owner.queue_free()
+
+
+func _on_mouse_click_detector_mouse_entered() -> void:
+	%Hover.show()
+
+
+func _on_mouse_click_detector_mouse_exited() -> void:
+	%Hover.hide()

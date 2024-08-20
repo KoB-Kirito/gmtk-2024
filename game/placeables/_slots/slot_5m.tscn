@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsmtu5n8vqbpt"]
+[gd_scene load_steps=11 format=3 uid="uid://dsmtu5n8vqbpt"]
 
 [ext_resource type="PackedScene" uid="uid://bjd5738m07yhn" path="res://game/placeables/_slots/base_slot.tscn" id="1_p4t3j"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="2_05sy3"]
-[ext_resource type="PackedScene" uid="uid://dso1c7dqa8bun" path="res://assets/models/ringe/roter-ring-5x5.blend" id="3_fibxn"]
+[ext_resource type="PackedScene" uid="uid://c4c0ven68nop7" path="res://assets/models/ringe/blau.ring.5.blend" id="3_nveo4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjn5q"]
 transparency = 1
@@ -17,6 +17,17 @@ top_radius = 2.4
 bottom_radius = 2.2
 height = 0.2
 cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p17hh"]
+transparency = 1
+albedo_color = Color(0, 0.741176, 0.380392, 0.490196)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w8xdr"]
+material = SubResource("StandardMaterial3D_p17hh")
+top_radius = 2.4
+bottom_radius = 2.4
+height = 0.001
 cap_bottom = false
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eckte"]
@@ -34,10 +45,16 @@ slot_type = 1
 
 [node name="Ring" type="MeshInstance3D" parent="Visual" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+visible = false
 mesh = SubResource("CylinderMesh_g2oi0")
 
-[node name="roter-ring-5x5" parent="Visual" index="1" instance=ExtResource("3_fibxn")]
-visible = false
+[node name="blau_ring_5" parent="Visual" index="1" instance=ExtResource("3_nveo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual/Hover" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = SubResource("CylinderMesh_w8xdr")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BuildArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

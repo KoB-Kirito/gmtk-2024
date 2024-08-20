@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxdq27knicbqy"]
+[gd_scene load_steps=11 format=3 uid="uid://cxdq27knicbqy"]
 
 [ext_resource type="PackedScene" uid="uid://bjd5738m07yhn" path="res://game/placeables/_slots/base_slot.tscn" id="1_oyu28"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="2_mqj3m"]
-[ext_resource type="PackedScene" uid="uid://cxribwevvka6k" path="res://assets/models/ringe/grüner-ring-2-5x2-5.blend" id="3_yqlyi"]
+[ext_resource type="PackedScene" uid="uid://bw25l1q2m4hj5" path="res://assets/models/ringe/grüner.ring.2.5.blend" id="3_bd52j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjn5q"]
 transparency = 1
@@ -19,6 +19,17 @@ height = 0.2
 cap_top = false
 cap_bottom = false
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j05dj"]
+transparency = 1
+albedo_color = Color(0, 0.741176, 0.380392, 0.490196)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j75li"]
+material = SubResource("StandardMaterial3D_j05dj")
+top_radius = 0.8
+bottom_radius = 0.8
+height = 0.001
+cap_bottom = false
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_47vbe"]
 size = Vector3(1.9, 1.9, 1.9)
 
@@ -33,11 +44,17 @@ resource_local_to_scene = true
 
 [node name="Ring" type="MeshInstance3D" parent="Visual" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+visible = false
 mesh = SubResource("CylinderMesh_jv2xo")
 skeleton = NodePath("../..")
 
-[node name="grüner-ring-2-5x2-5" parent="Visual" index="1" instance=ExtResource("3_yqlyi")]
-visible = false
+[node name="grüner_ring_2_5" parent="Visual" index="1" instance=ExtResource("3_bd52j")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual/Hover" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = SubResource("CylinderMesh_j75li")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BuildArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
