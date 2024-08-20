@@ -33,3 +33,8 @@ func on_first_module_placed(module: Placeable, data: UnitData) -> void:
 	await Dialogic.timeline_ended
 	
 	%BaseScene.show()
+	
+	%EnemySpawner1.start()
+	%EnemySpawner2.start()
+	%EnemySpawner3.start()
+	%EnemySpawner4.start()

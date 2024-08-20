@@ -77,6 +77,10 @@ window/size/viewport_height=1080
 
 enabled=PackedStringArray("res://addons/SimpleTerrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/terraincrafter/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [gui]
 
 timers/tooltip_delay_sec=0.1
