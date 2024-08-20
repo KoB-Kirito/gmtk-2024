@@ -4,9 +4,6 @@ extends RigidBody3D
 signal collected
 
 
-@export var item: InventoryItem
-
-
 func _on_collect_area_area_entered(area: Area3D) -> void:
 	if area.owner is Player:
 		# random item
