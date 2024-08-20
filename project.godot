@@ -61,8 +61,8 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={}
-layout/style_list=[""]
-layout/default_style=""
+layout/style_list=["res://story/storystyle123.tres"]
+layout/default_style="res://story/storystyle123.tres"
 glossary/default_case_sensitive=true
 
 [display]
