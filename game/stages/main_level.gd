@@ -2,7 +2,9 @@ extends Node3D
 
 
 func _ready() -> void:
-	%BaseScene.hide()
+	#%BaseScene.hide()
+	
+	#await get_tree().create_timer(0.2).timeout
 	
 	Dialogic.timeline_ended.connect(func(): get_tree().paused = false)
 	
@@ -32,7 +34,7 @@ func on_first_module_placed(module: Placeable, data: UnitData) -> void:
 	
 	await Dialogic.timeline_ended
 	
-	%BaseScene.show()
+	#%BaseScene.show()
 	
 	%EnemySpawner1.start()
 	%EnemySpawner2.start()

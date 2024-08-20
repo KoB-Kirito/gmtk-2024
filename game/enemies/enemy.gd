@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var heli: bool = false
 
 const SPEED = 20.0
-const MIN_DISTANCE = 1000.0
+const MIN_DISTANCE = 10000.0
 
 var player: Player
 

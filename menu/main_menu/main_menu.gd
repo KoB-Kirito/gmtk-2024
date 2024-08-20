@@ -34,6 +34,8 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_free_button_pressed() -> void:
+	PauseMenu.enable()
+	
 	%Robot.stop_autowalk()
 	%Robot.stop_autocam()
 	hide()

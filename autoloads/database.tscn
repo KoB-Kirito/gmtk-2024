@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://31o8nvgnpkwq"]
+[gd_scene load_steps=67 format=3 uid="uid://31o8nvgnpkwq"]
 
 [ext_resource type="Script" path="res://autoloads/database.gd" id="1_87apn"]
 [ext_resource type="Script" path="res://game/ui/unit_data.gd" id="2_3knpf"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://b5yiktqtck2ad" path="res://game/placeables/buildings/Haus10x20.png" id="6_ymnbq"]
 [ext_resource type="Texture2D" uid="uid://ddif1s80bwbbj" path="res://game/placeables/towers/gun.png" id="7_025sk"]
 [ext_resource type="Texture2D" uid="uid://dbgdq0302kj3o" path="res://game/placeables/towers/minigun.png" id="8_t83vu"]
-[ext_resource type="Texture2D" uid="uid://bb8akd06mdwoa" path="res://game/placeables/towers/2x2_module_modern_cannontower.png" id="9_4unvm"]
 [ext_resource type="Texture2D" uid="uid://v4rnv8wwdqu0" path="res://game/placeables/buildings/5x5_module_modern_generator.png" id="10_ndxxs"]
 [ext_resource type="Texture2D" uid="uid://coq58sid07t8s" path="res://game/placeables/buildings/5x5_module_modern_MtoS.png" id="11_u7e1f"]
 [ext_resource type="Texture2D" uid="uid://jdxryec3qhlx" path="res://game/placeables/buildings/10x10_modern_appartments.png" id="12_arcrg"]
@@ -164,7 +163,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_eftau"]
 script = ExtResource("2_3knpf")
 name = "Laser Turret"
-path = "res://kipas-gun-tests/LaserTurret.tscn"
+path = "res://game/placeables/towers/laser_turret.tscn"
 texture = ExtResource("7_025sk")
 description = "Pew pew."
 slot_type = 2
@@ -195,44 +194,13 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_hgmjj"]
 script = ExtResource("2_3knpf")
 name = "Minigun"
-path = "res://kipas-gun-tests/minigun.tscn"
+path = "res://game/placeables/towers/minigun.tscn"
 texture = ExtResource("8_t83vu")
 description = "Mini gun."
 slot_type = 1
 slot_orientation = 0
 materials = 80
 money = 120
-people = 0
-isActive = false
-isEnergized = false
-energyNeed = 0
-peopleNeed = 0
-peopleMax = 0
-ticks_every_x_seconds = 1
-energized_ticks_every_x_seconds = 1
-prod_materials_perTick = 0
-prod_money_perTick = 0
-prod_food = 0
-prod_energy = 0
-prod_housing = 0
-energized_prod_materials_perTick = 0
-energized_prod_money_perTick = 0
-energized_prod_food = 0
-energized_prod_housing = 0
-module_ID = 0
-myButton = null
-rotation = 0.0
-
-[sub_resource type="Resource" id="Resource_rfyki"]
-script = ExtResource("2_3knpf")
-name = "Cannon"
-path = "res://kipas-gun-tests/cannon_tower.tscn"
-texture = ExtResource("9_4unvm")
-description = ""
-slot_type = 0
-slot_orientation = 0
-materials = 60
-money = 20
 people = 0
 isActive = false
 isEnergized = false
@@ -1062,4 +1030,4 @@ rotation = 0.0
 
 [node name="Database" type="Node"]
 script = ExtResource("1_87apn")
-placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_p0k4h"), SubResource("Resource_diyew"), SubResource("Resource_8uiqs"), SubResource("Resource_ttxeq"), SubResource("Resource_eftau"), SubResource("Resource_hgmjj"), SubResource("Resource_rfyki"), SubResource("Resource_biu8u"), SubResource("Resource_afo4j"), SubResource("Resource_6dgjc"), SubResource("Resource_3k7jy"), SubResource("Resource_3712e"), SubResource("Resource_1a21s"), SubResource("Resource_df4l7"), SubResource("Resource_js0cv"), SubResource("Resource_s85a4"), SubResource("Resource_edk5d"), SubResource("Resource_1csvm"), SubResource("Resource_dab8f"), SubResource("Resource_u2y4p"), SubResource("Resource_8vsep"), SubResource("Resource_q7j4i"), SubResource("Resource_1vnr6"), SubResource("Resource_5ej6h"), SubResource("Resource_ta4gh"), SubResource("Resource_tawax"), SubResource("Resource_cm2jb"), SubResource("Resource_lbdi3"), SubResource("Resource_6dvbf"), SubResource("Resource_bond4"), SubResource("Resource_iojap"), SubResource("Resource_c4evb"), SubResource("Resource_q3qvs")])
+placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_p0k4h"), SubResource("Resource_diyew"), SubResource("Resource_8uiqs"), SubResource("Resource_ttxeq"), SubResource("Resource_eftau"), SubResource("Resource_hgmjj"), SubResource("Resource_biu8u"), SubResource("Resource_afo4j"), SubResource("Resource_6dgjc"), SubResource("Resource_3k7jy"), SubResource("Resource_3712e"), SubResource("Resource_1a21s"), SubResource("Resource_df4l7"), SubResource("Resource_js0cv"), SubResource("Resource_s85a4"), SubResource("Resource_edk5d"), SubResource("Resource_1csvm"), SubResource("Resource_dab8f"), SubResource("Resource_u2y4p"), SubResource("Resource_8vsep"), SubResource("Resource_q7j4i"), SubResource("Resource_1vnr6"), SubResource("Resource_5ej6h"), SubResource("Resource_ta4gh"), SubResource("Resource_tawax"), SubResource("Resource_cm2jb"), SubResource("Resource_lbdi3"), SubResource("Resource_6dvbf"), SubResource("Resource_bond4"), SubResource("Resource_iojap"), SubResource("Resource_c4evb"), SubResource("Resource_q3qvs")])

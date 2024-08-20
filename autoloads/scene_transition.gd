@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 
+var gtween: Tween
+
+
 class Options:
 	var scene_path: String
 	
@@ -42,6 +45,7 @@ func change_scene(data: Options) -> void:
 	%Fade.show()
 	
 	var tween = create_tween()
+	gtween = tween
 	
 	match data.transition:
 		SLIDE:
