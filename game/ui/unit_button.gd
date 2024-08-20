@@ -32,8 +32,6 @@ func setup(unit_data: UnitData, slot: BuildingSlot) -> void:
 	#TODO: name
 	tooltip_text = unit_data.name + "\n" + unit_data.description
 	texture_normal = unit_data.texture
-	texture_hover = unit_data.texture_hover
-	texture_disabled = unit_data.texture_disabled
 
 
 func _on_mouse_entered() -> void:
@@ -69,11 +67,9 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
-	if disabled:
-		return
-	
 	# highlight
-	modulate = Color(1.0, 1.0, 1.0)
+	if not disabled:
+		modulate = Color(1.0, 1.0, 1.0)
 	
 	hovered = false
 	print("mouse exited")

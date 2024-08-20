@@ -12,12 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fgtng")
-next_scene = "res://menu/main_menu/main_menu.tscn"
-transition_duration = 0.5
-transition_color = Color(0.141176, 0.141176, 0.141176, 1)
-fade_in_duration = 0.4
-stay_duration = 0.5
-fade_out_duration = 0.6
+next_scene = "res://game/stages/free_build/free_build_main.tscn"
+transition_duration_out = 2.0
+transition_color = Color(0.309804, 0.513726, 0.866667, 1)
 
 [node name="GodotSplash" type="TextureRect" parent="."]
 layout_mode = 1
