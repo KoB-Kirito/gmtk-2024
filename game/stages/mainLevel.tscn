@@ -139,7 +139,24 @@ surface_material_override/0 = SubResource("ShaderMaterial_xmwso")
 [node name="Robot" parent="World" instance=ExtResource("7_qrtt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 21.5093, -0.662)
 
-[node name="EnemySpawner" parent="World/Robot" instance=ExtResource("8_dylxs")]
+[node name="EnemySpawner1" parent="World/Robot" node_paths=PackedStringArray("parent_node") instance=ExtResource("8_dylxs")]
+unique_name_in_owner = true
+parent_node = NodePath("../..")
+
+[node name="EnemySpawner2" parent="World/Robot" node_paths=PackedStringArray("parent_node") instance=ExtResource("8_dylxs")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 937.516, 141.142, -825.812)
+parent_node = NodePath("../..")
+
+[node name="EnemySpawner3" parent="World/Robot" node_paths=PackedStringArray("parent_node") instance=ExtResource("8_dylxs")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 937.516, 141.142, 555.464)
+parent_node = NodePath("../..")
+
+[node name="EnemySpawner4" parent="World/Robot" node_paths=PackedStringArray("parent_node") instance=ExtResource("8_dylxs")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -899.011, 141.142, 555.464)
+parent_node = NodePath("../..")
 
 [node name="Water" type="MeshInstance3D" parent="World" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -75.1754, 0)

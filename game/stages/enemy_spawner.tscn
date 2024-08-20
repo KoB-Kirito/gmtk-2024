@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://m5aeoemhvncv"]
+
+[ext_resource type="Script" path="res://game/stages/enemy_spawner.gd" id="1_87qbp"]
+
+[node name="EnemySpawner" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -616.89, 141.142, -825.812)
+script = ExtResource("1_87qbp")
+enemie_paths = Array[String](["res://game/enemies/robot_enemy1.tscn", "res://game/enemies/robot_enemy2.tscn", "res://game/enemies/robot_enemy3.tscn", "res://game/enemies/robot_enemy4.tscn", "res://game/enemies/robot_enemy5.tscn", "res://game/enemies/heli_neu.tscn", "res://game/enemies/heli_neu2.tscn"])
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

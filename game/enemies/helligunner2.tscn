@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://euy6jk6wb04i"]
+[gd_scene load_steps=6 format=3 uid="uid://euy6jk6wb04i"]
 
 [ext_resource type="PackedScene" uid="uid://yv2t1d2k4bj7" path="res://game/enemies/helli.blend" id="1_c0tpe"]
-[ext_resource type="PackedScene" path="res://game/placeables/buildings/JapaneseFlat.tscn" id="2_8u5rf"]
+[ext_resource type="PackedScene" uid="uid://dkbhrlsjf231g" path="res://game/placeables/buildings/JapaneseFlat.tscn" id="2_8u5rf"]
+[ext_resource type="Script" path="res://game/enemies/enemy.gd" id="2_f505d"]
 [ext_resource type="PackedScene" uid="uid://bojqj72vx6lst" path="res://2x2_modern_cannontower.tscn" id="3_wuwpu"]
 [ext_resource type="AudioStream" uid="uid://dg7ho3xaxtn74" path="res://assets/audio/sound/sound effects/helicopter-sound-41975.mp3" id="4_gbypx"]
 
 [node name="helli" instance=ExtResource("1_c0tpe")]
+script = ExtResource("2_f505d")
+heli = true
 
 [node name="Placeable" parent="." index="6" instance=ExtResource("2_8u5rf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00872993, -4.91364, -0.000522852)
