@@ -6,7 +6,7 @@ var score: int = 0
 
 var gameManager : GameManager 
 var playerManager : player_manager
-
+var uiManager : UI_Manager
 
 
 # inventory system
