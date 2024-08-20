@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnewq0rescuxe"]
+[gd_scene load_steps=4 format=3 uid="uid://dd64d0ubwht8b"]
 
 [ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_s1h65"]
-[ext_resource type="PackedScene" uid="uid://b5mmuobkeb66y" path="res://assets/Nomi/3D/2x2_module_modern_cannontower.blend" id="2_vl8va"]
+[ext_resource type="PackedScene" uid="uid://bbe0vcul7lpi8" path="res://kipas-gun-tests/enemy_cannon_tower.tscn" id="2_6dw3h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k4oml"]
 size = Vector3(2.18567, 2.18561, 2.38501)
@@ -16,4 +16,4 @@ shape = SubResource("BoxShape3D_k4oml")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00299072, 1.09579, 0.000854492)
 shape = SubResource("BoxShape3D_k4oml")
 
-[node name="2x2_module_modern_cannontower" parent="." index="2" instance=ExtResource("2_vl8va")]
+[node name="CannonTower" parent="." index="2" instance=ExtResource("2_6dw3h")]
