@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddif1s80bwbbj"
-path="res://.godot/imported/gun.png-02d631b25c1cb5049d24622785031655.ctex"
+path="res://.godot/imported/gun.png-9f44b21694195754c71b0a2840d32278.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/placeables/buildings/gun.png"
-dest_files=["res://.godot/imported/gun.png-02d631b25c1cb5049d24622785031655.ctex"]
+source_file="res://game/placeables/towers/gun.png"
+dest_files=["res://.godot/imported/gun.png-9f44b21694195754c71b0a2840d32278.ctex"]
 
 [params]
 
