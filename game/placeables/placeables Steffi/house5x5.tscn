@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj6vsldxy0cqe"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_038e7"]
+[ext_resource type="PackedScene" uid="uid://bg1tu4f4pv5xg" path="res://assets/models/placeables/House5x5.blend" id="2_3xury"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="3_g7xnr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xcm5a"]
+size = Vector3(4.9, 4.9, 4.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3ake"]
+size = Vector3(5.1, 5.2, 5.2)
+
+[node name="Placeable" instance=ExtResource("1_038e7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_xcm5a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_u3ake")
+
+[node name="House5x5" parent="." index="2" instance=ExtResource("2_3xury")]
+
+[node name="Slot5m" parent="." index="3" instance=ExtResource("3_g7xnr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

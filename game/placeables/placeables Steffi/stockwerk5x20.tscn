@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2bdj2465p7h1"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_qgvgl"]
+[ext_resource type="PackedScene" uid="uid://dj7hywrpipufe" path="res://assets/models/placeables/Stockwerk5x20.blend" id="2_d6bwh"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="3_7jcma"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sn5p7"]
+size = Vector3(19.5, 3.3, 4.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j740d"]
+size = Vector3(20.2, 3.64063, 5.1)
+
+[node name="Placeable" instance=ExtResource("1_qgvgl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210401, 1.8, 0)
+shape = SubResource("BoxShape3D_sn5p7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77031, 0)
+shape = SubResource("BoxShape3D_j740d")
+
+[node name="Stockwerk5x20" parent="." index="2" instance=ExtResource("2_d6bwh")]
+
+[node name="Slot5m" parent="." index="3" instance=ExtResource("3_7jcma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.5, 0)
+
+[node name="Slot5m2" parent="." index="4" instance=ExtResource("3_7jcma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 3.5, 0)
+
+[node name="Slot5m3" parent="." index="5" instance=ExtResource("3_7jcma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3.5, 0)
+
+[node name="Slot5m4" parent="." index="6" instance=ExtResource("3_7jcma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3.5, 0)

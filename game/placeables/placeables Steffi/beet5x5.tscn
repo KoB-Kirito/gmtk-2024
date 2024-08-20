@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf04h7np4qivx"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_suxl2"]
+[ext_resource type="PackedScene" uid="uid://beecpxkmh4rer" path="res://assets/models/placeables/Beet5x5.blend" id="2_mn8ob"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qsamd"]
+size = Vector3(4.9, 3.7, 4.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0gcfy"]
+size = Vector3(5.1, 4.1, 5.1)
+
+[node name="Placeable" instance=ExtResource("1_suxl2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94648, 0)
+shape = SubResource("BoxShape3D_qsamd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_0gcfy")
+
+[node name="Beet5x5" parent="." index="2" instance=ExtResource("2_mn8ob")]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://fd3pbq08bytn"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_hdivk"]
+[ext_resource type="PackedScene" uid="uid://bsk8mcfx625" path="res://game/placeables/_slots/slot_10m.tscn" id="2_ql58u"]
+[ext_resource type="PackedScene" uid="uid://b54vokuqqkwqi" path="res://assets/models/placeables/Haus10x20.blend" id="3_si6wb"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="4_dvvpt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phkkw"]
+size = Vector3(19.8, 9.9, 9.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l41f7"]
+size = Vector3(20.2, 10.2, 10.2)
+
+[node name="Placeable" instance=ExtResource("1_hdivk")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_phkkw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_l41f7")
+
+[node name="Slot10m" parent="." index="2" instance=ExtResource("2_ql58u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10, 0)
+
+[node name="Slot10m2" parent="." index="3" instance=ExtResource("2_ql58u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 10, 0)
+
+[node name="Haus10x20" parent="." index="4" instance=ExtResource("3_si6wb")]
+
+[node name="Slot5m" parent="." index="5" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 7.5, 2.5, 5)
+
+[node name="Slot5m2" parent="." index="6" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.5, 2.5, 5)
+
+[node name="Slot5m3" parent="." index="7" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.5, 2.5, 5)
+
+[node name="Slot5m4" parent="." index="8" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.5, 2.5, 5)
+
+[node name="Slot5m5" parent="." index="9" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 2.5, -5)
+
+[node name="Slot5m6" parent="." index="10" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 7.5, -5)
+
+[node name="Slot5m7" parent="." index="11" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(-4.37114e-08, -1, 1.31134e-07, 0, 1.31134e-07, 1, -1, 4.37114e-08, -5.73206e-15, -10, 7.5, -2.5)
+
+[node name="Slot5m8" parent="." index="12" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(-4.37114e-08, -1, 1.31134e-07, 0, 1.31134e-07, 1, -1, 4.37114e-08, -5.73206e-15, -10, 7.5, 2.5)
+
+[node name="Slot5m9" parent="." index="13" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(-4.37114e-08, -1, 1.31134e-07, 0, 1.31134e-07, 1, -1, 4.37114e-08, -5.73206e-15, -10, 2.5, 2.5)
+
+[node name="Slot5m10" parent="." index="14" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(-4.37114e-08, -1, 1.31134e-07, 0, 1.31134e-07, 1, -1, 4.37114e-08, -5.73206e-15, -10, 2.5, -2.5)
+
+[node name="Slot5m11" parent="." index="15" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(-4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, 10, 2.5, -2.5)
+
+[node name="Slot5m12" parent="." index="16" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(-4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, 10, 2.5, 2.5)
+
+[node name="Slot5m13" parent="." index="17" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(-4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, 10, 7.5, 2.5)
+
+[node name="Slot5m14" parent="." index="18" instance=ExtResource("4_dvvpt")]
+transform = Transform3D(-4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, 10, 7.5, -2.5)
