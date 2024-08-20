@@ -25,10 +25,6 @@ func setup(slot: BuildingSlot) -> void:
 		if slot.slot_type >= unit.slot_type:
 			# only allow matching orientation
 			if unit.slot_orientation == Globals.SlotOrientation.ALL or slot_orientation == unit.slot_orientation:
-				# debug
-				if unit.occupied_space <= Vector3.ZERO:
-					push_error("item has no occupied space set: ", unit.name)
-				
 				# check resources
 				var p_manager := Globals.playerManager
 				assert(p_manager, "player manager is missing, set in Globals")
@@ -39,17 +35,6 @@ func setup(slot: BuildingSlot) -> void:
 				else:
 					unit_button.tooltip_text += "\n\n(Not enough resources)"
 					unit_button.disabled = true
-				
-				#TODO: space check not needed anymore with rotation preview
-				# check if space is enough
-				#if await slot.is_area_free(unit.occupied_space):
-					## unit meets requirements for this slot
-					#unit_button.pressed.connect(func(): unit_selected.emit(unit))
-					#
-				#else:
-					## area does not have enough space
-					#unit_button.tooltip_text += "\n\n(Not enough space available)"
-					#unit_button.disabled = true
 				
 			else:
 				# does not meet orientation requirement
