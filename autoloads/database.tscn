@@ -26,7 +26,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 3
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -37,9 +37,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_8mema"]
@@ -57,7 +57,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 3
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -68,9 +68,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_skrss"]
@@ -88,7 +88,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 3
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -99,9 +99,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_avyl5"]
@@ -119,7 +119,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 2
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -130,9 +130,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_51wv3"]
@@ -150,7 +150,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 3
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -161,9 +161,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_b35v2"]
@@ -181,7 +181,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 2
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -192,9 +192,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_7hm13"]
@@ -212,7 +212,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 2
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -223,9 +223,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_jm1ww"]
@@ -243,7 +243,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 2
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -254,9 +254,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_xy6w1"]
@@ -274,7 +274,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 3
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -285,9 +285,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_mmvhg"]
@@ -308,7 +308,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 3
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -319,9 +319,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [sub_resource type="Resource" id="Resource_h7fs4"]
@@ -342,7 +342,7 @@ isActive = false
 isEnergized = false
 energyNeed = 0
 peopleNeed = 0
-peopleMax = 0
+peopleMax = 2
 ticks_every_x_seconds = 1
 energized_ticks_every_x_seconds = 1
 prod_materials_perTick = 0
@@ -353,9 +353,9 @@ prod_housing = 0
 energized_prod_materials_perTick = 0
 energized_prod_money_perTick = 0
 energized_prod_food = 0
-energized_prod_energy = 0
 energized_prod_housing = 0
 module_ID = 0
+myButton = null
 rotation = 0.0
 
 [node name="Database" type="Node"]

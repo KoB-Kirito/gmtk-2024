@@ -77,6 +77,7 @@ func on_moreWorker(ID : int) -> void:
 	## Go through all in array, check ID and change
 	
 	Globals.uiManager.updateUI()
+	Globals.uiManager.updateModuleUI()
 	
 	pass
 
@@ -143,7 +144,9 @@ func exectueAtTick() -> void:
 					Globals.playerManager.res_money += module.energized_prod_money_perTick
 					Globals.playerManager.res_materials += module.energized_prod_materials_perTick
 		
-			
+	if(res_energy_used > res_energy_produced):
+		for module in modules:
+			module.isEnergized = false
 		
 		
 
