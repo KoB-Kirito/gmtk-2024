@@ -7,4 +7,10 @@ joffrey: See those rings on the platform—green, blue, and red? That’s where 
 joffrey: We can find more blueprints by taking down other cities—hehe!
 [voice volume="0.0"]
 joffrey: But be careful, space is limited. So choose wisely where and what you build.
+joffrey: See that blueprint over there? Pick it up. 
+[wait_input]
+joffrey: Take a look—nice, right?
+joffrey: Now, go ahead and try to build it.
+[wait_input]
+joffrey: Perfect! Now you've got the basics down. Have fun!
 leave joffrey
