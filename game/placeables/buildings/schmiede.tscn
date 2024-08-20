@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgc8lollh0kgb"]
-
-[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_fmotu"]
-
-[node name="Placeable" instance=ExtResource("1_fmotu")]
