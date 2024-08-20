@@ -18,7 +18,7 @@ var res_food_used : int = 0
 var res_materials : int = 0
 var res_money : int = 0
 
-@export var modules : Array[modules_base]
+@export var modules : Array[UnitData]
 var nextModuleID : int = 0
 
 
@@ -35,6 +35,7 @@ func _ready() -> void:
 func on_module_placed(module: Placeable, data: UnitData) -> void:
 	print("module placed: ", data.name)
 	
+	modules.append(data)
 	data.module_ID = nextModuleID
 	nextModuleID += 1
 	
@@ -54,12 +55,36 @@ func on_module_removed(ui_module: Control) -> void:
 	
 func on_moreWorker(ID : int) -> void:
 	
+	for module in modules:
+		if(module.module_ID == ID):
+			if(module.people < module.peopleMax):
+				module.people += 1
+				
+			#Check Workforce
+			if(module.people > module.peopleNeed):
+				module.isActive = true
+				
+			else:
+				pass
+		else:
+			pass
 	## Go through all in array, check ID and change
 	
 	pass
 
 func on_lessWorker(ID : int) -> void:
-	
+	for module in modules:
+		if(module.module_ID == ID):
+			if(module.people > 0):
+				module.people -= 1
+				
+			#Check Workforce
+			if(module.people < module.peopleNeed):
+				module.isActive = false
+			else:
+				pass
+		else:
+			pass
 	pass
 #endregion
 

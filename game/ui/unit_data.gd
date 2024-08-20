@@ -27,7 +27,7 @@ extends Resource
 @export var people: int
 
 ## HasPeopleToWork?
-#var isActive : bool
+var isActive : bool
 
 ## Produces Bonus Ressources?
 var isEnergized : bool
