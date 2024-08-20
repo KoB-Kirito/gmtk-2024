@@ -39,6 +39,8 @@ directories/dch_directory={
 directories/dtl_directory={
 "Random": "res://story/Random.dtl",
 "Tutorial": "res://story/Tutorial.dtl",
+"Tutorial2": "res://story/Tutorial2.dtl",
+"Tutorial3": "res://story/Tutorial3.dtl",
 "timeline": "res://story/timeline.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -64,6 +66,7 @@ variables={}
 layout/style_list=["res://story/storystyle123.tres"]
 layout/default_style="res://story/storystyle123.tres"
 glossary/default_case_sensitive=true
+layout/end_behaviour=1
 
 [display]
 
@@ -135,6 +138,7 @@ turn_right={
 3d_physics/layer_1="World"
 3d_physics/layer_2="Mouse"
 3d_physics/layer_3="BuildSystem"
+3d_physics/layer_4="Collectibles"
 
 [rendering]
 

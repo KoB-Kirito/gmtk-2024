@@ -1,11 +1,14 @@
 extends RigidBody3D
 
 
+signal collected
+
+
 @export var item: InventoryItem
 
 
-func _on_collect_area_body_entered(body: Node3D) -> void:
-	if body is Player:
+func _on_collect_area_area_entered(area: Area3D) -> void:
+	if area.owner is Player:
 		# random item
 		var item := InventoryItem.new()
 		item.unit_data = Database.placeables.pick_random()
@@ -28,4 +31,5 @@ func _on_collect_area_body_entered(body: Node3D) -> void:
 		
 		# remove collectible
 		#TODO: sfx, audio
+		collected.emit()
 		queue_free()
