@@ -26,11 +26,12 @@ extends Resource
 ## Required people
 @export var people: int
 
+@export_group("Data")
 ## HasPeopleToWork?
-var isActive : bool
+@export_storage var isActive : bool
 
 ## Produces Bonus Ressources?
-var isEnergized : bool
+@export_storage var isEnergized : bool
 
 ## Required energy while running
 @export var energyNeed : int

@@ -1,10 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://wec2lhayj68"]
+[gd_scene load_steps=8 format=3 uid="uid://wec2lhayj68"]
 
 [ext_resource type="PackedScene" uid="uid://c4gyrr74gsf0o" path="res://assets/Nomi/Levels/baseScene.tscn" id="1_2wchk"]
 [ext_resource type="PackedScene" uid="uid://cfyq0pwy6e1kl" path="res://game/terrain/Map.tscn" id="2_c6xf8"]
+[ext_resource type="PackedScene" uid="uid://cnjlkfj4q4p0k" path="res://game/collectible/collectible.tscn" id="3_v7qen"]
+[ext_resource type="Script" path="res://game/ui/InventoryItem.gd" id="4_40l4e"]
+[ext_resource type="Resource" uid="uid://dgwjktr2hu4c5" path="res://data/modern_house_large.tres" id="5_7cnyk"]
+
+[sub_resource type="Resource" id="Resource_x8m2u"]
+script = ExtResource("4_40l4e")
+unit_data = ExtResource("5_7cnyk")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_mihku"]
+script = ExtResource("4_40l4e")
+unit_data = ExtResource("5_7cnyk")
+amount = 1
 
 [node name="MainLevel" type="Node3D"]
 
 [node name="BaseScene" parent="." instance=ExtResource("1_2wchk")]
 
 [node name="World" parent="." instance=ExtResource("2_c6xf8")]
+
+[node name="Collectible" parent="." instance=ExtResource("3_v7qen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.003, 80, -63.987)
+item = SubResource("Resource_x8m2u")
+
+[node name="Collectible2" parent="." instance=ExtResource("3_v7qen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.566, 80, -88.1523)
+item = SubResource("Resource_mihku")

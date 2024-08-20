@@ -4,3 +4,4 @@ extends Resource
 
 
 @export var unit_data: UnitData
+@export var amount: int

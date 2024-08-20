@@ -42,7 +42,6 @@ func _on_free_button_pressed() -> void:
 	Globals.free_mode = true
 	
 	# add all modules
-	Globals.inventory.append_array(Database.placeables)
 	for module in Database.placeables:
 		var item := InventoryItem.new()
 		item.unit_data = module

@@ -1,13 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://31o8nvgnpkwq"]
+[gd_scene load_steps=24 format=3 uid="uid://31o8nvgnpkwq"]
 
 [ext_resource type="Script" path="res://autoloads/database.gd" id="1_87apn"]
 [ext_resource type="Script" path="res://game/ui/unit_data.gd" id="2_3knpf"]
 [ext_resource type="Texture2D" uid="uid://c1m43yekga067" path="res://assets/textures/prototype/green/texture_02.png" id="3_hdxwp"]
 [ext_resource type="Texture2D" uid="uid://cl5virwt0pvrc" path="res://assets/textures/prototype/purple/texture_02.png" id="6_c6n0q"]
+[ext_resource type="Resource" uid="uid://dgwjktr2hu4c5" path="res://data/modern_house_large.tres" id="8_p83ml"]
 [ext_resource type="Texture2D" uid="uid://dy3e4smobf4wj" path="res://assets/textures/prototype/red/texture_02.png" id="9_shc0q"]
 [ext_resource type="Texture2D" uid="uid://ceh1psmukhbfv" path="res://assets/textures/prototype/orange/texture_02.png" id="12_amv0v"]
 [ext_resource type="Texture2D" uid="uid://bkbh16uia54vk" path="res://assets/textures/prototype/light/texture_02.png" id="15_oe66c"]
-[ext_resource type="Texture2D" uid="uid://bhn8434hh0gu6" path="res://game/placeables/buildings/modern_house_large.png" id="18_je3ax"]
 [ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="21_pisxe"]
 [ext_resource type="Texture2D" uid="uid://bqwpongfebf8" path="res://assets/textures/prototype/dark/texture_02.png" id="23_6bjmw"]
 
@@ -22,6 +22,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -51,6 +53,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -80,6 +84,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -109,6 +115,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -138,35 +146,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
-energyNeed = 0
-peopleNeed = 0
-peopleMax = 0
-ticks_every_x_seconds = 1
-energized_ticks_every_x_seconds = 1
-prod_materials_perTick = 0
-prod_money_perTick = 0
-prod_food = 0
-prod_energy = 0
-prod_housing = 0
-energized_prod_materials_perTick = 0
-energized_prod_money_perTick = 0
-energized_prod_food = 0
-energized_prod_energy = 0
-energized_prod_housing = 0
-module_ID = 0
-rotation = 0.0
-
-[sub_resource type="Resource" id="Resource_qmcg1"]
-script = ExtResource("2_3knpf")
-name = "Modern House Large"
-path = "res://game/placeables/buildings/house_10x10.tscn"
-texture = ExtResource("18_je3ax")
-description = "Has a large slot on top"
-slot_type = 2
-slot_orientation = 1
-materials = 0
-money = 0
-people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -196,6 +177,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -225,6 +208,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -254,6 +239,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -283,6 +270,8 @@ slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -301,17 +290,22 @@ energized_prod_housing = 0
 module_ID = 0
 rotation = 0.0
 
+[sub_resource type="Resource" id="Resource_mmvhg"]
+metadata/__load_path__ = "res://game/placeables/buildings/modern_house_large.png"
+
 [sub_resource type="Resource" id="Resource_yiqa4"]
 script = ExtResource("2_3knpf")
 name = "Timber Double House Large"
 path = "res://game/placeables/buildings/timber_house_10x20.tscn"
-texture = ExtResource("18_je3ax")
+texture = SubResource("Resource_mmvhg")
 description = "House with a lot of building space"
 slot_type = 2
 slot_orientation = 0
 materials = 100
 money = 100
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -330,17 +324,22 @@ energized_prod_housing = 0
 module_ID = 0
 rotation = 0.0
 
+[sub_resource type="Resource" id="Resource_h7fs4"]
+metadata/__load_path__ = "res://game/placeables/buildings/modern_house_large.png"
+
 [sub_resource type="Resource" id="Resource_0cq0b"]
 script = ExtResource("2_3knpf")
 name = "Modern House with Platforms"
 path = "res://game/placeables/buildings/modern_house_10x10x10.tscn"
-texture = ExtResource("18_je3ax")
+texture = SubResource("Resource_h7fs4")
 description = "Large, platforms yada yada"
 slot_type = 2
 slot_orientation = 0
 materials = 0
 money = 0
 people = 0
+isActive = false
+isEnergized = false
 energyNeed = 0
 peopleNeed = 0
 peopleMax = 0
@@ -361,4 +360,4 @@ rotation = 0.0
 
 [node name="Database" type="Node"]
 script = ExtResource("1_87apn")
-placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_pc33a"), SubResource("Resource_8mema"), SubResource("Resource_skrss"), SubResource("Resource_avyl5"), SubResource("Resource_51wv3"), SubResource("Resource_qmcg1"), SubResource("Resource_b35v2"), SubResource("Resource_7hm13"), SubResource("Resource_jm1ww"), SubResource("Resource_xy6w1"), SubResource("Resource_yiqa4"), SubResource("Resource_0cq0b")])
+placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_pc33a"), SubResource("Resource_8mema"), SubResource("Resource_skrss"), SubResource("Resource_avyl5"), SubResource("Resource_51wv3"), ExtResource("8_p83ml"), SubResource("Resource_b35v2"), SubResource("Resource_7hm13"), SubResource("Resource_jm1ww"), SubResource("Resource_xy6w1"), SubResource("Resource_yiqa4"), SubResource("Resource_0cq0b")])

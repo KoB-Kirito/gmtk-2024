@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnjlkfj4q4p0k"]
+
+[ext_resource type="Script" path="res://game/collectible/collectible.gd" id="1_fhccm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v58lx"]
+radius = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbdjr"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7ufqv"]
+material = SubResource("StandardMaterial3D_xbdjr")
+radius = 5.0
+height = 10.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dtt6y"]
+radius = 6.0
+
+[node name="Collectible" type="RigidBody3D"]
+script = ExtResource("1_fhccm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_v58lx")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual"]
+mesh = SubResource("SphereMesh_7ufqv")
+skeleton = NodePath("../..")
+
+[node name="CollectArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectArea"]
+shape = SubResource("SphereShape3D_dtt6y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

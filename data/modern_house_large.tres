@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://dgwjktr2hu4c5"]
+
+[ext_resource type="Script" path="res://game/ui/unit_data.gd" id="1_g0cba"]
+[ext_resource type="Texture2D" uid="uid://ctpemcoabj487" path="res://game/placeables/buildings/modern_house_10x10x10.png" id="2_q44bh"]
+
+[resource]
+script = ExtResource("1_g0cba")
+name = "Modern House Large"
+path = "res://game/placeables/buildings/house_10x10.tscn"
+texture = ExtResource("2_q44bh")
+description = "Has a large slot on top"
+slot_type = 2
+slot_orientation = 1
+materials = 0
+money = 0
+people = 0
+isActive = false
+isEnergized = false
+energyNeed = 0
+peopleNeed = 0
+peopleMax = 0
+ticks_every_x_seconds = 1
+energized_ticks_every_x_seconds = 1
+prod_materials_perTick = 0
+prod_money_perTick = 0
+prod_food = 0
+prod_energy = 0
+prod_housing = 0
+energized_prod_materials_perTick = 0
+energized_prod_money_perTick = 0
+energized_prod_food = 0
+energized_prod_energy = 0
+energized_prod_housing = 0
+module_ID = 0
+rotation = 0.0

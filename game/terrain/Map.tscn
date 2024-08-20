@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfyq0pwy6e1kl"]
+[gd_scene load_steps=17 format=3 uid="uid://cfyq0pwy6e1kl"]
 
 [ext_resource type="Script" path="res://addons/terraincrafter/terrain_crafter.gd" id="2_y15o3"]
 [ext_resource type="Shader" path="res://addons/terraincrafter/generator_resources/terrain_shader.gdshader" id="3_7lo6u"]
 [ext_resource type="Texture2D" uid="uid://exeg38jtm0yn" path="res://game/terrain/texturen/snow1_s.jpg" id="3_xt66i"]
 [ext_resource type="PackedScene" uid="uid://d07fjyk53j4ls" path="res://game/robot/robot.tscn" id="6_d65or"]
 [ext_resource type="Texture2D" uid="uid://bd1jyqcceievr" path="res://game/terrain/texturen/snow_rough_s.jpg" id="6_y6pix"]
-[ext_resource type="Script" path="res://addons/terraincrafter/assets/example_ship/scripts/ship_camera.gd" id="8_f7jbf"]
 [ext_resource type="Shader" path="res://addons/terraincrafter/assets/example_level/water.gdshader" id="9_a0rco"]
 [ext_resource type="Script" path="res://addons/terraincrafter/assets/example_level/water.gd" id="10_nnbgs"]
 
@@ -121,24 +120,15 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_xmwso")
 
 [node name="Robot" parent="." instance=ExtResource("6_d65or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 200, -0.662)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 40, -0.662)
 
-[node name="FollowCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 310.935, -27.3319)
-current = true
-fov = 46.3
-far = 5000.0
-script = ExtResource("8_f7jbf")
-lerp_speed = 30.0
-target_path = NodePath("../Robot")
-offset = Vector3(0, 160, 300)
-
-[node name="Water" type="MeshInstance3D" parent="."]
+[node name="Water" type="MeshInstance3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -75.1754, 0)
 layers = 3
 mesh = SubResource("PlaneMesh_y5lfv")
 surface_material_override/0 = SubResource("ShaderMaterial_gxwin")
 script = ExtResource("10_nnbgs")
+player = NodePath("../Robot")
 follow_height = -180.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Water"]

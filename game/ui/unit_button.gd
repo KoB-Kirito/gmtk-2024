@@ -4,9 +4,10 @@ extends TextureButton
 
 const preview_shader = preload("res://game/placeables/preview_material.tres")
 
-signal unit_selected(unit_data: UnitData, rotation: float)
+signal unit_selected(item: InventoryItem, rotation: float)
 
 var _slot: BuildingSlot
+var _item: InventoryItem
 var _unit_data: UnitData
 
 var module: Placeable
@@ -19,19 +20,26 @@ var module_area_is_free: bool = false:
 		if value != module_area_is_free:
 			module_area_is_free = value
 			if module_area_is_free:
-				RenderingServer.global_shader_parameter_set("preview_color", Color.GREEN)
+				RenderingServer.global_shader_parameter_set("preview_color", Color(0.2, 1.0, 0.2, 0.8))
 			else:
-				RenderingServer.global_shader_parameter_set("preview_color", Color.RED)
+				RenderingServer.global_shader_parameter_set("preview_color", Color(1.0, 0.2, 0.2, 0.8))
 
 
 
-func setup(unit_data: UnitData, slot: BuildingSlot) -> void:
+func setup(item: InventoryItem, slot: BuildingSlot) -> void:
 	_slot = slot
-	_unit_data = unit_data
+	_item = item
+	_unit_data = item.unit_data
 	
 	#TODO: name
-	tooltip_text = unit_data.name + "\n" + unit_data.description
-	texture_normal = unit_data.texture
+	tooltip_text = _unit_data.name + "\n" + _unit_data.description
+	texture_normal = _unit_data.texture
+	
+	# amount
+	if item.amount > 0:
+		%AmountLabel.text = str(item.amount)
+	else:
+		%AmountLabel.text = "∞"
 
 
 func _on_mouse_entered() -> void:
@@ -80,8 +88,8 @@ func _on_mouse_exited() -> void:
 
 func _on_pressed() -> void:
 	if module_area_is_free:
-		_unit_data.rotation = applied_rotation
-		unit_selected.emit(_unit_data)
+		_item.unit_data.rotation = applied_rotation
+		unit_selected.emit(_item)
 		
 	else:
 		unit_selected.emit(null)

@@ -15,7 +15,7 @@ func setup(slot: BuildingSlot) -> void:
 		var unit := item.unit_data
 		
 		var unit_button = UNIT_BUTTON.instantiate()
-		unit_button.setup(unit, slot)
+		unit_button.setup(item, slot)
 		%GridContainer.add_child(unit_button)
 		
 		# check if unit can be placed in slot
