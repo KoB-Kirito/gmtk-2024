@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4gyrr74gsf0o"]
+[gd_scene load_steps=17 format=3 uid="uid://c4gyrr74gsf0o"]
 
 [ext_resource type="Script" path="res://assets/Nomi/Levels/game_manager.gd" id="1_2wocj"]
 [ext_resource type="Script" path="res://assets/Nomi/Levels/player_manager.gd" id="2_7cadx"]
@@ -19,6 +19,14 @@ texture = ExtResource("4_4qrcf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_snwc1"]
 texture = ExtResource("5_n28ey")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4uw5l"]
+texture = ExtResource("5_n28ey")
+texture_margin_left = 48.0
+texture_margin_top = 48.0
+texture_margin_right = 48.0
+texture_margin_bottom = 48.0
+modulate_color = Color(1, 1, 1, 0.560784)
 
 [node name="BaseScene" type="Node3D"]
 
@@ -324,9 +332,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(480, 1080)
 offset_right = 480.0
 offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4uw5l")
 
 [node name="Module_UI_Container" type="VBoxContainer" parent="GameManager/UI_Manager/CanvasLayer/PanelContainer2"]
 layout_mode = 2
 
-[connection signal="Tick_second" from="GameManager" to="GameManager/Player_Manager_1" method="ressourcePerTick"]
 [connection signal="Tick_second" from="GameManager" to="GameManager/Player_Manager_1" method="exectueAtTick"]
+[connection signal="Tick_second" from="GameManager" to="GameManager/Player_Manager_1" method="ressourcePerTick"]

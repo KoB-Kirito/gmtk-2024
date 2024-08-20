@@ -109,6 +109,9 @@ func exectueAtTick() -> void:
 	res_energy_produced = 0
 	res_energy_used = 0
 
+	Globals.playerManager.res_money += 1
+	Globals.playerManager.res_materials += 1
+				
 	
 	
 	
