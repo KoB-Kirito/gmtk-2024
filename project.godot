@@ -28,7 +28,6 @@ Globals="*res://autoloads/globals.gd"
 PauseMenu="*res://autoloads/pause_menu.tscn"
 SceneTransition="*res://autoloads/scene_transition.tscn"
 Database="*res://autoloads/database.tscn"
-PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [dialogic]
 
@@ -73,7 +72,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SimpleTerrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/lightweight_state_machine/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/terraincrafter/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleTerrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/terraincrafter/plugin.cfg")
 
 [gui]
 

@@ -25,11 +25,13 @@ func setup(slot: BuildingSlot) -> void:
 		if slot.slot_type >= unit.slot_type:
 			# only allow matching orientation
 			if unit.slot_orientation == Globals.SlotOrientation.ALL or slot_orientation == unit.slot_orientation:
-				# check resources
-				var p_manager := Globals.playerManager
-				assert(p_manager, "player manager is missing, set in Globals")
+				var p_manager: player_manager
+				if not Globals.free_mode:
+					# check resources
+					p_manager = Globals.playerManager
+					assert(p_manager, "player manager is missing, set in Globals")
 				
-				if p_manager.res_materials >= unit.materials and p_manager.res_money >= unit.money:
+				if Globals.free_mode or (p_manager.res_materials >= unit.materials and p_manager.res_money >= unit.money):
 					unit_button.unit_selected.connect(func(unit_data): unit_selected.emit(unit_data))
 					
 				else:

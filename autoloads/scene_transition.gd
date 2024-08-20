@@ -6,7 +6,8 @@ class Options:
 	
 	var transition: int = FADE
 	var color: Color = Color.BLACK
-	var duration: float = 1.0
+	var duration_out: float = 1.0
+	var duration_in: float = 1.0
 	
 	var new_bgm: AudioStream
 	var volume: float = 0.0
@@ -48,27 +49,27 @@ func change_scene(data: Options) -> void:
 			%Fade.position.x = get_right_position()
 			
 			if data.new_bgm:
-				tween.tween_callback(func(): Bgm.fade_out(data.duration / 2))
-			tween.tween_property(%Fade, "position:x", get_middle_position(), data.duration / 2)
+				tween.tween_callback(func(): Bgm.fade_out(data.duration_out / 2))
+			tween.tween_property(%Fade, "position:x", get_middle_position(), data.duration_out / 2)
 			
 			tween.tween_callback(func(): get_tree().change_scene_to_file(data.scene_path))
 			
 			if data.new_bgm:
-				tween.tween_callback(func(): Bgm.fade_to(data.new_bgm, data.volume, data.duration / 2))
-			tween.tween_property(%Fade, "position:x", get_left_position(), data.duration / 2)
+				tween.tween_callback(func(): Bgm.fade_to(data.new_bgm, data.volume, data.duration_in / 2))
+			tween.tween_property(%Fade, "position:x", get_left_position(), data.duration_in / 2)
 		
 		FADE:
 			%Fade.modulate = Color.TRANSPARENT
 			%Fade.position.x = get_middle_position()
 			
 			if data.new_bgm:
-				tween.tween_callback(func(): Bgm.fade_out(data.duration / 2))
-			tween.tween_property(%Fade, "modulate", Color.WHITE, data.duration / 2)
+				tween.tween_callback(func(): Bgm.fade_out(data.duration_out / 2))
+			tween.tween_property(%Fade, "modulate", Color.WHITE, data.duration_out / 2)
 			
 			tween.tween_callback(func(): get_tree().change_scene_to_file(data.scene_path))
 			
 			if data.new_bgm:
-				tween.tween_callback(func(): Bgm.fade_to(data.new_bgm, data.volume, data.duration / 2))
-			tween.tween_property(%Fade, "modulate", Color.TRANSPARENT, data.duration / 2)
+				tween.tween_callback(func(): Bgm.fade_to(data.new_bgm, data.volume, data.duration_in / 2))
+			tween.tween_property(%Fade, "modulate", Color.TRANSPARENT, data.duration_in / 2)
 	
 	tween.tween_callback(func(): %Fade.hide())
