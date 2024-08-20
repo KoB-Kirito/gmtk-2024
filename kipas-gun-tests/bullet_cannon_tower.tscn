@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://4l0p8d80xf0a"]
+
+[ext_resource type="Script" path="res://kipas-gun-tests/bullet_cannon_tower.gd" id="1_smsrf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_syrtx"]
+radius = 0.586765
+
+[sub_resource type="SphereMesh" id="SphereMesh_d3p8b"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayfjf"]
+albedo_color = Color(0.129558, 0.129558, 0.129558, 1)
+
+[node name="BulletCannonTower" type="Area3D"]
+script = ExtResource("1_smsrf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_syrtx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_d3p8b")
+surface_material_override/0 = SubResource("StandardMaterial3D_ayfjf")
+
+[node name="TimeroutTimer" type="Timer" parent="."]

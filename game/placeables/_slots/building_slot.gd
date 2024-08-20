@@ -26,13 +26,18 @@ func _on_mouse_click_detector_mouse_clicked(button_index: int, event_position: V
 			add_child(unit_panel)
 			unit_panel.set_panel_position(screen_position)
 			
-			var unit: UnitData = await unit_panel.unit_selected
+			var item: InventoryItem = await unit_panel.unit_selected
 			
 			unit_panel.queue_free()
 			
-			if unit:
-				print("Picked unit: ", unit.name)
-				build(unit)
+			if item:
+				print("Picked unit: ", item.unit_data.name)
+				build(item.unit_data)
+				
+				# remove item
+				item.amount -= 1
+				if item.amount <= 0:
+					Globals.inventory.erase(item)
 				
 			else:
 				print("UI cancelled")

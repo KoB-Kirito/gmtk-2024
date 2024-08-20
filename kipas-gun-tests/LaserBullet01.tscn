@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://1w8oqunnnlpk"]
+
+[ext_resource type="Script" path="res://kipas-gun-tests/LaserBullet.gd" id="1_q7143"]
+[ext_resource type="Material" uid="uid://cexql3lhhsctk" path="res://kipas-gun-tests/LaserBullet01.tres" id="2_hcr3a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jlf13"]
+radius = 0.19
+height = 4.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_358o1"]
+material = ExtResource("2_hcr3a")
+radius = 0.05
+height = 4.0
+
+[node name="LaserBullet01" type="Area3D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_q7143")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 2.00017)
+shape = SubResource("CapsuleShape3D_jlf13")
+
+[node name="TimeroutTimer" type="Timer" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 2)
+mesh = SubResource("CapsuleMesh_358o1")
+
+[connection signal="timeout" from="TimeroutTimer" to="." method="_on_timerout_timer_timeout"]
