@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boynad28c26yu"
+path="res://.godot/imported/rusty-mech-stomp-sfx-83548.mp3-214f2b083ac4127bb0cbe4c7679a1638.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sound/sound effects/rusty-mech-stomp-sfx-83548.mp3"
+dest_files=["res://.godot/imported/rusty-mech-stomp-sfx-83548.mp3-214f2b083ac4127bb0cbe4c7679a1638.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

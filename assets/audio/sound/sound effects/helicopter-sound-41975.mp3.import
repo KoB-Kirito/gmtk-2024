@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dg7ho3xaxtn74"
+path="res://.godot/imported/helicopter-sound-41975.mp3-7b65ff9ca13465d9792ea76232a6a5b0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sound/sound effects/helicopter-sound-41975.mp3"
+dest_files=["res://.godot/imported/helicopter-sound-41975.mp3-7b65ff9ca13465d9792ea76232a6a5b0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
