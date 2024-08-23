@@ -76,7 +76,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SimpleTerrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/terraincrafter/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/terraincrafter/plugin.cfg")
 
 [global_group]
 
