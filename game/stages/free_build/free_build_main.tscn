@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bs863hfhagxve"]
+[gd_scene load_steps=14 format=3 uid="uid://bs863hfhagxve"]
 
 [ext_resource type="PackedScene" uid="uid://dn4dashthsf4l" path="res://menu/main_menu/main_menu.tscn" id="1_ekqun"]
 [ext_resource type="Script" path="res://game/stages/free_build/free_build_main.gd" id="1_owfel"]
@@ -6,8 +6,6 @@
 [ext_resource type="Shader" path="res://addons/terraincrafter/generator_resources/terrain_shader.gdshader" id="3_gxy36"]
 [ext_resource type="Texture2D" uid="uid://exeg38jtm0yn" path="res://game/terrain/texturen/snow1_s.jpg" id="4_yl40o"]
 [ext_resource type="Texture2D" uid="uid://bd1jyqcceievr" path="res://game/terrain/texturen/snow_rough_s.jpg" id="5_epppq"]
-[ext_resource type="Shader" path="res://addons/terraincrafter/assets/example_level/water.gdshader" id="8_6a8k0"]
-[ext_resource type="Script" path="res://addons/terraincrafter/assets/example_level/water.gd" id="9_22ryj"]
 [ext_resource type="PackedScene" uid="uid://d07fjyk53j4ls" path="res://game/robot/robot.tscn" id="9_e3xu1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gpdl0"]
@@ -68,28 +66,6 @@ shader_parameter/texture_low = ExtResource("5_epppq")
 shader_parameter/texture_medium = ExtResource("4_yl40o")
 shader_parameter/texture_high = ExtResource("4_yl40o")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_y5lfv"]
-size = Vector2(10000, 10000)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxwin"]
-render_priority = 1
-shader = ExtResource("8_6a8k0")
-shader_parameter/depth_fade_distance = 2.041
-shader_parameter/absorbance = 0.521
-shader_parameter/shallow_color = Color(0.36105, 0.707403, 1, 1)
-shader_parameter/deep_color = Color(0, 0.25, 0.45, 1)
-shader_parameter/foam_amount = 2.0
-shader_parameter/foam_color = Color(1, 1, 1, 1)
-shader_parameter/roughness = 0.819
-shader_parameter/wave_scale = 4.0
-shader_parameter/height_scale = 0.15
-shader_parameter/wave_dir1 = Vector2(1, 0)
-shader_parameter/wave_dir2 = Vector2(0, 1)
-shader_parameter/wave_speed = 0.0
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r6gj8"]
-points = PackedVector3Array(-3000, 0, -3000, -3000, 0, 3000, 3000, 0, -3000, 3000, 0, 3000)
-
 [node name="FreeBuild" type="Node3D"]
 script = ExtResource("1_owfel")
 
@@ -123,20 +99,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
 mesh = SubResource("PlaneMesh_w8kbc")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_xmwso")
-
-[node name="Water" type="MeshInstance3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -75.1754, 0)
-layers = 3
-mesh = SubResource("PlaneMesh_y5lfv")
-surface_material_override/0 = SubResource("ShaderMaterial_gxwin")
-script = ExtResource("9_22ryj")
-player = NodePath("../Robot")
-follow_height = -180.0
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Water"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_r6gj8")
 
 [node name="Robot" parent="." instance=ExtResource("9_e3xu1")]
 unique_name_in_owner = true
