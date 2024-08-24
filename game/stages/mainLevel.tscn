@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c4gyrr74gsf0o" path="res://assets/Nomi/Levels/baseScene.tscn" id="1_2wchk"]
 [ext_resource type="Script" path="res://game/stages/main_level.gd" id="1_uu5gw"]
+[ext_resource type="Script" path="res://game/managers/enemy_manager.gd" id="3_5xkly"]
 [ext_resource type="Script" path="res://addons/terraincrafter/terrain_crafter.gd" id="3_sg3n2"]
 [ext_resource type="PackedScene" uid="uid://cnjlkfj4q4p0k" path="res://game/collectible/collectible.tscn" id="3_v7qen"]
 [ext_resource type="Shader" path="res://addons/terraincrafter/generator_resources/terrain_shader.gdshader" id="4_x1w6f"]
 [ext_resource type="Texture2D" uid="uid://exeg38jtm0yn" path="res://game/terrain/texturen/snow1_s.jpg" id="5_txt3k"]
 [ext_resource type="Texture2D" uid="uid://bd1jyqcceievr" path="res://game/terrain/texturen/snow_rough_s.jpg" id="6_bm5j6"]
 [ext_resource type="PackedScene" uid="uid://d07fjyk53j4ls" path="res://game/robot/robot.tscn" id="7_qrtt6"]
-[ext_resource type="PackedScene" uid="uid://m5aeoemhvncv" path="res://game/stages/enemy_spawner.tscn" id="8_dylxs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gpdl0"]
 sky_top_color = Color(0.211765, 0.313726, 0.552941, 1)
@@ -73,6 +73,15 @@ script = ExtResource("1_uu5gw")
 [node name="BaseScene" parent="." instance=ExtResource("1_2wchk")]
 unique_name_in_owner = true
 
+[node name="SpawnManager" type="Node" parent="." node_paths=PackedStringArray("locations_root", "enemies_root", "collectibles_root")]
+unique_name_in_owner = true
+script = ExtResource("3_5xkly")
+locations_root = NodePath("../World/Robot/SpawnLocations")
+enemies_root = NodePath("../World/Enemies")
+enemie_scene_paths = Array[String](["res://game/enemies/robot_enemy1.tscn", "res://game/enemies/robot_enemy2.tscn", "res://game/enemies/robot_enemy3.tscn", "res://game/enemies/robot_enemy4.tscn", "res://game/enemies/robot_enemy5.tscn", "res://game/enemies/heli_neu.tscn", "res://game/enemies/heli_neu2.tscn"])
+collectibles_root = NodePath("../World/Collectibles")
+collectible_scene_path = "res://game/collectible/collectible.tscn"
+
 [node name="World" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
@@ -108,26 +117,25 @@ surface_material_override/0 = SubResource("ShaderMaterial_xmwso")
 [node name="Robot" parent="World" instance=ExtResource("7_qrtt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 21.5093, -0.662)
 
-[node name="EnemySpawner1" parent="World/Robot" node_paths=PackedStringArray("parent_node") instance=ExtResource("8_dylxs")]
-unique_name_in_owner = true
-parent_node = NodePath("../..")
+[node name="SpawnLocations" type="Node3D" parent="World/Robot"]
 
-[node name="EnemySpawner2" parent="World/Robot" node_paths=PackedStringArray("parent_node") instance=ExtResource("8_dylxs")]
-unique_name_in_owner = true
+[node name="1" type="Node3D" parent="World/Robot/SpawnLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -616.89, 141.142, -825.812)
+
+[node name="2" type="Node3D" parent="World/Robot/SpawnLocations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 937.516, 141.142, -825.812)
-parent_node = NodePath("../..")
 
-[node name="EnemySpawner3" parent="World/Robot" node_paths=PackedStringArray("parent_node") instance=ExtResource("8_dylxs")]
-unique_name_in_owner = true
+[node name="3" type="Node3D" parent="World/Robot/SpawnLocations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 937.516, 141.142, 555.464)
-parent_node = NodePath("../..")
 
-[node name="EnemySpawner4" parent="World/Robot" node_paths=PackedStringArray("parent_node") instance=ExtResource("8_dylxs")]
-unique_name_in_owner = true
+[node name="4" type="Node3D" parent="World/Robot/SpawnLocations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -899.011, 141.142, 555.464)
-parent_node = NodePath("../..")
 
-[node name="Collectible" parent="." instance=ExtResource("3_v7qen")]
+[node name="Enemies" type="Node3D" parent="World"]
+
+[node name="Collectibles" type="Node3D" parent="World"]
+
+[node name="Collectible" parent="World/Collectibles" instance=ExtResource("3_v7qen")]
 transform = Transform3D(0.945519, 0, 0.325568, 0.295781, -0.417867, -0.859011, 0.136044, 0.908508, -0.395101, 6.78468, 143.412, -175.644)
 
-[connection signal="collected" from="Collectible" to="." method="_on_collectible_collected"]
+[connection signal="collected" from="World/Collectibles/Collectible" to="." method="_on_collectible_collected"]

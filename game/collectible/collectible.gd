@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 
-signal collected
+signal collected(item: InventoryItem)
 
 
 func _on_collect_area_area_entered(area: Area3D) -> void:
@@ -28,5 +28,5 @@ func _on_collect_area_area_entered(area: Area3D) -> void:
 		
 		# remove collectible
 		#TODO: sfx, audio
-		collected.emit()
+		collected.emit(item)
 		queue_free()
