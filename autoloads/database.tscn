@@ -1,48 +1,54 @@
-[gd_scene load_steps=67 format=3 uid="uid://31o8nvgnpkwq"]
+[gd_scene load_steps=79 format=3 uid="uid://31o8nvgnpkwq"]
 
 [ext_resource type="Script" path="res://autoloads/database.gd" id="1_87apn"]
 [ext_resource type="Script" path="res://game/ui/unit_data.gd" id="2_3knpf"]
-[ext_resource type="Texture2D" uid="uid://quyrrwu8ovw8" path="res://game/placeables/buildings/5x5_modern_Fluegelturm.png" id="3_0fvfl"]
-[ext_resource type="Texture2D" uid="uid://ctpemcoabj487" path="res://game/placeables/buildings/modern_house_10x10x10.png" id="4_rsnop"]
-[ext_resource type="Texture2D" uid="uid://bd4hghnythr5v" path="res://game/placeables/buildings/JapaneseHouse.png" id="5_nt0oo"]
-[ext_resource type="Texture2D" uid="uid://b5yiktqtck2ad" path="res://game/placeables/buildings/Haus10x20.png" id="6_ymnbq"]
+[ext_resource type="Texture2D" uid="uid://quyrrwu8ovw8" path="res://game/placeables/medium/modern_wingtower.png" id="3_0fvfl"]
+[ext_resource type="Texture2D" uid="uid://ctpemcoabj487" path="res://game/placeables/large/modern_house_armed.png" id="4_rsnop"]
+[ext_resource type="Texture2D" uid="uid://bd4hghnythr5v" path="res://game/placeables/medium/eastern_temple.png" id="5_nt0oo"]
+[ext_resource type="Texture2D" uid="uid://b5yiktqtck2ad" path="res://game/placeables/large/timber_house_double.png" id="6_ymnbq"]
 [ext_resource type="Texture2D" uid="uid://ddif1s80bwbbj" path="res://game/placeables/towers/gun.png" id="7_025sk"]
 [ext_resource type="Texture2D" uid="uid://dbgdq0302kj3o" path="res://game/placeables/towers/minigun.png" id="8_t83vu"]
-[ext_resource type="Texture2D" uid="uid://v4rnv8wwdqu0" path="res://game/placeables/buildings/5x5_module_modern_generator.png" id="10_ndxxs"]
-[ext_resource type="Texture2D" uid="uid://coq58sid07t8s" path="res://game/placeables/buildings/5x5_module_modern_MtoS.png" id="11_u7e1f"]
-[ext_resource type="Texture2D" uid="uid://jdxryec3qhlx" path="res://game/placeables/buildings/10x10_modern_appartments.png" id="12_arcrg"]
-[ext_resource type="Texture2D" uid="uid://c85476820opgm" path="res://game/placeables/buildings/Balkon5x5.png" id="13_4pm7c"]
-[ext_resource type="Texture2D" uid="uid://bewbq1wip3te5" path="res://game/placeables/buildings/Balkon5x20.png" id="14_6p6h3"]
-[ext_resource type="Texture2D" uid="uid://dxijj84xrp10e" path="res://game/placeables/buildings/Balkon10x20.png" id="15_muj45"]
-[ext_resource type="Texture2D" uid="uid://ci5w341eg6bgm" path="res://game/placeables/buildings/Bambus5x5.png" id="16_efe23"]
-[ext_resource type="Texture2D" uid="uid://dpxhon5q3fd1x" path="res://game/placeables/buildings/Beet5x5.png" id="17_18c7a"]
-[ext_resource type="Texture2D" uid="uid://gi6jab8sco1r" path="res://game/placeables/buildings/Bonsai.png" id="18_02v76"]
-[ext_resource type="Texture2D" uid="uid://cq0a7wmpqje8" path="res://game/placeables/buildings/Busch2x2.png" id="19_5oxip"]
-[ext_resource type="Texture2D" uid="uid://b7vvr5k6aujmc" path="res://game/placeables/buildings/forge.png" id="20_7puen"]
-[ext_resource type="Texture2D" uid="uid://dx5h3p6ihxk40" path="res://game/placeables/buildings/greenhouse.png" id="21_bx8qc"]
-[ext_resource type="Texture2D" uid="uid://c0m7of20otb8l" path="res://game/placeables/buildings/Haus10x10.png" id="22_ogk1n"]
-[ext_resource type="Texture2D" uid="uid://n7yyqcwvflex" path="res://game/placeables/buildings/Haus10x10Dach.png" id="23_46ut0"]
-[ext_resource type="Texture2D" uid="uid://b4rk6tevqx0bu" path="res://game/placeables/buildings/House5x5.png" id="24_oc3np"]
-[ext_resource type="Texture2D" uid="uid://doqxqhffqxkeo" path="res://game/placeables/buildings/House10x10.png" id="25_qopvg"]
-[ext_resource type="Texture2D" uid="uid://dmhn8mpxjssli" path="res://game/placeables/buildings/JapaneseAddOne.png" id="26_ufq3x"]
-[ext_resource type="Texture2D" uid="uid://4s1yag5bbc5a" path="res://game/placeables/buildings/JapaneseFlat.png" id="27_h4fhg"]
-[ext_resource type="Texture2D" uid="uid://clv8g8mofvpid" path="res://game/placeables/buildings/modern_pyramid.png" id="28_cwel0"]
-[ext_resource type="Texture2D" uid="uid://bcutqrch4o4bp" path="res://game/placeables/buildings/Stockwerk5x20.png" id="29_5ho32"]
-[ext_resource type="Texture2D" uid="uid://dmy3wqdueo4dt" path="res://game/placeables/buildings/Stockwerk10x20.png" id="30_oimdh"]
-[ext_resource type="Texture2D" uid="uid://d7hotoajwwmd" path="res://game/placeables/buildings/Stockwerk10x20Dach.png" id="31_md3pv"]
-[ext_resource type="Texture2D" uid="uid://ccag5advvvkeh" path="res://game/placeables/buildings/Tank5x5.png" id="32_80jpq"]
-[ext_resource type="Texture2D" uid="uid://dhwu524yw8v4x" path="res://game/placeables/buildings/Tanklager10x10.png" id="33_q3a88"]
-[ext_resource type="Texture2D" uid="uid://b0jpe0wufb2tt" path="res://game/placeables/buildings/techlab.png" id="34_w10y8"]
-[ext_resource type="Texture2D" uid="uid://chu8esj577tfh" path="res://game/placeables/buildings/Windmühle.png" id="35_f5pnr"]
+[ext_resource type="Texture2D" uid="uid://v4rnv8wwdqu0" path="res://game/placeables/medium/modern_generator.png" id="10_ndxxs"]
+[ext_resource type="Texture2D" uid="uid://coq58sid07t8s" path="res://game/placeables/medium/modern_m_to_s.png" id="11_u7e1f"]
+[ext_resource type="Texture2D" uid="uid://jdxryec3qhlx" path="res://game/placeables/large/modern_appartments.png" id="12_arcrg"]
+[ext_resource type="Texture2D" uid="uid://c85476820opgm" path="res://game/placeables/medium/desert_balcony.png" id="13_4pm7c"]
+[ext_resource type="Texture2D" uid="uid://bewbq1wip3te5" path="res://game/placeables/medium/timber_balcony_wide.png" id="14_6p6h3"]
+[ext_resource type="Texture2D" uid="uid://dxijj84xrp10e" path="res://game/placeables/large/timber_balcony_large.png" id="15_muj45"]
+[ext_resource type="Texture2D" uid="uid://ci5w341eg6bgm" path="res://game/placeables/medium/bamboo.png" id="16_efe23"]
+[ext_resource type="Texture2D" uid="uid://dpxhon5q3fd1x" path="res://game/placeables/medium/plantation.png" id="17_18c7a"]
+[ext_resource type="Texture2D" uid="uid://gi6jab8sco1r" path="res://game/placeables/small/bonsai.png" id="18_02v76"]
+[ext_resource type="Texture2D" uid="uid://cq0a7wmpqje8" path="res://game/placeables/small/bush.png" id="19_5oxip"]
+[ext_resource type="Texture2D" uid="uid://b7vvr5k6aujmc" path="res://game/placeables/large/forge.png" id="20_7puen"]
+[ext_resource type="Texture2D" uid="uid://dx5h3p6ihxk40" path="res://game/placeables/large/greenhouse.png" id="21_bx8qc"]
+[ext_resource type="Texture2D" uid="uid://c0m7of20otb8l" path="res://game/placeables/large/timber_house_large.png" id="22_ogk1n"]
+[ext_resource type="Texture2D" uid="uid://n7yyqcwvflex" path="res://game/placeables/large/timber_house_large_roof.png" id="23_46ut0"]
+[ext_resource type="Texture2D" uid="uid://b4rk6tevqx0bu" path="res://game/placeables/medium/desert_hut.png" id="24_oc3np"]
+[ext_resource type="Texture2D" uid="uid://doqxqhffqxkeo" path="res://game/placeables/large/desert_house.png" id="25_qopvg"]
+[ext_resource type="Texture2D" uid="uid://dmhn8mpxjssli" path="res://game/placeables/medium/eastern_house.png" id="26_ufq3x"]
+[ext_resource type="Texture2D" uid="uid://4s1yag5bbc5a" path="res://game/placeables/large/eastern_flat.png" id="27_h4fhg"]
+[ext_resource type="Texture2D" uid="uid://clv8g8mofvpid" path="res://game/placeables/large/modern_flight_tower.png" id="28_cwel0"]
+[ext_resource type="Texture2D" uid="uid://bcutqrch4o4bp" path="res://game/placeables/medium/timber_storey.png" id="29_5ho32"]
+[ext_resource type="Texture2D" uid="uid://dmy3wqdueo4dt" path="res://game/placeables/large/timber_storey_large.png" id="30_oimdh"]
+[ext_resource type="Texture2D" uid="uid://d7hotoajwwmd" path="res://game/placeables/large/timber_storey_roof.png" id="31_md3pv"]
+[ext_resource type="Texture2D" uid="uid://ccag5advvvkeh" path="res://game/placeables/medium/fuel_tank.png" id="32_80jpq"]
+[ext_resource type="Texture2D" uid="uid://dhwu524yw8v4x" path="res://game/placeables/large/fuel_tank_depot.png" id="33_q3a88"]
+[ext_resource type="Texture2D" uid="uid://b0jpe0wufb2tt" path="res://game/placeables/large/techlab.png" id="34_w10y8"]
+[ext_resource type="Texture2D" uid="uid://c8i23oi1vutse" path="res://game/placeables/large/apartment_block.png" id="35_6dose"]
+[ext_resource type="Texture2D" uid="uid://chu8esj577tfh" path="res://game/placeables/medium/desert_windmill.png" id="35_f5pnr"]
+[ext_resource type="Texture2D" uid="uid://dahikfhu37cy4" path="res://game/placeables/large/desert_house_block2.png" id="36_deqmv"]
+[ext_resource type="Texture2D" uid="uid://dy3g2vmv3plf7" path="res://game/placeables/large/desert_house_block.png" id="37_x776t"]
+[ext_resource type="Texture2D" uid="uid://5l5hu2rjqvrh" path="res://game/placeables/medium/modern_windmill.png" id="38_ackk7"]
+[ext_resource type="Texture2D" uid="uid://cdlox2uw0wilv" path="res://game/placeables/medium/water_pump.png" id="39_bj713"]
+[ext_resource type="Texture2D" uid="uid://c4rx7dw3q5c7o" path="res://game/placeables/medium/greenhouse_medium.png" id="40_35rur"]
 
 [sub_resource type="Resource" id="Resource_p0k4h"]
 script = ExtResource("2_3knpf")
 name = "Modern Wingtower"
-path = "res://game/placeables/buildings/5x5_modern_Fluegelturm.tscn"
+path = "res://game/placeables/medium/modern_wingtower.tscn"
 texture = ExtResource("3_0fvfl")
 description = "Nice wing tower, no idea. Gives building slots."
 slot_type = 1
-slot_orientation = 0
+slot_orientation = 1
 materials = 60
 money = 120
 people = 0
@@ -69,7 +75,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_diyew"]
 script = ExtResource("2_3knpf")
 name = "Modern House Large"
-path = "res://game/placeables/buildings/house_10x10.tscn"
+path = "res://game/placeables/large/modern_house_armed.tscn"
 texture = ExtResource("4_rsnop")
 description = "Has two weapon slots. Makes Money."
 slot_type = 2
@@ -100,11 +106,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_8uiqs"]
 script = ExtResource("2_3knpf")
 name = "Japanese House"
-path = "res://game/placeables/buildings/JapaneseHouse.tscn"
+path = "res://game/placeables/medium/eastern_temple.tscn"
 texture = ExtResource("5_nt0oo")
 description = "Does nothing. But japanese.
 Does doch was. 20 Housing."
-slot_type = 2
+slot_type = 1
 slot_orientation = 0
 materials = 35
 money = 0
@@ -132,11 +138,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_ttxeq"]
 script = ExtResource("2_3knpf")
 name = "Double House"
-path = "res://game/placeables/placeables Steffi/haus10x20.tscn"
+path = "res://game/placeables/large/timber_house_double.tscn"
 texture = ExtResource("6_ymnbq")
 description = "Has a lot of slots."
 slot_type = 2
-slot_orientation = 0
+slot_orientation = 1
 materials = 30
 money = 30
 people = 0
@@ -225,7 +231,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_biu8u"]
 script = ExtResource("2_3knpf")
 name = "Modern Generator"
-path = "res://game/placeables/buildings/5x5_module_modern_generator.tscn"
+path = "res://game/placeables/medium/modern_generator.tscn"
 texture = ExtResource("10_ndxxs")
 description = ""
 slot_type = 1
@@ -256,7 +262,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_afo4j"]
 script = ExtResource("2_3knpf")
 name = "Modern Platform"
-path = "res://game/placeables/buildings/5x5_module_modern_MtoS.tscn"
+path = "res://game/placeables/medium/modern_m_to_s.tscn"
 texture = ExtResource("11_u7e1f")
 description = ""
 slot_type = 1
@@ -287,11 +293,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_6dgjc"]
 script = ExtResource("2_3knpf")
 name = "Modern Apartment"
-path = "res://game/placeables/buildings/10x10_modern_appartments.tscn"
+path = "res://game/placeables/large/modern_appartments.tscn"
 texture = ExtResource("12_arcrg")
 description = ""
 slot_type = 2
-slot_orientation = 0
+slot_orientation = 1
 materials = 140
 money = 200
 people = 0
@@ -318,11 +324,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_3k7jy"]
 script = ExtResource("2_3knpf")
 name = "Balcony Medium"
-path = "res://game/placeables/placeables Steffi/balkon5x5.tscn"
+path = "res://game/placeables/medium/desert_balcony.tscn"
 texture = ExtResource("13_4pm7c")
 description = ""
 slot_type = 1
-slot_orientation = 0
+slot_orientation = 2
 materials = 60
 money = 20
 people = 0
@@ -349,11 +355,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_3712e"]
 script = ExtResource("2_3knpf")
 name = "Balcony Wide"
-path = "res://game/placeables/placeables Steffi/balkon5x20.tscn"
+path = "res://game/placeables/medium/timber_balcony_wide.tscn"
 texture = ExtResource("14_6p6h3")
 description = ""
 slot_type = 1
-slot_orientation = 0
+slot_orientation = 2
 materials = 80
 money = 0
 people = 0
@@ -380,11 +386,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_1a21s"]
 script = ExtResource("2_3knpf")
 name = "Balcony Large"
-path = "res://game/placeables/placeables Steffi/balkon10x20.tscn"
+path = "res://game/placeables/large/timber_balcony_large.tscn"
 texture = ExtResource("15_muj45")
 description = ""
 slot_type = 2
-slot_orientation = 0
+slot_orientation = 2
 materials = 70
 money = 10
 people = 0
@@ -411,7 +417,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_df4l7"]
 script = ExtResource("2_3knpf")
 name = "Bamboo"
-path = "res://game/placeables/placeables Steffi/bambus5x5.tscn"
+path = "res://game/placeables/medium/bamboo.tscn"
 texture = ExtResource("16_efe23")
 description = ""
 slot_type = 1
@@ -442,7 +448,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_js0cv"]
 script = ExtResource("2_3knpf")
 name = "Grapefield"
-path = "res://game/placeables/placeables Steffi/beet5x5.tscn"
+path = "res://game/placeables/medium/plantation.tscn"
 texture = ExtResource("17_18c7a")
 description = ""
 slot_type = 1
@@ -473,7 +479,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_s85a4"]
 script = ExtResource("2_3knpf")
 name = "Bonsai"
-path = "res://game/placeables/placeables Steffi/bonsai.tscn"
+path = "res://game/placeables/small/bonsai.tscn"
 texture = ExtResource("18_02v76")
 description = ""
 slot_type = 0
@@ -504,7 +510,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_edk5d"]
 script = ExtResource("2_3knpf")
 name = "Raspberry Busch"
-path = "res://game/placeables/placeables Steffi/busch2x2.tscn"
+path = "res://game/placeables/small/bush.tscn"
 texture = ExtResource("19_5oxip")
 description = ""
 slot_type = 0
@@ -535,7 +541,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_1csvm"]
 script = ExtResource("2_3knpf")
 name = "Forge"
-path = "res://game/placeables/buildings/forge.tscn"
+path = "res://game/placeables/large/forge.tscn"
 texture = ExtResource("20_7puen")
 description = ""
 slot_type = 2
@@ -566,7 +572,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_dab8f"]
 script = ExtResource("2_3knpf")
 name = "Greenhouse"
-path = "res://game/placeables/buildings/greenhouse.tscn"
+path = "res://game/placeables/large/greenhouse.tscn"
 texture = ExtResource("21_bx8qc")
 description = ""
 slot_type = 2
@@ -597,7 +603,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_u2y4p"]
 script = ExtResource("2_3knpf")
 name = "Timber House"
-path = "res://game/placeables/placeables Steffi/haus10x10.tscn"
+path = "res://game/placeables/large/timber_house_large.tscn"
 texture = ExtResource("22_ogk1n")
 description = ""
 slot_type = 2
@@ -628,11 +634,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_8vsep"]
 script = ExtResource("2_3knpf")
 name = "Timber House with Roof"
-path = "res://game/placeables/placeables Steffi/haus10x10dach.tscn"
+path = "res://game/placeables/large/timber_house_large_roof.tscn"
 texture = ExtResource("23_46ut0")
 description = ""
 slot_type = 2
-slot_orientation = 0
+slot_orientation = 1
 materials = 85
 money = 15
 people = 0
@@ -659,7 +665,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_q7j4i"]
 script = ExtResource("2_3knpf")
 name = "Timber House Medium"
-path = "res://game/placeables/placeables Steffi/house5x5.tscn"
+path = "res://game/placeables/medium/desert_hut.tscn"
 texture = ExtResource("24_oc3np")
 description = ""
 slot_type = 1
@@ -690,11 +696,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_1vnr6"]
 script = ExtResource("2_3knpf")
 name = "Desert House Large"
-path = "res://game/placeables/placeables Steffi/house10x10.tscn"
+path = "res://game/placeables/large/desert_house.tscn"
 texture = ExtResource("25_qopvg")
 description = ""
 slot_type = 2
-slot_orientation = 0
+slot_orientation = 1
 materials = 80
 money = 40
 people = 0
@@ -721,7 +727,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_5ej6h"]
 script = ExtResource("2_3knpf")
 name = "Japanese Medium House"
-path = "res://game/placeables/buildings/JapaneseAddOne.tscn"
+path = "res://game/placeables/medium/eastern_house.tscn"
 texture = ExtResource("26_ufq3x")
 description = ""
 slot_type = 1
@@ -752,7 +758,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_ta4gh"]
 script = ExtResource("2_3knpf")
 name = "Japanese Flat"
-path = "res://game/placeables/buildings/JapaneseFlat.tscn"
+path = "res://game/placeables/large/eastern_flat.tscn"
 texture = ExtResource("27_h4fhg")
 description = ""
 slot_type = 2
@@ -783,11 +789,11 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_tawax"]
 script = ExtResource("2_3knpf")
 name = "Modern House with Platforms"
-path = "res://game/placeables/buildings/modern_house_10x10x10.tscn"
+path = "res://game/placeables/large/modern_flight_tower.tscn"
 texture = ExtResource("28_cwel0")
 description = ""
 slot_type = 2
-slot_orientation = 0
+slot_orientation = 1
 materials = 60
 money = 85
 people = 0
@@ -814,7 +820,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_cm2jb"]
 script = ExtResource("2_3knpf")
 name = "Timber Floor Medium"
-path = "res://game/placeables/placeables Steffi/stockwerk5x20.tscn"
+path = "res://game/placeables/medium/timber_storey.tscn"
 texture = ExtResource("29_5ho32")
 description = ""
 slot_type = 1
@@ -845,7 +851,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_lbdi3"]
 script = ExtResource("2_3knpf")
 name = "Timber Floor Large"
-path = "res://game/placeables/placeables Steffi/stockwerk10x20.tscn"
+path = "res://game/placeables/large/timber_storey_large.tscn"
 texture = ExtResource("30_oimdh")
 description = ""
 slot_type = 2
@@ -876,7 +882,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_6dvbf"]
 script = ExtResource("2_3knpf")
 name = "Timber Floor Large Roof"
-path = "res://game/placeables/placeables Steffi/stockwerk10x20dach.tscn"
+path = "res://game/placeables/large/timber_house_large_roof.tscn"
 texture = ExtResource("31_md3pv")
 description = ""
 slot_type = 2
@@ -907,7 +913,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_bond4"]
 script = ExtResource("2_3knpf")
 name = "Fuel Tank Medium"
-path = "res://game/placeables/placeables Steffi/tank.tscn"
+path = "res://game/placeables/medium/fuel_tank.tscn"
 texture = ExtResource("32_80jpq")
 description = ""
 slot_type = 1
@@ -938,7 +944,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_iojap"]
 script = ExtResource("2_3knpf")
 name = "Fuel Tank Storage"
-path = "res://game/placeables/placeables Steffi/tanklager10x10.tscn"
+path = "res://game/placeables/large/fuel_tank_depot.tscn"
 texture = ExtResource("33_q3a88")
 description = ""
 slot_type = 2
@@ -969,7 +975,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_c4evb"]
 script = ExtResource("2_3knpf")
 name = "Techlab"
-path = "res://game/placeables/buildings/techlab.tscn"
+path = "res://game/placeables/large/techlab.tscn"
 texture = ExtResource("34_w10y8")
 description = ""
 slot_type = 2
@@ -1000,7 +1006,7 @@ rotation = 0.0
 [sub_resource type="Resource" id="Resource_q3qvs"]
 script = ExtResource("2_3knpf")
 name = "Windmill"
-path = "res://game/placeables/placeables Steffi/windmühleklein.tscn"
+path = "res://game/placeables/medium/desert_windmill.tscn"
 texture = ExtResource("35_f5pnr")
 description = ""
 slot_type = 1
@@ -1028,6 +1034,192 @@ module_ID = 0
 myButton = null
 rotation = 0.0
 
+[sub_resource type="Resource" id="Resource_hrpck"]
+script = ExtResource("2_3knpf")
+name = "Apartment Block"
+path = "res://game/placeables/large/apartment_block.tscn"
+texture = ExtResource("35_6dose")
+description = "Very big house with lots of big slots."
+slot_type = 2
+slot_orientation = 1
+materials = 400
+money = 100
+people = 0
+isActive = false
+isEnergized = false
+energyNeed = 0
+peopleNeed = 0
+peopleMax = 0
+ticks_every_x_seconds = 1
+energized_ticks_every_x_seconds = 1
+prod_materials_perTick = 0
+prod_money_perTick = 0
+prod_food = 0
+prod_energy = 0
+prod_housing = 100
+energized_prod_materials_perTick = 0
+energized_prod_money_perTick = 0
+energized_prod_food = 0
+energized_prod_housing = 0
+module_ID = 0
+myButton = null
+rotation = 0.0
+
+[sub_resource type="Resource" id="Resource_n3v0o"]
+script = ExtResource("2_3knpf")
+name = "Desert House Block Stairs"
+path = "res://game/placeables/large/desert_house_block2.tscn"
+texture = ExtResource("36_deqmv")
+description = ""
+slot_type = 2
+slot_orientation = 1
+materials = 50
+money = 0
+people = 0
+isActive = false
+isEnergized = false
+energyNeed = 0
+peopleNeed = 0
+peopleMax = 0
+ticks_every_x_seconds = 1
+energized_ticks_every_x_seconds = 1
+prod_materials_perTick = 0
+prod_money_perTick = 0
+prod_food = 0
+prod_energy = 0
+prod_housing = 20
+energized_prod_materials_perTick = 0
+energized_prod_money_perTick = 0
+energized_prod_food = 0
+energized_prod_housing = 0
+module_ID = 0
+myButton = null
+rotation = 0.0
+
+[sub_resource type="Resource" id="Resource_5rqug"]
+script = ExtResource("2_3knpf")
+name = "Desert House Block"
+path = "res://game/placeables/large/desert_house_block.tscn"
+texture = ExtResource("37_x776t")
+description = ""
+slot_type = 2
+slot_orientation = 1
+materials = 70
+money = 0
+people = 0
+isActive = false
+isEnergized = false
+energyNeed = 0
+peopleNeed = 0
+peopleMax = 0
+ticks_every_x_seconds = 1
+energized_ticks_every_x_seconds = 1
+prod_materials_perTick = 0
+prod_money_perTick = 0
+prod_food = 0
+prod_energy = 0
+prod_housing = 30
+energized_prod_materials_perTick = 0
+energized_prod_money_perTick = 0
+energized_prod_food = 0
+energized_prod_housing = 0
+module_ID = 0
+myButton = null
+rotation = 0.0
+
+[sub_resource type="Resource" id="Resource_l03y8"]
+script = ExtResource("2_3knpf")
+name = "Modern Windmill"
+path = "res://game/placeables/medium/modern_windmill.tscn"
+texture = ExtResource("38_ackk7")
+description = "Produces energy."
+slot_type = 1
+slot_orientation = 0
+materials = 60
+money = 40
+people = 0
+isActive = false
+isEnergized = false
+energyNeed = 0
+peopleNeed = 0
+peopleMax = 0
+ticks_every_x_seconds = 1
+energized_ticks_every_x_seconds = 1
+prod_materials_perTick = 0
+prod_money_perTick = 0
+prod_food = 0
+prod_energy = 10
+prod_housing = 0
+energized_prod_materials_perTick = 0
+energized_prod_money_perTick = 0
+energized_prod_food = 0
+energized_prod_housing = 0
+module_ID = 0
+myButton = null
+rotation = 0.0
+
+[sub_resource type="Resource" id="Resource_n1r7y"]
+script = ExtResource("2_3knpf")
+name = "Water Pump"
+path = "res://game/placeables/medium/water_pump.tscn"
+texture = ExtResource("39_bj713")
+description = "Produces water."
+slot_type = 1
+slot_orientation = 0
+materials = 70
+money = 50
+people = 0
+isActive = false
+isEnergized = false
+energyNeed = 0
+peopleNeed = 0
+peopleMax = 0
+ticks_every_x_seconds = 1
+energized_ticks_every_x_seconds = 1
+prod_materials_perTick = 0
+prod_money_perTick = 0
+prod_food = 20
+prod_energy = 0
+prod_housing = 0
+energized_prod_materials_perTick = 0
+energized_prod_money_perTick = 0
+energized_prod_food = 0
+energized_prod_housing = 0
+module_ID = 0
+myButton = null
+rotation = 0.0
+
+[sub_resource type="Resource" id="Resource_r2jkf"]
+script = ExtResource("2_3knpf")
+name = "Bush Greenhouse"
+path = "res://game/placeables/medium/greenhouse_medium.tscn"
+texture = ExtResource("40_35rur")
+description = "Produces food."
+slot_type = 1
+slot_orientation = 1
+materials = 40
+money = 30
+people = 0
+isActive = false
+isEnergized = false
+energyNeed = 0
+peopleNeed = 0
+peopleMax = 0
+ticks_every_x_seconds = 1
+energized_ticks_every_x_seconds = 1
+prod_materials_perTick = 0
+prod_money_perTick = 0
+prod_food = 10
+prod_energy = 0
+prod_housing = 0
+energized_prod_materials_perTick = 0
+energized_prod_money_perTick = 0
+energized_prod_food = 0
+energized_prod_housing = 0
+module_ID = 0
+myButton = null
+rotation = 0.0
+
 [node name="Database" type="Node"]
 script = ExtResource("1_87apn")
-placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_p0k4h"), SubResource("Resource_diyew"), SubResource("Resource_8uiqs"), SubResource("Resource_ttxeq"), SubResource("Resource_eftau"), SubResource("Resource_hgmjj"), SubResource("Resource_biu8u"), SubResource("Resource_afo4j"), SubResource("Resource_6dgjc"), SubResource("Resource_3k7jy"), SubResource("Resource_3712e"), SubResource("Resource_1a21s"), SubResource("Resource_df4l7"), SubResource("Resource_js0cv"), SubResource("Resource_s85a4"), SubResource("Resource_edk5d"), SubResource("Resource_1csvm"), SubResource("Resource_dab8f"), SubResource("Resource_u2y4p"), SubResource("Resource_8vsep"), SubResource("Resource_q7j4i"), SubResource("Resource_1vnr6"), SubResource("Resource_5ej6h"), SubResource("Resource_ta4gh"), SubResource("Resource_tawax"), SubResource("Resource_cm2jb"), SubResource("Resource_lbdi3"), SubResource("Resource_6dvbf"), SubResource("Resource_bond4"), SubResource("Resource_iojap"), SubResource("Resource_c4evb"), SubResource("Resource_q3qvs")])
+placeables = Array[ExtResource("2_3knpf")]([SubResource("Resource_p0k4h"), SubResource("Resource_diyew"), SubResource("Resource_8uiqs"), SubResource("Resource_ttxeq"), SubResource("Resource_eftau"), SubResource("Resource_hgmjj"), SubResource("Resource_biu8u"), SubResource("Resource_afo4j"), SubResource("Resource_6dgjc"), SubResource("Resource_3k7jy"), SubResource("Resource_3712e"), SubResource("Resource_1a21s"), SubResource("Resource_df4l7"), SubResource("Resource_js0cv"), SubResource("Resource_s85a4"), SubResource("Resource_edk5d"), SubResource("Resource_1csvm"), SubResource("Resource_dab8f"), SubResource("Resource_u2y4p"), SubResource("Resource_8vsep"), SubResource("Resource_q7j4i"), SubResource("Resource_1vnr6"), SubResource("Resource_5ej6h"), SubResource("Resource_ta4gh"), SubResource("Resource_tawax"), SubResource("Resource_cm2jb"), SubResource("Resource_lbdi3"), SubResource("Resource_6dvbf"), SubResource("Resource_bond4"), SubResource("Resource_iojap"), SubResource("Resource_c4evb"), SubResource("Resource_q3qvs"), SubResource("Resource_hrpck"), SubResource("Resource_n3v0o"), SubResource("Resource_5rqug"), SubResource("Resource_l03y8"), SubResource("Resource_n1r7y"), SubResource("Resource_r2jkf")])

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://svysnsggdnlf"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_8r1gy"]
+[ext_resource type="PackedScene" uid="uid://c3v8ql8ky847n" path="res://assets/models/placeables/Stockwerk10x20Dach.blend" id="2_o1vdg"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="3_qsjb0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4a2rt"]
+size = Vector3(19.8, 3.2, 9.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pujgu"]
+size = Vector3(19.8, 3, 4.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kar45"]
+size = Vector3(20.2, 3.7, 10.2)
+
+[node name="TimberStoreyLargeRoof" instance=ExtResource("1_8r1gy")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+shape = SubResource("BoxShape3D_4a2rt")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="OccupiedArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 2.5)
+shape = SubResource("BoxShape3D_pujgu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+shape = SubResource("BoxShape3D_kar45")
+
+[node name="Stockwerk10x20Dach" parent="." index="2" instance=ExtResource("2_o1vdg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.164062, 0, -0.178977)
+
+[node name="Slot5m" parent="." index="3" instance=ExtResource("3_qsjb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.5, -2.5)
+
+[node name="Slot5m2" parent="." index="4" instance=ExtResource("3_qsjb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 3.5, -2.5)
+
+[node name="Slot5m3" parent="." index="5" instance=ExtResource("3_qsjb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3.5, -2.5)
+
+[node name="Slot5m4" parent="." index="6" instance=ExtResource("3_qsjb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3.5, -2.5)

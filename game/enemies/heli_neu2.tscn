@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://lldj5kcdjek7"]
 
 [ext_resource type="Script" path="res://game/enemies/enemy.gd" id="1_4es27"]
-[ext_resource type="PackedScene" uid="uid://dkbhrlsjf231g" path="res://game/placeables/buildings/JapaneseFlat.tscn" id="2_u7jp6"]
+[ext_resource type="PackedScene" uid="uid://dkbhrlsjf231g" path="res://game/placeables/large/eastern_flat.tscn" id="2_u7jp6"]
 [ext_resource type="PackedScene" uid="uid://bojqj72vx6lst" path="res://2x2_modern_cannontower.tscn" id="3_6vsdg"]
 [ext_resource type="AudioStream" uid="uid://dg7ho3xaxtn74" path="res://assets/audio/sound/sound effects/helicopter-sound-41975.mp3" id="3_yady5"]
 

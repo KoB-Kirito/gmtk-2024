@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds7yitbjc6g8c"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_88nsc"]
+[ext_resource type="PackedScene" uid="uid://d15a2g2oefxho" path="res://assets/models/kipas/desert-house-02.blend" id="2_x0phc"]
+[ext_resource type="PackedScene" uid="uid://bsk8mcfx625" path="res://game/placeables/_slots/slot_10m.tscn" id="3_h23o4"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="4_igkmm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lb5ds"]
+size = Vector3(9.80029, 8, 9.85938)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kbb3y"]
+size = Vector3(10.1, 10.1, 10.1)
+
+[node name="DesertHouseBlock2" instance=ExtResource("1_88nsc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.07037, 0)
+shape = SubResource("BoxShape3D_lb5ds")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150146, 5.11475, 0.0146484)
+shape = SubResource("BoxShape3D_kbb3y")
+
+[node name="desert-house-02" parent="." index="2" instance=ExtResource("2_x0phc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11759e-08, 4.9, 1.2)
+
+[node name="Slot10m" parent="." index="3" instance=ExtResource("3_h23o4")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 5, 5)
+
+[node name="Slot5m2" parent="." index="4" instance=ExtResource("4_igkmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 1.5)
+
+[node name="Slot5m3" parent="." index="5" instance=ExtResource("4_igkmm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5, 5, 1.5)

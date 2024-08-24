@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv77ernaieg3k"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_aqqiu"]
+[ext_resource type="PackedScene" uid="uid://in0cbip1xdse" path="res://assets/Nomi/3D/5x5_module_modern_generator.blend" id="2_x8467"]
+[ext_resource type="PackedScene" uid="uid://cxdq27knicbqy" path="res://game/placeables/_slots/slot_2m.tscn" id="3_ou6nw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kslda"]
+size = Vector3(4.92493, 7, 4.91058)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuv7d"]
+size = Vector3(5.1, 3, 5.1)
+
+[node name="ModernGenerator" instance=ExtResource("1_aqqiu")]
+
+[node name="5x5_module_modern_generator" parent="." index="0" instance=ExtResource("2_x8467")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.80775, 0)
+shape = SubResource("BoxShape3D_kslda")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00799561, 1.73074, 0.00942993)
+shape = SubResource("BoxShape3D_yuv7d")
+
+[node name="Slot2m" parent="." index="3" instance=ExtResource("3_ou6nw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://qft1b83lyhxv"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_f3h1h"]
+[ext_resource type="Texture2D" uid="uid://bky6crxwku6u4" path="res://icon.svg" id="3_iybq1"]
+[ext_resource type="PackedScene" uid="uid://dsmtu5n8vqbpt" path="res://game/placeables/_slots/slot_5m.tscn" id="4_2a2wt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfqac"]
+albedo_color = Color(0.835851, 0, 0.329768, 1)
+albedo_texture = ExtResource("3_iybq1")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pbjy"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjqo4"]
+size = Vector3(5.1, 5.1, 5.1)
+
+[node name="Block5m" instance=ExtResource("1_f3h1h")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+size = Vector3(5, 5, 5)
+material = SubResource("StandardMaterial3D_jfqac")
+
+[node name="BuildingSlot5mUp" parent="." index="1" instance=ExtResource("4_2a2wt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="BuildingSlot5m1" parent="." index="2" instance=ExtResource("4_2a2wt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, 2.5)
+
+[node name="BuildingSlot5m2" parent="." index="3" instance=ExtResource("4_2a2wt")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -2.5, 2.5, 0)
+
+[node name="BuildingSlot5m3" parent="." index="4" instance=ExtResource("4_2a2wt")]
+transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 0, 2.5, -2.5)
+
+[node name="BuildingSlot5m4" parent="." index="5" instance=ExtResource("4_2a2wt")]
+transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 2.5, 2.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_0pbjy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_fjqo4")

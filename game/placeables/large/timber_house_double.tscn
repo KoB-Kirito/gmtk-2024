@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://fd3pbq08bytn"]
+
+[ext_resource type="PackedScene" uid="uid://supqn4f73wkn" path="res://game/placeables/placeable.tscn" id="1_i50s1"]
+[ext_resource type="PackedScene" uid="uid://bsk8mcfx625" path="res://game/placeables/_slots/slot_10m.tscn" id="2_yls3w"]
+[ext_resource type="PackedScene" uid="uid://b54vokuqqkwqi" path="res://assets/models/placeables/Haus10x20.blend" id="3_seb6a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phkkw"]
+size = Vector3(19.8, 9.9, 9.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l41f7"]
+size = Vector3(20.2, 10.2, 10.2)
+
+[node name="TimberHouseDouble" instance=ExtResource("1_i50s1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OccupiedArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
+shape = SubResource("BoxShape3D_phkkw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseClickDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
+shape = SubResource("BoxShape3D_l41f7")
+
+[node name="Slot10m" parent="." index="2" instance=ExtResource("2_yls3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 10, 0)
+
+[node name="Slot10m3" parent="." index="3" instance=ExtResource("2_yls3w")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 15, 5, 0)
+
+[node name="Slot10m2" parent="." index="4" instance=ExtResource("2_yls3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="Slot10m6" parent="." index="5" instance=ExtResource("2_yls3w")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5, 5, 0)
+
+[node name="Haus10x20" parent="." index="6" instance=ExtResource("3_seb6a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)

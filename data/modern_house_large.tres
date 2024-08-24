@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://dgwjktr2hu4c5"]
 
 [ext_resource type="Script" path="res://game/ui/unit_data.gd" id="1_g0cba"]
-[ext_resource type="Texture2D" uid="uid://ctpemcoabj487" path="res://game/placeables/buildings/modern_house_10x10x10.png" id="2_q44bh"]
+[ext_resource type="Texture2D" uid="uid://ctpemcoabj487" path="res://game/placeables/large/modern_house_armed.png" id="2_q44bh"]
 
 [resource]
 script = ExtResource("1_g0cba")
