@@ -9,6 +9,9 @@ signal unit_selected(unit: UnitData)
 
 
 func setup(slot: BuildingSlot) -> void:
+	if Globals.free_mode:
+		%GridContainer.columns = 8
+	
 	var slot_orientation = slot.get_slot_orientation()
 	
 	for item: InventoryItem in Globals.inventory:

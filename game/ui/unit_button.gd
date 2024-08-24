@@ -31,8 +31,18 @@ func setup(item: InventoryItem, slot: BuildingSlot) -> void:
 	_item = item
 	_unit_data = item.unit_data
 	
-	#TODO: name
+	# build tooltip
 	tooltip_text = _unit_data.name + "\n" + _unit_data.description
+	if not Globals.free_mode and (_unit_data.materials or _unit_data.money):
+		# unit has cost
+		tooltip_text += "\n\nCost:"
+		
+		if _unit_data.materials:
+			tooltip_text += "\n" + str(_unit_data.materials) + " materials"
+		
+		if _unit_data.money:
+			tooltip_text += "\n" + str(_unit_data.money) + " money"
+	
 	texture_normal = _unit_data.texture
 	
 	# amount
@@ -47,10 +57,10 @@ func _on_mouse_entered() -> void:
 		return
 	
 	hovered = true
-	print("mouse entered")
+	#print("mouse entered")
 	
 	# highlight
-	modulate = Color(2.0, 2.0, 2.0)
+	self_modulate = Color(2.0, 2.0, 2.0)
 	
 	# load object
 	var placeable_scene: PackedScene = load(_unit_data.path)
@@ -66,9 +76,9 @@ func _on_mouse_entered() -> void:
 		mesh.material_override = preview_shader
 	
 	#TODO: remove all csgs before export!
-	for csg: CSGPrimitive3D in placeable.find_children("*", "CSGPrimitive3D"):
-		#mesh.set_surface_override_material(0, preview_shader)
-		csg.material_override = preview_shader
+	#for csg: CSGPrimitive3D in placeable.find_children("*", "CSGPrimitive3D"):
+	#	#mesh.set_surface_override_material(0, preview_shader)
+	#	csg.material_override = preview_shader
 	
 	
 	module = placeable
@@ -80,7 +90,7 @@ func _on_mouse_exited() -> void:
 		modulate = Color(1.0, 1.0, 1.0)
 	
 	hovered = false
-	print("mouse exited")
+	#print("mouse exited")
 	
 	if module:
 		module.queue_free()
@@ -102,14 +112,14 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			print("wheel down")
+			#print("wheel down")
 			applied_rotation += PI/2.0
 			#module.rotate_y(PI/2.0)
 			module.rotate_object_local(Vector3.UP, PI/2)
 			get_viewport().set_input_as_handled()
 			
 		elif mouse_event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			print("wheel up")
+			#print("wheel up")
 			applied_rotation -= PI/2.0
 			#module.rotate_y(-PI/2.0)
 			module.rotate_object_local(Vector3.UP, -PI/2)
