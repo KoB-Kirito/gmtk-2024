@@ -1,9 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1bavbomwxi8e"]
+[gd_scene load_steps=5 format=3 uid="uid://c1bavbomwxi8e"]
 
 [ext_resource type="Shader" path="res://addons/terraincrafter/generator_resources/terrain_shader.gdshader" id="1_gn3gs"]
-[ext_resource type="Texture2D" uid="uid://cyaltt1kavpdm" path="res://addons/terraincrafter/assets/example_level/textures/mountain.png" id="2_xfw3j"]
-[ext_resource type="Texture2D" uid="uid://bd2locnvt74sb" path="res://addons/terraincrafter/assets/example_level/textures/sand.png" id="3_055rm"]
-[ext_resource type="Texture2D" uid="uid://n3qqy4edgv8h" path="res://addons/terraincrafter/assets/example_level/textures/grass.png" id="4_3ol6c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pn7c3"]
 uv1_scale = Vector3(10, 10, 10)
@@ -28,9 +25,6 @@ shader_parameter/roughness_high = 1.0
 shader_parameter/specular_low = 0.0
 shader_parameter/specular_medium = 0.0
 shader_parameter/specular_high = 0.0
-shader_parameter/texture_low = ExtResource("3_055rm")
-shader_parameter/texture_medium = ExtResource("4_3ol6c")
-shader_parameter/texture_high = ExtResource("2_xfw3j")
 
 [node name="BaseMeshInstance" type="MeshInstance3D"]
 mesh = SubResource("PlaneMesh_wmr4n")

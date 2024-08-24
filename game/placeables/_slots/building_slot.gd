@@ -58,7 +58,7 @@ func build(unit_data: UnitData) -> void:
 	# place object
 	add_sibling(placeable, true)
 	placeable.global_transform = global_transform
-	print("rotating ", unit_data.rotation)
+	#print("rotating ", unit_data.rotation)
 	placeable.rotate_object_local(Vector3.UP, unit_data.rotation)
 	
 	# tell nomi
