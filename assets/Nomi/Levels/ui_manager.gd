@@ -37,6 +37,7 @@ func initializeModuleUI(myData : UnitData) -> void:
 	$CanvasLayer/PanelContainer2/Module_UI_Container.add_child(mod)
 	myData.myButton = mod
 	mod.myData = myData
+	updateModuleUI()
 	#for module in Globals.playerManager.modules:
 		#
 		#var mod = module_UI_Prefab.instantiate()

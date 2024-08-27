@@ -543,7 +543,10 @@ script = ExtResource("2_3knpf")
 name = "Forge"
 path = "res://game/placeables/large/forge.tscn"
 texture = ExtResource("20_7puen")
-description = ""
+description = "Produces 24 Mat every 4 seconds.
+
+With 12 Energy it also produces:
+16 Material"
 slot_type = 2
 slot_orientation = 0
 materials = 120

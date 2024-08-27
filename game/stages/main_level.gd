@@ -9,15 +9,15 @@ func _ready() -> void:
 	
 	Dialogic.timeline_ended.connect(func(): get_tree().paused = false)
 	
-	Dialogic.start("res://story/timeline.dtl")
-	get_tree().paused = true
-	Dialogic.paused = false
-	
-	await Dialogic.timeline_ended
-	
-	Dialogic.start("res://story/Tutorial.dtl")
-	get_tree().paused = true
-	Dialogic.paused = false
+	#Dialogic.start("res://story/timeline.dtl")
+	#get_tree().paused = true
+	#Dialogic.paused = false
+	#
+	#await Dialogic.timeline_ended
+	#
+	#Dialogic.start("res://story/Tutorial.dtl")
+	#get_tree().paused = true
+	#Dialogic.paused = false
 	
 	Events.module_placed.connect(on_first_module_placed, CONNECT_ONE_SHOT)
 

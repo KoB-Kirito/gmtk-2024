@@ -50,6 +50,7 @@ func on_module_placed(module: Placeable, data: UnitData) -> void:
 	res_money -= myData.money
 	
 	module.tree_exited.connect(on_module_removed.bind(ui_module))
+	
 
 
 func on_module_removed(ui_module: Control) -> void:
@@ -102,6 +103,7 @@ func on_lessWorker(ID : int) -> void:
 
 func exectueAtTick() -> void:
 	
+	print( "atTick wird ausgeführt")
 	res_livingRoom = 50
 	res_food_produced = 30
 	
@@ -116,8 +118,14 @@ func exectueAtTick() -> void:
 	
 	
 	for module in modules:
+		print(module.name + "bin ein gefundenes module")
+		
+		if module.people >= module.peopleNeed:
+			module.isActive = true
+		
+		
 		if module.isActive:
-			
+			print(module.name + "bin ein aktives module")
 			#1 Coin per Worker
 			Globals.playerManager.res_money += module.people
 			
@@ -127,6 +135,7 @@ func exectueAtTick() -> void:
 			res_energy_produced += module.prod_energy
 			
 			if module.isEnergized:
+				print(module.name + "bin ein energized module")
 				res_energy_used += module.energyNeed
 				res_livingRoom += module.energized_prod_housing
 				res_food_produced += module.energized_prod_food

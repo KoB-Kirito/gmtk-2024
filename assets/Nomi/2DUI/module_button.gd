@@ -5,6 +5,7 @@ var myData : UnitData
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	pass # Replace with function body.
 
 
@@ -17,6 +18,10 @@ func updateUI() -> void:
 	
 	print("Bin am tryharden! im module button")
 	$ModuleButton/VBoxContainer/HBoxContainer/ActivityTag3.text = str(myData.people) + "/" + str(myData.peopleMax)
+	
+	$ModuleButton/VBoxContainer/ModuleName.text = myData.name
+	
+	$ModuleButton/VBoxContainer/Description.text = myData.description
 	
 	if(myData.people >= myData.peopleNeed):
 		$ModuleButton/VBoxContainer/HBoxContainer/ActivityTag.text = "Active"
