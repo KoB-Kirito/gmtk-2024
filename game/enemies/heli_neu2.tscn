@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://game/enemies/enemy.gd" id="1_4es27"]
 [ext_resource type="PackedScene" uid="uid://dkbhrlsjf231g" path="res://game/placeables/large/eastern_flat.tscn" id="2_u7jp6"]
-[ext_resource type="PackedScene" uid="uid://bojqj72vx6lst" path="res://2x2_modern_cannontower.tscn" id="3_6vsdg"]
 [ext_resource type="AudioStream" uid="uid://dg7ho3xaxtn74" path="res://assets/audio/sound/sound effects/helicopter-sound-41975.mp3" id="3_yady5"]
+[ext_resource type="PackedScene" uid="uid://cxm8bttjpb353" path="res://game/placeables/towers/enemy_2x2_modern_CannonTower.tscn" id="4_n10jt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwoax"]
 resource_name = "Material.001"
@@ -350,23 +350,20 @@ libraries = {
 [node name="Placeable" parent="helli" instance=ExtResource("2_u7jp6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00872993, -4.91364, -0.000522852)
 
-[node name="Placeable2" parent="helli" instance=ExtResource("3_6vsdg")]
-transform = Transform3D(-0.0010502, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107861, -2.12444, -5.05798, 2.0573)
-
-[node name="Placeable3" parent="helli" instance=ExtResource("3_6vsdg")]
-transform = Transform3D(-0.0010502, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107861, 2.11562, -5.05798, 2.0573)
-
-[node name="Placeable4" parent="helli" instance=ExtResource("3_6vsdg")]
-transform = Transform3D(-0.0010502, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107861, 2.11562, -5.05798, -2.27041)
-
-[node name="Placeable5" parent="helli" instance=ExtResource("3_6vsdg")]
-transform = Transform3D(-0.0010502, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107861, -2.23401, -5.05798, -2.27041)
-
-[node name="Placeable6" parent="helli" instance=ExtResource("3_6vsdg")]
-transform = Transform3D(-0.0010502, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107861, -2.23401, -5.05798, -2.27041)
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="helli"]
 stream = ExtResource("3_yady5")
+
+[node name="Placeable7" parent="helli" instance=ExtResource("4_n10jt")]
+transform = Transform3D(-0.00105014, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107856, -2.12444, -4.81856, 2.0573)
+
+[node name="Placeable8" parent="helli" instance=ExtResource("4_n10jt")]
+transform = Transform3D(-0.00105014, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107856, 2.11562, -4.81856, 2.0573)
+
+[node name="Placeable9" parent="helli" instance=ExtResource("4_n10jt")]
+transform = Transform3D(-0.00105014, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107856, 2.11562, -4.81856, -2.27041)
+
+[node name="Placeable10" parent="helli" instance=ExtResource("4_n10jt")]
+transform = Transform3D(-0.00105014, -0.00102508, -0.999999, 0.0281308, -0.999604, 0.000995132, -0.999604, -0.0281297, 0.00107856, -2.23401, -4.81856, -2.27041)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_8orcd")

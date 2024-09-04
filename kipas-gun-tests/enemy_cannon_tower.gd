@@ -8,7 +8,7 @@ extends RigidBody3D
 
 
 var enemies_in_range: Array[Node3D] = []
-var current_enemy: BuildingSlot
+var current_enemy: Enemy
 var shooting_timer: Timer
 
 
@@ -77,8 +77,8 @@ func _shoot() -> void:
 		
 
 
-func _on_patrolzone_body_entered(body: Node3D) -> void:
-	if body is BuildingSlot:
+func _on_patrol_zone_body_entered(body: Node3D) -> void:
+	if body is Enemy:
 		#print_debug(body, "entered")
 		if current_enemy == null:
 			current_enemy = body
@@ -88,8 +88,8 @@ func _on_patrolzone_body_entered(body: Node3D) -> void:
 		look_at_2d(body.global_position)
 
 
-func _on_patrolzone_body_exited(body: Node3D) -> void:
-	if body is BuildingSlot:
+func _on_patrol_zone_body_exited(body: Node3D) -> void:
+	if body is Enemy:
 		#print(body, "exited")
 		enemies_in_range.erase(body)
 		if current_enemy == body:

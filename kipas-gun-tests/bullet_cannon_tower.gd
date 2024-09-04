@@ -3,7 +3,7 @@ class_name BulletCannon
 
 @onready var collision_shape_3d = %CollisionShape3D
 
-var speed: float = 50.0
+var speed: float = 150.0
 var direction: Vector3
 var damage: float
 
