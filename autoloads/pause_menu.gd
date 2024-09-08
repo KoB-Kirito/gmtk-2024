@@ -24,7 +24,7 @@ var title: String:
 
 func _ready() -> void:
 	%RestartButton.hide()
-	%ExitButton.hide()
+	#%ExitButton.hide()
 	hide()
 
 
@@ -118,8 +118,9 @@ func _on_options_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	toggle()
-	%RestartButton.hide()
-	%ExitButton.hide()
+	
+	Bgm.stop()
+	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	#TODO: Bugs out when starting a cancelled timeline later
