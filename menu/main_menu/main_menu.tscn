@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn4dashthsf4l"]
+[gd_scene load_steps=5 format=3 uid="uid://dn4dashthsf4l"]
 
 [ext_resource type="Theme" uid="uid://c46na1j7c1bq" path="res://menu/theme.tres" id="1_xjn03"]
 [ext_resource type="Script" path="res://menu/main_menu/main_menu.gd" id="2_opjhm"]
 [ext_resource type="PackedScene" uid="uid://csligmwblw82j" path="res://menu/options_menu/options_menu.tscn" id="3_d7lqq"]
-[ext_resource type="AudioStream" uid="uid://bp8gjbyv34bit" path="res://assets/audio/music/awesomeness.ogg" id="3_xxm66"]
 [ext_resource type="AudioStream" uid="uid://dimgs8jlsvbml" path="res://assets/audio/music/loading.ogg" id="4_k0tek"]
 
 [node name="MainMenu" type="Control"]
@@ -15,8 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xjn03")
 script = ExtResource("2_opjhm")
-start_scene = "res://game/stages/mainLevel.tscn"
-next_song = ExtResource("3_xxm66")
 bgm = ExtResource("4_k0tek")
 volume_db = -8.0
 

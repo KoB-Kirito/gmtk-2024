@@ -1,12 +1,8 @@
 extends Control
 
 
-@export_file("*.tscn") var next_scene: String
+@export var scene_transition: TransitionDataOut
 
-@export_group("Scene Transition")
-@export var transition_duration_out: float = 1.0
-@export var transition_duration_in: float = 3.0
-@export var transition_color: Color = Color.BLACK
 
 @export_group("Splash Transitions")
 @export_subgroup("Fade In")
@@ -38,13 +34,9 @@ func _ready() -> void:
 	#tween.tween_property(%DialogicSplash, "modulate", Color.WHITE, fade_in_duration).set_trans(fade_in_transition).set_ease(fade_in_ease)
 	#tween.tween_interval(stay_duration)
 	#tween.tween_property(%Fade, "modulate", Color.WHITE, fade_out_duration).set_trans(fade_out_transition).set_ease(fade_out_ease)
-
+	
 	
 	#TODO: Team splash, Best played with controller?, ...
 	
-	var transition_options := SceneTransition.Options.new(next_scene)
-	transition_options.duration_out = transition_duration_out
-	transition_options.duration_in = transition_duration_in
-	transition_options.color = transition_color
 	
-	tween.tween_callback(func(): SceneTransition.change_scene(transition_options))
+	tween.tween_callback(func(): SceneTransition.fade_out_change_scene(scene_transition))

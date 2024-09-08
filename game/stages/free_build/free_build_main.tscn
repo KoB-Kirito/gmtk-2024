@@ -1,12 +1,26 @@
-[gd_scene load_steps=14 format=3 uid="uid://bs863hfhagxve"]
+[gd_scene load_steps=18 format=3 uid="uid://bs863hfhagxve"]
 
 [ext_resource type="PackedScene" uid="uid://dn4dashthsf4l" path="res://menu/main_menu/main_menu.tscn" id="1_ekqun"]
 [ext_resource type="Script" path="res://game/stages/free_build/free_build_main.gd" id="1_owfel"]
+[ext_resource type="Script" path="res://autoloads/transition_data_in.gd" id="2_jd8sc"]
 [ext_resource type="Script" path="res://addons/terraincrafter/terrain_crafter.gd" id="2_ryviu"]
 [ext_resource type="Shader" path="res://addons/terraincrafter/generator_resources/terrain_shader.gdshader" id="3_gxy36"]
+[ext_resource type="Script" path="res://autoloads/transition_data_out.gd" id="4_sr8k1"]
 [ext_resource type="Texture2D" uid="uid://exeg38jtm0yn" path="res://game/terrain/texturen/snow1_s.jpg" id="4_yl40o"]
 [ext_resource type="Texture2D" uid="uid://bd1jyqcceievr" path="res://game/terrain/texturen/snow_rough_s.jpg" id="5_epppq"]
 [ext_resource type="PackedScene" uid="uid://d07fjyk53j4ls" path="res://game/robot/robot.tscn" id="9_e3xu1"]
+
+[sub_resource type="Resource" id="Resource_b02i0"]
+script = ExtResource("2_jd8sc")
+transition = 1
+duration = 1.0
+
+[sub_resource type="Resource" id="Resource_cyebn"]
+script = ExtResource("4_sr8k1")
+scene_path = "res://game/stages/mainLevel.tscn"
+transition = 1
+color = Color(0, 0, 0, 1)
+duration = 1.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gpdl0"]
 sky_top_color = Color(0.211765, 0.313726, 0.552941, 1)
@@ -68,8 +82,10 @@ shader_parameter/texture_high = ExtResource("4_yl40o")
 
 [node name="FreeBuild" type="Node3D"]
 script = ExtResource("1_owfel")
+fade_in_data = SubResource("Resource_b02i0")
 
 [node name="MainMenu" parent="." instance=ExtResource("1_ekqun")]
+arcade_transition = SubResource("Resource_cyebn")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rmk44")
@@ -93,6 +109,7 @@ noise = SubResource("FastNoiseLite_e72jx")
 render_distance = 4
 
 [node name="Chunks" type="Node3D" parent="TerrainCrafter"]
+unique_name_in_owner = true
 
 [node name="BaseMesh" type="MeshInstance3D" parent="TerrainCrafter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
@@ -103,3 +120,5 @@ surface_material_override/0 = SubResource("ShaderMaterial_xmwso")
 [node name="Robot" parent="." instance=ExtResource("9_e3xu1")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 98.4333, 0)
+
+[connection signal="child_order_changed" from="TerrainCrafter/Chunks" to="." method="_on_chunks_child_order_changed"]

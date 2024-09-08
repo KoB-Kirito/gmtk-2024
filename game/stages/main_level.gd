@@ -1,7 +1,14 @@
 extends Node3D
 
 
+@export var fade_in: TransitionDataIn
+
+
 func _ready() -> void:
+	SceneTransition.fade_in(fade_in)
+	
+	await SceneTransition.finished
+	
 	#TODO: hide the UI during tutorial
 	#%BaseScene.hide()
 	

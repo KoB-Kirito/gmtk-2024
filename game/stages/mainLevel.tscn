@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://wec2lhayj68"]
+[gd_scene load_steps=18 format=3 uid="uid://wec2lhayj68"]
 
 [ext_resource type="PackedScene" uid="uid://c4gyrr74gsf0o" path="res://assets/Nomi/Levels/baseScene.tscn" id="1_2wchk"]
 [ext_resource type="Script" path="res://game/stages/main_level.gd" id="1_uu5gw"]
+[ext_resource type="Script" path="res://autoloads/transition_data_in.gd" id="2_oek6o"]
 [ext_resource type="Script" path="res://game/managers/enemy_manager.gd" id="3_5xkly"]
 [ext_resource type="Script" path="res://addons/terraincrafter/terrain_crafter.gd" id="3_sg3n2"]
 [ext_resource type="PackedScene" uid="uid://cnjlkfj4q4p0k" path="res://game/collectible/collectible.tscn" id="3_v7qen"]
@@ -9,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://exeg38jtm0yn" path="res://game/terrain/texturen/snow1_s.jpg" id="5_txt3k"]
 [ext_resource type="Texture2D" uid="uid://bd1jyqcceievr" path="res://game/terrain/texturen/snow_rough_s.jpg" id="6_bm5j6"]
 [ext_resource type="PackedScene" uid="uid://d07fjyk53j4ls" path="res://game/robot/robot.tscn" id="7_qrtt6"]
+
+[sub_resource type="Resource" id="Resource_4v2tl"]
+script = ExtResource("2_oek6o")
+transition = 1
+duration = 1.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gpdl0"]
 sky_top_color = Color(0.211765, 0.313726, 0.552941, 1)
@@ -69,6 +75,7 @@ shader_parameter/texture_high = ExtResource("5_txt3k")
 
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_uu5gw")
+fade_in = SubResource("Resource_4v2tl")
 
 [node name="BaseScene" parent="." instance=ExtResource("1_2wchk")]
 unique_name_in_owner = true
