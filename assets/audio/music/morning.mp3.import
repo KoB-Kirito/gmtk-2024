@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/morning.mp3-0371973f73e31da3d67f2095a8fa9aea.
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

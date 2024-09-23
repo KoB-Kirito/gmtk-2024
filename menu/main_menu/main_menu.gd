@@ -20,6 +20,8 @@ func _on_start_button_pressed() -> void:
 	# start normal game
 	PauseMenu.enable()
 	
+	Bgm.fade_out(0.5)
+	
 	SceneTransition.fade_out_change_scene(arcade_transition)
 
 
@@ -38,6 +40,8 @@ func _on_free_button_pressed() -> void:
 		item.unit_data = module
 		#TODO: infinite count
 		Globals.inventory.append(item)
+	
+	Bgm.fade_to(load("res://assets/audio/music/morning.mp3"), -6.0, 1.0)
 	
 	# remove main menu
 	queue_free()

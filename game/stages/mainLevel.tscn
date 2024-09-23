@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://wec2lhayj68"]
+[gd_scene load_steps=19 format=3 uid="uid://wec2lhayj68"]
 
 [ext_resource type="PackedScene" uid="uid://c4gyrr74gsf0o" path="res://assets/Nomi/Levels/baseScene.tscn" id="1_2wchk"]
 [ext_resource type="Script" path="res://game/stages/main_level.gd" id="1_uu5gw"]
 [ext_resource type="Script" path="res://autoloads/transition_data_in.gd" id="2_oek6o"]
+[ext_resource type="AudioStream" uid="uid://bp8gjbyv34bit" path="res://assets/audio/music/awesomeness.ogg" id="3_5u0w5"]
 [ext_resource type="Script" path="res://game/managers/enemy_manager.gd" id="3_5xkly"]
 [ext_resource type="Script" path="res://addons/terraincrafter/terrain_crafter.gd" id="3_sg3n2"]
 [ext_resource type="PackedScene" uid="uid://cnjlkfj4q4p0k" path="res://game/collectible/collectible.tscn" id="3_v7qen"]
@@ -56,6 +57,9 @@ subdivide_depth = 32
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xmwso"]
 render_priority = 0
 shader = ExtResource("4_x1w6f")
+shader_parameter/texture_low = ExtResource("6_bm5j6")
+shader_parameter/texture_medium = ExtResource("5_txt3k")
+shader_parameter/texture_high = ExtResource("5_txt3k")
 shader_parameter/low_height = -287.578
 shader_parameter/medium_height = -140.857
 shader_parameter/high_height = 93.789
@@ -69,13 +73,11 @@ shader_parameter/roughness_high = 1.0
 shader_parameter/specular_low = 0.0
 shader_parameter/specular_medium = 0.0
 shader_parameter/specular_high = 0.0
-shader_parameter/texture_low = ExtResource("6_bm5j6")
-shader_parameter/texture_medium = ExtResource("5_txt3k")
-shader_parameter/texture_high = ExtResource("5_txt3k")
 
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_uu5gw")
 fade_in = SubResource("Resource_4v2tl")
+bgm = ExtResource("3_5u0w5")
 
 [node name="BaseScene" parent="." instance=ExtResource("1_2wchk")]
 unique_name_in_owner = true

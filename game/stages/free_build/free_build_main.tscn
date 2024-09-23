@@ -63,6 +63,9 @@ subdivide_depth = 32
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xmwso"]
 render_priority = 0
 shader = ExtResource("3_gxy36")
+shader_parameter/texture_low = ExtResource("5_epppq")
+shader_parameter/texture_medium = ExtResource("4_yl40o")
+shader_parameter/texture_high = ExtResource("4_yl40o")
 shader_parameter/low_height = -287.578
 shader_parameter/medium_height = -140.857
 shader_parameter/high_height = 93.789
@@ -76,9 +79,6 @@ shader_parameter/roughness_high = 1.0
 shader_parameter/specular_low = 0.0
 shader_parameter/specular_medium = 0.0
 shader_parameter/specular_high = 0.0
-shader_parameter/texture_low = ExtResource("5_epppq")
-shader_parameter/texture_medium = ExtResource("4_yl40o")
-shader_parameter/texture_high = ExtResource("4_yl40o")
 
 [node name="FreeBuild" type="Node3D"]
 script = ExtResource("1_owfel")

@@ -2,12 +2,15 @@ extends Node3D
 
 
 @export var fade_in: TransitionDataIn
+@export var bgm: AudioStream
 
 
 func _ready() -> void:
 	SceneTransition.fade_in(fade_in)
 	
 	await SceneTransition.finished
+	
+	Bgm.fade_to(bgm, 0.0, 0.0)
 	
 	#TODO: hide the UI during tutorial
 	#%BaseScene.hide()
@@ -16,15 +19,15 @@ func _ready() -> void:
 	
 	Dialogic.timeline_ended.connect(func(): get_tree().paused = false)
 	
-	#Dialogic.start("res://story/timeline.dtl")
-	#get_tree().paused = true
-	#Dialogic.paused = false
-	#
-	#await Dialogic.timeline_ended
-	#
-	#Dialogic.start("res://story/Tutorial.dtl")
-	#get_tree().paused = true
-	#Dialogic.paused = false
+	Dialogic.start("res://story/timeline.dtl")
+	get_tree().paused = true
+	Dialogic.paused = false
+	
+	await Dialogic.timeline_ended
+	
+	Dialogic.start("res://story/Tutorial.dtl")
+	get_tree().paused = true
+	Dialogic.paused = false
 	
 	Events.module_placed.connect(on_first_module_placed, CONNECT_ONE_SHOT)
 
